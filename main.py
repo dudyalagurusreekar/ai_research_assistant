@@ -1,4 +1,7 @@
 from agents.research_agent import create_agent
+from utils import get_logger
+
+logger = get_logger(__name__)
 
 
 def main():
@@ -7,7 +10,11 @@ def main():
     print("Type 'exit' to quit.")
     print("=" * 70)
 
+    logger.info("Initializing Research Agent...")
+
     agent = create_agent()
+
+    logger.info("Research Agent Ready.")
 
     while True:
         query = input("\nYou: ").strip()
@@ -16,6 +23,7 @@ def main():
             continue
 
         if query.lower() in {"exit", "quit"}:
+            logger.info("Shutting down.")
             break
 
         print("\nAssistant:\n")
@@ -25,12 +33,11 @@ def main():
             print(answer)
 
         except KeyboardInterrupt:
-            print("\nInterrupted.")
+            logger.warning("Interrupted by user.")
 
-        except Exception as e:
-            print(f"\nError: {e}")
+        except Exception:
+            logger.exception("Unhandled exception")
 
 
 if __name__ == "__main__":
     main()
-

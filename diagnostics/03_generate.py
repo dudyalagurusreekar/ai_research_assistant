@@ -9,7 +9,7 @@ model = get_model()
 messages = [
     {
         "role": "user",
-        "content": "Say hello in one sentence."
+        "content": [{"type": "text", "text": "What is 2 + 2?"}]
     }
 ]
 
