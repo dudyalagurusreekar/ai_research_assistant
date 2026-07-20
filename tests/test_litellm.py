@@ -1,19 +1,18 @@
-from litellm import completion
+import sys
+from pathlib import Path
 from dotenv import load_dotenv
-import os
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config.model import resolve_model_config
+import litellm
 
 load_dotenv()
 
-model_id = os.getenv("MODEL_NAME", "ollama_chat/qwen2:7b")
-if model_id.startswith("ollama/") and not model_id.startswith("ollama_chat/"):
-    model_id = model_id.replace("ollama/", "ollama_chat/", 1)
+model_name, model_kwargs = resolve_model_config()
 
-response = completion(
-    model=model_id,
-    api_base=os.getenv("MODEL_API_BASE", "http://127.0.0.1:11434"),
-    api_key=os.getenv("MODEL_API_KEY") or None,
-    timeout=300,
-    messages=[
+kwargs = {
+    "model": model_name,
+    "messages": [
         {
             "role": "system",
             "content": (
@@ -29,5 +28,12 @@ response = completion(
             "content": "What is 2+2?",
         },
     ],
-)
+    "timeout": 300,
+}
+if "api_key" in model_kwargs:
+    kwargs["api_key"] = model_kwargs["api_key"]
+if "api_base" in model_kwargs:
+    kwargs["api_base"] = model_kwargs["api_base"]
+
+response = litellm.completion(**kwargs)
 print("Response:", response.choices[0].message.content)
