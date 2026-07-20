@@ -1,0 +1,141 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================
+# Virtual Environments
+# ==========================
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+.env.*
+!.env.example
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+
+# ==========================
+# Testing
+# ==========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================
+# mypy
+# ==========================
+.mypy_cache/
+
+# ==========================
+# Ruff
+# ==========================
+.ruff_cache/
+
+# ==========================
+# Pyright
+# ==========================
+.pyright/
+
+# ==========================
+# macOS
+# ==========================
+.DS_Store
+
+# ==========================
+# Windows
+# ==========================
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# Ollama Models
+# ==========================
+.ollama/
+
+# ==========================
+# Vector Databases
+# ==========================
+storage/
+persist/
+vector_store/
+chroma_db/
+chroma/
+qdrant_data/
+faiss_index/
+
+# ==========================
+# Uploaded Documents
+# ==========================
+data/documents/
+uploads/
+
+# ==========================
+# Temporary Files
+# ==========================
+temp/
+tmp/
+cache/
+
+# ==========================
+# Local Databases
+# ==========================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================
+# API Keys
+# ==========================
+secrets/
+credentials.json
+
+# ==========================
+# Node (if frontend added)
+# ==========================
+node_modules/
+
+# ==========================
+# Build Artifacts
+# ==========================
+*.zip
+*.tar
+*.gz

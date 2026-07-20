@@ -1,0 +1,3 @@
+[10:54:00] INFO | test | Logger working!
+[10:54:00] WARNING | test | Warning message
+[10:54:00] ERROR | test | Error message
