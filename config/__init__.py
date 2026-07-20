@@ -1,7 +1,8 @@
-from .settings import settings
+from .agent import AgentConfig, get_research_agent_config
 from .model import get_model
 
 __all__ = [
-    "settings",
+    "AgentConfig",
+    "get_research_agent_config",
     "get_model",
 ]
