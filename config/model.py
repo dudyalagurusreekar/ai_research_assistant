@@ -39,7 +39,7 @@ def resolve_model_config() -> Tuple[str, Dict[str, Any]]:
             MessageRole.TOOL_RESPONSE: "user",
         },
         "temperature": 0.0,
-        "max_tokens": int(os.getenv("MODEL_MAX_TOKENS", "512")),
+        "max_tokens": int(os.getenv("MODEL_MAX_TOKENS", "1536")),
         "drop_params": True,  # Allows LiteLLM to drop unsupported parameters per provider
         "timeout": int(os.getenv("MODEL_TIMEOUT", "300")),
     }
