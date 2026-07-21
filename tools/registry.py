@@ -12,7 +12,12 @@ from tools.web import (
 )
 
 # File Tools
-from tools.file import FileReaderTool
+from tools.file import (
+    FileReaderTool,
+    PdfReaderTool,
+)
+
+# Research Tools
 from tools.research import ResearchTool
 
 
@@ -44,6 +49,11 @@ class ToolRegistry:
 
 registry = ToolRegistry()
 
-# ---------------- Core ----------------
+# ---------------- Register Tools ----------------
 
 registry.register(CalculatorTool())
+registry.register(WebSearchTool())
+registry.register(WebPageReaderTool())
+registry.register(FileReaderTool())
+registry.register(PdfReaderTool())
+registry.register(ResearchTool())
