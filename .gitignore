@@ -1,0 +1,26 @@
+# Environments and Secrets
+.env
+.venv/
+venv/
+env/
+*.env
+
+# Cache and Compiled Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Artifacts and Logs
+.browser_artifacts/
+logs/
+*.log
+*.txt
+!requirements.txt
+
+# Scratch and Temporary files
+scratch/
+debug.txt
+logs2.txt
+tests_output.log

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import yaml
-from smolagents import CodeAgent
+from agents.runtime import SafeCodeAgent
 
 from config import get_model, get_research_agent_config
 from tools import registry
@@ -25,8 +25,8 @@ class ResearchAgent:
         self.model = get_model()
         self.tools = registry.get_tools()
 
-    def build(self) -> CodeAgent:
-        return CodeAgent(
+    def build(self) -> SafeCodeAgent:
+        return SafeCodeAgent(
             model=self.model,
             tools=self.tools,
             prompt_templates=_load_compact_prompts(),
@@ -39,8 +39,8 @@ class ResearchAgent:
         )
 
 
-def create_agent() -> CodeAgent:
+def create_agent() -> SafeCodeAgent:
     """
     Backward-compatible factory.
     """
-    return ResearchAgent().build()
+    return ResearchAgent().build()

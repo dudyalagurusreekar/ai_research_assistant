@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from smolagents import LiteLLMModel
+from utils.resilience import ResilientLiteLLMModel
 
 load_dotenv()
 
@@ -31,7 +31,7 @@ def get_model():
         "ollama"
     )
 
-    return LiteLLMModel(
+    return ResilientLiteLLMModel(
         model_id=model_name,
         api_base=api_base,
         api_key=api_key,

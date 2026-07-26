@@ -28,6 +28,18 @@ def main():
         logger.error(f"Failed to build Research Agent: {e}")
         sys.exit(1)
 
+    if len(sys.argv) > 1:
+        query = " ".join(sys.argv[1:]).strip()
+        print(f"\nYou: {query}\n")
+        print("\nAssistant:\n")
+        try:
+            answer = agent.run(query)
+            print(f"\n{answer}\n")
+        except Exception as e:
+            logger.error(f"Error executing CLI query: {e}", exc_info=True)
+            sys.exit(1)
+        return
+
     while True:
         try:
             query = input("\nYou: ").strip()
@@ -56,6 +68,8 @@ def main():
                 logger.error("Rate limit hit or quota exceeded. Verify API key limits or wait before retrying.")
             elif "Authentication" in err_str or "401" in err_str or "403" in err_str:
                 logger.error("Authentication error. Check your GEMINI_API_KEY or MODEL_API_KEY in .env.")
+            elif "503" in err_str or "ServiceUnavailable" in err_str or "overloaded" in err_str.lower() or "high demand" in err_str.lower():
+                logger.error("The model provider is currently overloaded or experiencing high demand (503 Service Unavailable). Please try again in a few seconds or switch models in .env.")
             else:
                 logger.exception("An error occurred during query execution")
 
