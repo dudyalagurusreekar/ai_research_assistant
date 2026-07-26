@@ -1,8 +1,9 @@
 import os
 from typing import Dict, Any, Tuple
 from dotenv import load_dotenv
-from smolagents import LiteLLMModel, MessageRole
+from smolagents import MessageRole
 import litellm
+from utils.resilience import ResilientLiteLLMModel, resilient_completion
 
 load_dotenv()
 
@@ -42,6 +43,7 @@ def resolve_model_config() -> Tuple[str, Dict[str, Any]]:
         "max_tokens": int(os.getenv("MODEL_MAX_TOKENS", "1536")),
         "drop_params": True,  # Allows LiteLLM to drop unsupported parameters per provider
         "timeout": int(os.getenv("MODEL_TIMEOUT", "300")),
+        "num_retries": int(os.getenv("MODEL_NUM_RETRIES", "3")),
     }
 
     if api_key:
@@ -60,16 +62,16 @@ def resolve_model_config() -> Tuple[str, Dict[str, Any]]:
     return model_name, model_kwargs
 
 
-def get_model() -> LiteLLMModel:
+def get_model() -> ResilientLiteLLMModel:
     """
-    Factory to construct a LiteLLMModel instance.
+    Factory to construct a ResilientLiteLLMModel instance.
     """
     model_name, model_kwargs = resolve_model_config()
 
     if os.getenv("DEBUG", "false").lower() == "true":
         litellm._turn_on_debug()
 
-    return LiteLLMModel(
+    return ResilientLiteLLMModel(
         model_id=model_name,
         **model_kwargs,
     )
@@ -95,7 +97,7 @@ def validate_model_connection() -> Tuple[bool, str]:
         if "api_base" in model_kwargs:
             kwargs["api_base"] = model_kwargs["api_base"]
 
-        litellm.completion(**kwargs)
+        resilient_completion(**kwargs)
         return True, f"Model '{model_name}' verified successfully."
     except Exception as e:
         return False, f"Model connection check failed for '{model_name}': {str(e)}"

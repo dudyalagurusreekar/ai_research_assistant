@@ -1,5 +1,11 @@
-from tools.datetime_tool import DateTimeTool
+import unittest
+from tools.core.datetime_tool import DateTimeTool
 
-tool = DateTimeTool()
+class TestDateTimeTool(unittest.TestCase):
+    def test_forward(self):
+        tool = DateTimeTool()
+        result = tool.forward()
+        self.assertIsNotNone(result)
 
-print(tool.forward())
+if __name__ == '__main__':
+    unittest.main()

@@ -13,6 +13,6 @@ messages = [
     }
 ]
 
-response = model.generate(messages)
-
-print(response)
+if __name__ == "__main__":
+    response = model.generate(messages)
+    print(response)

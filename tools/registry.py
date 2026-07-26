@@ -10,6 +10,7 @@ from tools.web import (
     WebSearchTool,
     WebPageReaderTool,
 )
+from tools.browser import BrowserTool
 
 # File Tools
 from tools.file import (
@@ -54,6 +55,8 @@ registry = ToolRegistry()
 registry.register(CalculatorTool())
 registry.register(WebSearchTool())
 registry.register(WebPageReaderTool())
+registry.register(BrowserTool())
 registry.register(FileReaderTool())
 registry.register(PdfReaderTool())
 registry.register(ResearchTool())
+

@@ -35,5 +35,6 @@ if "api_key" in model_kwargs:
 if "api_base" in model_kwargs:
     kwargs["api_base"] = model_kwargs["api_base"]
 
-response = litellm.completion(**kwargs)
-print("Response:", response.choices[0].message.content)
+if __name__ == "__main__":
+    response = litellm.completion(**kwargs)
+    print("Response:", response.choices[0].message.content)

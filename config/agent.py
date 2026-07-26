@@ -7,7 +7,7 @@ class AgentConfig:
     Common configuration for a SmolAgents agent.
     """
 
-    max_steps: int = 3
+    max_steps: int = 15
     planning_interval: int | None = None
     authorized_imports: list[str] = field(default_factory=list)
     stream_outputs: bool = False
@@ -20,7 +20,7 @@ def get_research_agent_config() -> AgentConfig:
     Configuration used by the Research Agent.
     """
     return AgentConfig(
-        max_steps=3,
+        max_steps=15,
         planning_interval=None,
         authorized_imports=[],
         stream_outputs=False,
