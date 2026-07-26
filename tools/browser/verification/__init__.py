@@ -1,16 +1,8 @@
-"""Action Verification package (`tools/browser/verification/`).
+"""Browser Verification package."""
 
-Exposes ActionVerificationEngine for decoupling execution from validation.
-"""
-
-from tools.browser.verification.engine import (
-    ActionVerificationEngine,
-    VerificationResult,
-    VerificationType,
-)
+from tools.browser.verification.verifier import BrowserActionVerifier, BrowserVerificationResult
 
 __all__ = [
-    "ActionVerificationEngine",
-    "VerificationResult",
-    "VerificationType",
+    "BrowserActionVerifier",
+    "BrowserVerificationResult",
 ]
