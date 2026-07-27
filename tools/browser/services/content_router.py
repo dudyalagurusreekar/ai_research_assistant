@@ -72,20 +72,53 @@ class TextParser(BaseParser):
 
 
 class PDFParser(BaseParser):
-    """Parser strategy for application/pdf document payloads."""
+    """Parser strategy for application/pdf document payloads integrated with Document Intelligence Platform."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        from tools.document.facade.facade import DocumentToolFacade
+        self._doc_facade = DocumentToolFacade()
 
     def parse(self, fetch_result: FetchResult) -> PageState:
         url = fetch_result.url
-        content_len = len(fetch_result.content)
-        placeholder_text = f"[PDF Document: {url} ({content_len} bytes)]"
+        content_bytes = fetch_result.content
+        content_len = len(content_bytes) if content_bytes else 0
 
-        return PageState(
-            url=url,
-            metadata=PageMetadata(title=url, description=f"PDF Document ({content_len} bytes)"),
-            main_text=placeholder_text,
-            headings=[{"level": "h1", "text": "PDF Document"}],
-            paragraphs=[placeholder_text],
-        )
+        try:
+            import asyncio
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as pool:
+                    norm_doc = pool.submit(
+                        asyncio.run,
+                        self._doc_facade.parse_document(content_bytes or fetch_result.text or "", mime_type="application/pdf", filename=url)
+                    ).result()
+            else:
+                norm_doc = loop.run_until_complete(
+                    self._doc_facade.parse_document(content_bytes or fetch_result.text or "", mime_type="application/pdf", filename=url)
+                )
+
+            headings = [{"level": f"h{s.level}", "text": s.title} for s in norm_doc.sections] if norm_doc.sections else [{"level": "h1", "text": "PDF Document"}]
+            paragraphs = [p.text for p in norm_doc.paragraphs] if norm_doc.paragraphs else [norm_doc.full_text[:500]]
+
+            return PageState(
+                url=url,
+                metadata=PageMetadata(title=norm_doc.metadata.title or url, description=f"PDF Document ({content_len} bytes)"),
+                main_text=norm_doc.full_text or f"[PDF Document: {url} ({content_len} bytes)]",
+                headings=headings,
+                paragraphs=paragraphs,
+                structured_data=[t.to_dict() for t in norm_doc.tables] if norm_doc.tables else [],
+            )
+        except Exception as e:
+            placeholder_text = f"[PDF Document: {url} ({content_len} bytes)] (Parse note: {e})"
+            return PageState(
+                url=url,
+                metadata=PageMetadata(title=url, description=f"PDF Document ({content_len} bytes)"),
+                main_text=placeholder_text,
+                headings=[{"level": "h1", "text": "PDF Document"}],
+                paragraphs=[placeholder_text],
+            )
 
     def extract_metadata(self, raw_html: str, url: str) -> PageMetadata:
         return PageMetadata(title=url, description="PDF Document")

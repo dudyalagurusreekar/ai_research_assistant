@@ -1,0 +1,18 @@
+{
+  "key": "art_225957a0-6ce3-4f18-bd45-c74faf7ed2bf",
+  "data": {
+    "artifact_id": "art_225957a0-6ce3-4f18-bd45-c74faf7ed2bf",
+    "name": "raw_test_doc.md",
+    "artifact_type": "raw_document",
+    "uri_or_path": null,
+    "mime_type": "text/markdown",
+    "metadata": {
+      "document_id": "doc_36394c1c-44e2-4c33-a326-26d33ef3cdbc"
+    },
+    "timestamp": "2026-07-27T06:33:33.962915+00:00"
+  },
+  "metadata": {
+    "document_id": "doc_36394c1c-44e2-4c33-a326-26d33ef3cdbc"
+  },
+  "updated_at": "2026-07-27T06:33:33.962941+00:00"
+}

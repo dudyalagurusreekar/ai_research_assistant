@@ -8,12 +8,7 @@ from typing import Optional, Dict, Any
 
 
 class BrowserError(Exception):
-    """Base exception class for all errors originating from the Browser Tool.
-
-    Attributes:
-        message (str): Human-readable error description.
-        context (Dict[str, Any]): Optional contextual key-value pairs (e.g. url, status_code).
-    """
+    """Base exception class for all errors originating from the Browser Tool."""
 
     def __init__(self, message: str, context: Optional[Dict[str, Any]] = None) -> None:
         super().__init__(message)
@@ -73,7 +68,7 @@ class HTTPError(FetchError):
 
 
 class NetworkError(FetchError):
-    """Raised when underlying socket or network connectivity fails (DNS resolution, connection refused)."""
+    """Raised when underlying socket or network connectivity fails."""
     pass
 
 
@@ -93,22 +88,45 @@ class ContentExtractionError(ParsingError):
 
 
 class UnsupportedEngineError(ConfigurationError):
-    """Raised when requesting a browser driver/engine that is not supported or installed."""
+    """Raised when requesting a browser driver/engine that is not supported."""
     pass
 
 
-# Re-export automation exception classes for unified access
-try:
-    from tools.browser.automation.exceptions import (
-        AutomationError,
-        ElementNotFoundError,
-        InteractionError,
-        ScriptExecutionError,
-        SessionError,
-        DialogError,
-        DownloadError,
-        UploadError,
-    )
-except ImportError:
+class AutomationError(BrowserError):
+    """Base exception class for dynamic browser automation errors."""
     pass
 
+
+class ElementNotFoundError(AutomationError):
+    """Raised when a target DOM element cannot be located."""
+    pass
+
+
+class InteractionError(AutomationError):
+    """Raised when an interactive action fails."""
+    pass
+
+
+class ScriptExecutionError(AutomationError):
+    """Raised when custom JavaScript execution fails."""
+    pass
+
+
+class SessionError(AutomationError):
+    """Raised when browser session state operation fails."""
+    pass
+
+
+class DialogError(AutomationError):
+    """Raised when handling JavaScript dialog alerts/prompts encounters an error."""
+    pass
+
+
+class DownloadError(AutomationError):
+    """Raised when file download operation fails or times out."""
+    pass
+
+
+class UploadError(AutomationError):
+    """Raised when file upload operation fails."""
+    pass

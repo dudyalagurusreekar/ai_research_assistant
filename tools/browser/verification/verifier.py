@@ -2,7 +2,7 @@
 
 import os
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, Any
 
 
 @dataclass
@@ -12,6 +12,14 @@ class BrowserVerificationResult:
     passed: bool
     check_type: str
     details: str
+
+    @property
+    def verification_type(self) -> Any:
+        try:
+            from tools.browser.verification import VerificationType
+            return VerificationType(self.check_type)
+        except Exception:
+            return self.check_type
 
 
 class BrowserActionVerifier:
@@ -35,6 +43,10 @@ class BrowserActionVerifier:
             details="DOM mutated successfully." if passed else "DOM hash remained unchanged.",
         )
 
+    def verify_dom_change(self, old_hash: str, new_hash: str) -> BrowserVerificationResult:
+        """Alias for verify_dom_mutation."""
+        return self.verify_dom_mutation(old_hash, new_hash)
+
     def verify_element_present(self, selector: str, page_content: str) -> BrowserVerificationResult:
         """Verify element selector or text is present in page content."""
         s_clean = selector.lower().replace("#", "").replace(".", "")
@@ -43,6 +55,15 @@ class BrowserActionVerifier:
             passed=passed,
             check_type="element_presence",
             details=f"Element '{selector}' {'found' if passed else 'missing'} in content.",
+        )
+
+    def verify_text_present(self, text: str, page_content: str) -> BrowserVerificationResult:
+        """Verify text snippet is present in page content."""
+        passed = text.lower() in page_content.lower()
+        return BrowserVerificationResult(
+            passed=passed,
+            check_type="text_presence",
+            details=f"Text '{text}' {'found' if passed else 'missing'} in content.",
         )
 
     def verify_download(self, file_path: str, min_bytes: int = 1) -> BrowserVerificationResult:

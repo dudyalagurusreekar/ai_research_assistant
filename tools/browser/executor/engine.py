@@ -23,7 +23,7 @@ class BrowserExecutor:
         """
         action_lower = action.lower().strip()
 
-        if action_lower == "navigate":
+        if action_lower in ("navigate", "open_url"):
             url = parameters.get("url") or parameters.get("target_url") or "https://wikipedia.org"
             success = await self.driver.open_url(url)
             current_url = await self.driver.get_current_url()

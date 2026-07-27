@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  ai-research-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-research-assistant:1.0.0
+    container_name: ai_research_assistant_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=INFO
+      - MAX_CONCURRENT_WORKFLOWS=10
+    volumes:
+      - app_data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/liveness"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  app_data:
+    driver: local
