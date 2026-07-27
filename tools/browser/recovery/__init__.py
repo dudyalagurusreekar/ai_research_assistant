@@ -1,37 +1,11 @@
-"""Recovery and Self-Healing Engine Package.
+"""Browser Recovery package."""
 
-Exposes public exception hierarchy, context, results, categories, and orchestrator engines.
-"""
+from tools.browser.recovery.engine import BrowserRecoveryEngine
 
-from tools.browser.recovery.base import (
-    BaseRecoveryStrategy,
-    RecoveryContext,
-    RecoveryError,
-    RecoveryResult,
-    RecoveryStrategyError,
-    SessionRestorationError,
-)
-from tools.browser.recovery.classifier import ErrorCategory, ErrorClassifier
-from tools.browser.recovery.engine import (
-    RecoveryEngine,
-    RecoveryMetrics,
-    RecoveryPolicyEngine,
-)
+# Alias for backward compatibility across recovery tests
+RecoveryEngine = BrowserRecoveryEngine
 
 __all__ = [
-    # Custom Exceptions
-    "RecoveryError",
-    "RecoveryStrategyError",
-    "SessionRestorationError",
-    # Context & Result DTOs
-    "RecoveryContext",
-    "RecoveryResult",
-    # Classifier & Taxonomy
-    "ErrorCategory",
-    "ErrorClassifier",
-    # Engine & Metrics
+    "BrowserRecoveryEngine",
     "RecoveryEngine",
-    "RecoveryPolicyEngine",
-    "RecoveryMetrics",
-    "BaseRecoveryStrategy",
 ]

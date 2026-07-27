@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ai-research-assistant-config
+  namespace: default
+data:
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "INFO"
+  MAX_CONCURRENT_WORKFLOWS: "20"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-research-assistant-deployment
+  namespace: default
+  labels:
+    app: ai-research-assistant
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ai-research-assistant
+  template:
+    metadata:
+      labels:
+        app: ai-research-assistant
+    spec:
+      containers:
+      - name: assistant
+        image: ai-research-assistant:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: ai-research-assistant-config
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health/liveness
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /health/readiness
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-research-assistant-service
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: ai-research-assistant
+  ports:
+  - port: 8000
+    targetPort: 8000
