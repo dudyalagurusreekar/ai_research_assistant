@@ -1,6 +1,5 @@
 """Layout Analyzer segmenting visual pages into structural regions."""
 
-import asyncio
 from typing import List, Any
 from tools.vision.interfaces.vision_interfaces import ILayoutAnalyzer
 from tools.vision.models.vision_models import DetectedRegion, BoundingBox

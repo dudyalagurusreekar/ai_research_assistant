@@ -1,7 +1,7 @@
 """Search index for fast memory term matching and retrieval."""
 
 import re
-from typing import List, Dict, Set
+from typing import List, Dict
 from tools.memory.interfaces.memory_interfaces import IMemoryIndex
 from tools.memory.models.memory_models import MemoryItem, MemoryQuery
 from infrastructure.logging.logger import StructuredLogger

@@ -3,7 +3,6 @@
 from typing import Dict, List, Optional
 from tools.document.interfaces.parser import IDocumentParser, IParserRegistry
 from tools.document.models.format import DocumentFormat
-from tools.document.exceptions import ParserNotFoundError
 from infrastructure.logging.logger import StructuredLogger
 
 

@@ -1,7 +1,6 @@
 """Connector Lifecycle Manager monitoring health, retries, and circuit breaking."""
 
-import asyncio
-from typing import Dict, Any, Optional
+from typing import Optional
 from tools.integration.interfaces.integration_interfaces import IConnectorLifecycleManager, IIntegrationRegistry
 from tools.integration.models.integration_models import ConnectorMetadata, ProtocolType
 from infrastructure.logging.logger import StructuredLogger

@@ -4,16 +4,11 @@
 import asyncio
 import os
 import tempfile
-from typing import Dict, Any
 
 from tools.document.facade.facade import DocumentToolFacade
 from tools.document.models.document import NormalizedDocument, DocumentMetadata, DocumentChunk
 from tools.document.models.context import ProcessingContext
 from tools.document.registry.parser_registry import ParserRegistry
-from tools.document.detector.format_detector import FormatDetector
-from tools.document.router.file_router import FileRouter
-from tools.document.pipeline.engine import ProcessingPipeline
-from tools.document.pipeline.registry import PipelineRegistry
 from tools.document.storage.artifact_manager import DocumentArtifactManager
 from tools.document.retrieval.search import KeywordSearchEngine
 from tools.document.retrieval.comparison import DocumentComparator
@@ -105,7 +100,7 @@ def test_artifact_manager_and_event_publishing():
                 metadata=DocumentMetadata(title="Event Test PDF", mime_type="application/pdf"),
                 chunks=[DocumentChunk(chunk_id="chunk_1", text="Chunk text", chunk_index=0)],
             )
-            ctx = ProcessingContext()
+            ProcessingContext()
             
             saved_artifacts = await manager.store_document_artifacts(doc, raw_bytes=b"sample pdf bytes")
             assert len(saved_artifacts) > 0

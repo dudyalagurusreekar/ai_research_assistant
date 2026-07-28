@@ -1,6 +1,5 @@
 """Web Search Provider strategy implementation."""
 
-import time
 import asyncio
 from typing import List
 from tools.search.interfaces.provider import ISearchProvider
@@ -29,7 +28,7 @@ class WebSearchProvider(ISearchProvider):
         # Simulate quick async network execution
         await asyncio.sleep(0.01)
 
-        raw_q = query.normalized_query.lower()
+        query.normalized_query.lower()
         items = [
             SearchResultItem(
                 title=f"Comprehensive Overview: {query.normalized_query}",

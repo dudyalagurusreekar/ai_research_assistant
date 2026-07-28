@@ -1,7 +1,6 @@
 """Image Processor for loading, binarizing, resizing, and normalizing visual assets."""
 
 import os
-import asyncio
 from typing import Dict, Any, Optional, Tuple
 from tools.vision.interfaces.vision_interfaces import IImageProcessor
 from infrastructure.logging.logger import StructuredLogger

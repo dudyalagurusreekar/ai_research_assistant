@@ -7,11 +7,9 @@ cross-tab data extraction.
 """
 
 import logging
-import time
 from typing import Any, Dict, List, Optional
 
 from tools.browser.core.browser import Browser
-from tools.browser.models.response import ActionResult
 from tools.browser.tabs.models import TabEvent, TabEventRecord, TabGroup, TabInfo
 from tools.browser.tabs.strategies import ConservativeStrategy, TabStrategy
 
@@ -20,12 +18,10 @@ logger = logging.getLogger("MultiTabCoordinator")
 
 class TabLimitExceeded(Exception):
     """Raised when tab operations exceed the configured tab limit."""
-    pass
 
 
 class TabNotFoundError(Exception):
     """Raised when a referenced tab_id does not exist in the registry."""
-    pass
 
 
 class MultiTabCoordinator:

@@ -9,7 +9,6 @@ from tools.document.pipeline.cleaner import CleanerStep
 from tools.document.pipeline.header_footer import HeaderFooterStep
 from tools.document.pipeline.metadata_extractor import MetadataExtractorStep
 from tools.document.pipeline.heading_detector import HeadingDetectorStep
-from tools.document.pipeline.table_extractor import TableExtractorStep
 from tools.document.pipeline.chunker import ChunkerStep
 
 

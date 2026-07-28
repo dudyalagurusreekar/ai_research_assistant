@@ -5,7 +5,6 @@ caching, and evaluating `robots.txt` rules per domain using `urllib.robotparser`
 """
 
 from typing import Dict, Optional, Any
-from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 from tools.browser.utils.helpers import extract_domain

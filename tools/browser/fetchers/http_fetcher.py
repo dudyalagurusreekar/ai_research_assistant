@@ -10,7 +10,7 @@ backoff retries, and comprehensive error mapping using custom Browser Tool excep
 import asyncio
 import random
 import time
-from typing import Dict, Any, Optional, Tuple
+from typing import Dict, Optional, Tuple
 import httpx
 
 from tools.browser.config import BrowserConfig
@@ -19,9 +19,7 @@ from tools.browser.core.base_fetcher import BaseFetcher
 from tools.browser.exceptions import (
     FetchError,
     TimeoutError,
-    HTTPError,
     NetworkError,
-    ValidationError,
 )
 from tools.browser.models.request import NavigationParams
 from tools.browser.models.response import FetchResult

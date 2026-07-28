@@ -21,7 +21,6 @@ class TraversalStrategy(ABC):
             depth (int): Depth level.
             parent_url (Optional[str]): Parent URL that referenced this node.
         """
-        pass
 
     @abstractmethod
     def pop_url(self) -> Optional[Tuple[str, int, Optional[str]]]:
@@ -30,7 +29,6 @@ class TraversalStrategy(ABC):
         Returns:
             Optional[Tuple[str, int, Optional[str]]]: (url, depth, parent_url) tuple or None if empty.
         """
-        pass
 
     @abstractmethod
     def has_urls(self) -> bool:
@@ -39,7 +37,6 @@ class TraversalStrategy(ABC):
         Returns:
             bool: True if pending URLs remain.
         """
-        pass
 
 
 class BFSTraversal(TraversalStrategy):

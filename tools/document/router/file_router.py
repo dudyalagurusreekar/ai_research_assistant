@@ -8,7 +8,7 @@ from tools.document.interfaces.parser import IParserRegistry, IDocumentParser
 from tools.document.models.document import NormalizedDocument
 from tools.document.models.context import ProcessingContext
 from tools.document.models.format import DocumentFormat
-from tools.document.exceptions import DocumentError, ParserNotFoundError, FormatDetectionError
+from tools.document.exceptions import DocumentError, ParserNotFoundError
 from tools.document.detector.format_detector import FormatDetector
 from infrastructure.logging.logger import StructuredLogger
 
@@ -40,7 +40,7 @@ class FileRouter(IFileRouter):
         loop = asyncio.get_event_loop()
         if loop.is_running():
             # In async context
-            detection = loop.run_until_complete(self.format_detector.detect(source, mime_type, filename)) if not loop.is_running() else None
+            loop.run_until_complete(self.format_detector.detect(source, mime_type, filename)) if not loop.is_running() else None
         # We handle resolve_parser inside route_and_parse asynchronously
         return None
 

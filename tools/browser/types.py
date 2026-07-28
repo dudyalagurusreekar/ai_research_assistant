@@ -4,7 +4,7 @@ This module provides common type aliases, generic type definitions, and Python
 Protocols defining component contracts for dependency inversion and extension.
 """
 
-from typing import Dict, Any, Union, List, Optional, Tuple, Protocol, runtime_checkable
+from typing import Dict, Any, Union, List, Tuple, Protocol, runtime_checkable
 
 # Common Type Aliases
 URL = str

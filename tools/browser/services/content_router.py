@@ -6,7 +6,7 @@ Includes built-in parsers for HTML, JSON, Plain Text/Markdown, and PDF documents
 """
 
 import json
-from typing import Dict, Any, Optional
+from typing import Dict, Optional
 from urllib.parse import urlparse
 
 from tools.browser.core.base_parser import BaseParser
@@ -124,7 +124,7 @@ class PDFParser(BaseParser):
         return PageMetadata(title=url, description="PDF Document")
 
     def extract_clean_text(self, raw_html: str) -> str:
-        return f"[PDF Document: {url}]"
+        return "[PDF Document]"
 
 
 class ContentRouter:

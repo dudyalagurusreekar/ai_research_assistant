@@ -1,6 +1,5 @@
 """Authentication Manager injecting headers for API Key, Bearer Token, OAuth2, and Basic Auth."""
 
-from typing import Dict, Any
 from tools.integration.interfaces.integration_interfaces import IAuthenticationManager
 from tools.integration.models.integration_models import IntegrationRequest, AuthenticationConfig, AuthType
 from infrastructure.logging.logger import StructuredLogger

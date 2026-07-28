@@ -31,12 +31,10 @@ class AutomationError(BrowserError):
 
 class ElementNotFoundError(AutomationError):
     """Raised when a specified target DOM element or selector cannot be located."""
-    pass
 
 
 class InteractionError(AutomationError):
     """Raised when an interactive action (click, fill, scroll, select) fails."""
-    pass
 
 
 class ScriptExecutionError(AutomationError):
@@ -57,19 +55,15 @@ class ScriptExecutionError(AutomationError):
 
 class SessionError(AutomationError):
     """Raised when exporting, importing, or persisting browser authentication session state fails."""
-    pass
 
 
 class DialogError(AutomationError):
     """Raised when handling JavaScript dialog alerts/confirms/prompts encounters an error."""
-    pass
 
 
 class DownloadError(AutomationError):
     """Raised when file download operation fails or times out."""
-    pass
 
 
 class UploadError(AutomationError):
     """Raised when file upload input target or file path resolution fails."""
-    pass

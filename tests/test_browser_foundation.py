@@ -8,7 +8,6 @@ import unittest
 from unittest.mock import MagicMock, patch
 
 from tools.browser.constants import (
-    HttpMethod,
     BrowserAction,
     PageStatus,
     BrowserEngineType,
@@ -25,9 +24,6 @@ from tools.browser.models import (
     NavigationParams,
     ActionParams,
     BrowserResponse,
-    PageMetadata,
-    PageState,
-    FetchResult,
 )
 from tools.browser.utils.helpers import (
     validate_url,

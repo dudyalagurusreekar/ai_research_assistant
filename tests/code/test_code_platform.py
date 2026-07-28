@@ -3,25 +3,11 @@
 import asyncio
 import os
 import tempfile
-import pytest
 
 from tools.code.facade.facade import CodeToolFacade
-from tools.code.models.code_models import (
-    NormalizedCodeProject,
-    CodeFile,
-    CodeSymbol,
-    SymbolType,
-    DependencyItem,
-    StaticAnalysisResult,
-    ExecutionResult,
-    DocGenResult,
-)
 from tools.code.registry.language_registry import LanguageRegistry
 from tools.code.providers.python_provider import PythonLanguageProvider
-from tools.code.providers.js_provider import JavaScriptLanguageProvider
-from tools.code.providers.generic_provider import GenericLanguageProvider
 from tools.code.indexer.project_indexer import ProjectIndexer
-from tools.code.symbols.symbol_resolver import SymbolResolver
 from tools.code.dependencies.dependency_analyzer import DependencyAnalyzer
 from tools.code.analysis.static_analysis import StaticAnalysisEngine
 from tools.code.execution.sandboxed_executor import SandboxedExecutionEngine

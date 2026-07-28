@@ -1,7 +1,7 @@
 """HeaderFooterStep for detecting and stripping repeated headers and footers."""
 
 import re
-from typing import Dict, List
+from typing import Dict
 from tools.document.interfaces.pipeline import IPipelineStep
 from tools.document.models.document import NormalizedDocument
 from tools.document.models.context import ProcessingContext

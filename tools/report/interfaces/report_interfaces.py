@@ -4,7 +4,6 @@ from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional
 from tools.report.models.report_models import (
     NormalizedReport,
-    ReportSection,
     CitationItem,
     VisualizationElement,
     ExportFormat,
@@ -18,12 +17,10 @@ class IReportTemplateRegistry(ABC):
     @abstractmethod
     def register_template(self, name: str, structure: List[Dict[str, Any]]) -> None:
         """Register a report template."""
-        pass
 
     @abstractmethod
     def get_template(self, name: str) -> Optional[List[Dict[str, Any]]]:
         """Get template structure by name."""
-        pass
 
 
 class IReportComposer(ABC):
@@ -38,7 +35,6 @@ class IReportComposer(ABC):
         custom_sections: Optional[List[Dict[str, Any]]] = None,
     ) -> NormalizedReport:
         """Assemble structured report."""
-        pass
 
 
 class ICitationManager(ABC):
@@ -47,12 +43,10 @@ class ICitationManager(ABC):
     @abstractmethod
     def add_citation(self, title: str, url_or_path: str, snippet: Optional[str] = None) -> CitationItem:
         """Add citation reference item."""
-        pass
 
     @abstractmethod
     def format_bibliography_markdown(self) -> str:
         """Format bibliography references into Markdown list."""
-        pass
 
 
 class IVisualizationBuilder(ABC):
@@ -61,7 +55,6 @@ class IVisualizationBuilder(ABC):
     @abstractmethod
     def create_markdown_table(self, headers: List[str], rows: List[List[str]], title: str = "") -> VisualizationElement:
         """Build Markdown table visualization element."""
-        pass
 
 
 class IExportEngine(ABC):
@@ -70,7 +63,6 @@ class IExportEngine(ABC):
     @abstractmethod
     async def export(self, report: NormalizedReport, format_type: ExportFormat) -> str:
         """Export report into target format string or file payload."""
-        pass
 
 
 class IReportValidator(ABC):
@@ -79,4 +71,3 @@ class IReportValidator(ABC):
     @abstractmethod
     def validate_report(self, report: NormalizedReport) -> ReportValidationResult:
         """Validate report structure and citation references."""
-        pass

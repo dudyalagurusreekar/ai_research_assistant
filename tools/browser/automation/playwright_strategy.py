@@ -22,7 +22,6 @@ from tools.browser.automation.exceptions import (
     InteractionError,
     ScriptExecutionError,
     SessionError,
-    DialogError,
     DownloadError,
     UploadError,
 )
@@ -322,7 +321,7 @@ class PlaywrightStrategy(AutomationStrategy):
                 "title": page_title,
                 "success": status_code < 400,
             }
-        except PlaywrightTimeoutError as e:
+        except PlaywrightTimeoutError:
             raise BrowserTimeoutError(f"Navigation wait timed out after {timeout_ms/1000.0}s", url=self._page.url)
         except PlaywrightError as e:
             raise AutomationError(f"Navigation wait failed: {e}")
@@ -581,6 +580,7 @@ class PlaywrightStrategy(AutomationStrategy):
             direction_lower = direction.strip().lower()
             if direction_lower == "into_view":
                 if not selector:
+                    from tools.browser.exceptions import ValidationError
                     raise ValidationError("Selector is required to scroll an element into view.")
                 await self._page.locator(selector).first.scroll_into_view_if_needed()
                 return True

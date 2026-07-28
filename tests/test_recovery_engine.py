@@ -4,12 +4,11 @@ Tests error classification, metrics tracking, self-healing strategies,
 crashes, network disconnections, and planner feedback.
 """
 
-import time
 import pytest
 from unittest.mock import MagicMock, patch
 
 from tools.browser.models.response import ActionResult
-from tools.browser.recovery.base import RecoveryContext, RecoveryResult
+from tools.browser.recovery.base import RecoveryContext
 from tools.browser.recovery.classifier import ErrorCategory, ErrorClassifier
 from tools.browser.recovery.engine import RecoveryEngine, RecoveryMetrics, RecoveryPolicyEngine
 from tools.browser.recovery.strategies import (
@@ -17,7 +16,6 @@ from tools.browser.recovery.strategies import (
     BrowserCrashRecovery,
     DismissOverlay,
     NetworkInterruptionRecovery,
-    PageReload,
     PlannerFeedbackStrategy,
     RetryWithBackoff,
     ScrollIntoView,

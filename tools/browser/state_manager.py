@@ -1,7 +1,6 @@
 import json
 import logging
 import time
-from dataclasses import dataclass, field
 from typing import Dict, Any, List, Optional
 from tools.browser.core.browser import Browser
 from tools.browser.browser.state import BrowserState, BrowserStateSnapshot

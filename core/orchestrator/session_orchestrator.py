@@ -13,6 +13,7 @@ from core.models.event import Event
 from core.exceptions.base import SessionError
 from core.exceptions.codes import ErrorCode
 from core.utils.time_utils import utc_now
+from core.orchestrator.recovery_engine import GlobalRecoveryEngine
 
 logger = logging.getLogger("Core.SessionOrchestrator")
 
@@ -31,6 +32,7 @@ class SessionOrchestrator(ISessionManager):
         self._registry = registry
         self._router = router
         self._logger = logger
+        self._recovery_engine = GlobalRecoveryEngine()
 
     async def create_session(self, user_id: str, metadata: Optional[Dict] = None) -> Session:
         """Create a new session and publish session.created event.
@@ -138,7 +140,12 @@ class SessionOrchestrator(ISessionManager):
                 if decision and self._registry:
                     tool = self._registry.get_tool(decision.tool_name)
                     if tool:
-                        result = await tool.execute(request.parameters)
+                        result = await self._recovery_engine.execute_with_recovery(
+                            tool_name=decision.tool_name,
+                            func=tool.execute,
+                            parameters=request.parameters,
+                            session_id=session.session_id
+                        )
                         tool_result_data = result.to_dict()
                         artifacts = result.artifacts
 

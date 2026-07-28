@@ -4,7 +4,6 @@ from smolagents.local_python_executor import CodeOutput
 from smolagents.models import get_clean_message_list
 from agents.runtime.agent import SafeCodeAgent
 from agents.runtime.controller import SafePythonExecutor
-from agents.runtime.policy import ImportStatus
 
 class TestRuntimeAgent(unittest.TestCase):
     def setUp(self):

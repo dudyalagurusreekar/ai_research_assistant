@@ -6,7 +6,6 @@ must implement to convert raw content into structured `PageState`.
 """
 
 from abc import ABC, abstractmethod
-from typing import Optional
 
 from tools.browser.models.response import FetchResult, PageMetadata
 from tools.browser.models.page import PageState
@@ -32,7 +31,6 @@ class BaseParser(ABC):
         Raises:
             ParsingError: If DOM structure or payload cannot be parsed.
         """
-        pass
 
     @abstractmethod
     def extract_metadata(self, raw_html: str, url: str) -> PageMetadata:
@@ -45,7 +43,6 @@ class BaseParser(ABC):
         Returns:
             PageMetadata: Extracted document metadata.
         """
-        pass
 
     @abstractmethod
     def extract_clean_text(self, raw_html: str) -> str:
@@ -57,4 +54,3 @@ class BaseParser(ABC):
         Returns:
             str: Normalized readable plain text content.
         """
-        pass

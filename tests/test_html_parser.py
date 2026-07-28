@@ -13,7 +13,7 @@ import httpx
 from tools.browser.config import BrowserConfig
 from tools.browser.constants import PageStatus
 from tools.browser.core.browser import Browser
-from tools.browser.models import FetchResult, PageState, LinkInfo, FormInfo, PageMetadata
+from tools.browser.models import FetchResult, PageState
 from tools.browser.parsers import (
     HTMLCleaner,
     BS4Parser,

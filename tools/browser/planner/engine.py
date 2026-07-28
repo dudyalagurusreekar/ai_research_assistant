@@ -7,15 +7,13 @@ and executes them sequentially using the BrowserActionExecutor.
 import json
 import logging
 import time
-import litellm
 from utils.resilience import resilient_completion
-from typing import Dict, Any, List, Optional, Set
+from typing import Dict, Any, List
 
 from config.model import resolve_model_config
 from tools.browser.core.browser import Browser
 from tools.browser.executor import BrowserActionExecutor
-from tools.browser.models.response import ActionResult, ActionMetrics
-from tools.browser.planner.graph import TaskGraph, TaskNode, TaskStatus
+from tools.browser.planner.graph import TaskGraph, TaskStatus
 from tools.browser.planner.prompts import GRAPH_SYSTEM_INSTRUCTIONS, GRAPH_PROMPT_TEMPLATE
 
 logger = logging.getLogger("TaskPlannerEngine")

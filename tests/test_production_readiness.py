@@ -1,7 +1,6 @@
 """Production Readiness & Operational Health Verification Test Suite."""
 
 import asyncio
-import pytest
 
 from infrastructure.deployment.health import HealthCheckManager
 from tools.registry import registry

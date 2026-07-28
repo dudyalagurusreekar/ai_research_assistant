@@ -4,12 +4,10 @@ Tests session lifecycle, multi-goal execution, pause/resume, persistence,
 hooks, error handling, and edge cases.
 """
 
-import json
 import os
 import shutil
-import time
 import pytest
-from unittest.mock import MagicMock, patch, PropertyMock
+from unittest.mock import MagicMock, patch
 
 from tools.browser.session.models import (
     GoalResult,

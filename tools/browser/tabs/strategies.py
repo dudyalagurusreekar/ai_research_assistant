@@ -6,7 +6,7 @@ how many tabs to allow, when to evict, and how to select tabs for reuse.
 
 import abc
 import logging
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 
 from tools.browser.tabs.models import TabInfo
 
@@ -32,7 +32,6 @@ class TabStrategy(abc.ABC):
         Returns:
             Optional[str]: The tab_id to evict, or None if no eviction is needed.
         """
-        pass
 
     @abc.abstractmethod
     def should_reuse_tab(
@@ -47,7 +46,6 @@ class TabStrategy(abc.ABC):
         Returns:
             Optional[str]: The tab_id to reuse, or None if a new tab should be opened.
         """
-        pass
 
     @property
     @abc.abstractmethod
@@ -57,7 +55,6 @@ class TabStrategy(abc.ABC):
         Returns:
             int: Tab limit.
         """
-        pass
 
 
 class ConservativeStrategy(TabStrategy):

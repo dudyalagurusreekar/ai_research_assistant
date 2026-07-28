@@ -7,8 +7,8 @@ allowing future extractors (e.g. OCR, Video, Charts) to be added seamlessly.
 """
 
 import json
-from typing import List, Dict, Any, Optional
-from urllib.parse import urljoin, urlparse
+from typing import List, Dict, Any
+from urllib.parse import urljoin
 from bs4 import BeautifulSoup, Tag
 
 from tools.browser.models.page import LinkInfo, FormInfo

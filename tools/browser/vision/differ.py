@@ -9,7 +9,10 @@ import io
 import logging
 import os
 import time
-from typing import Optional, Tuple
+from typing import Optional, Tuple, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from PIL import Image
 
 from tools.browser.vision.models import (
     ScreenshotCapture,

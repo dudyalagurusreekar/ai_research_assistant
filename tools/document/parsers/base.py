@@ -1,12 +1,10 @@
 """Base abstract class for all document parsers."""
 
 import os
-from abc import ABC, abstractmethod
-from typing import Optional, Union, BinaryIO, List
+from abc import ABC
+from typing import Union, BinaryIO
 from tools.document.interfaces.parser import IDocumentParser
-from tools.document.models.document import NormalizedDocument, DocumentMetadata
-from tools.document.models.context import ProcessingContext
-from tools.document.models.format import DocumentFormat
+from tools.document.models.document import NormalizedDocument
 from tools.document.utils.text_helpers import compute_sha256
 from infrastructure.logging.logger import StructuredLogger
 

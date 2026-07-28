@@ -13,7 +13,7 @@ from tools.browser.models.request import NavigationParams
 from tools.browser.models.response import FetchResult
 from tools.browser.automation.engine import BrowserAutomationEngine
 from tools.browser.automation.exceptions import AutomationError
-from tools.browser.exceptions import FetchError, TimeoutError as BrowserTimeoutError
+from tools.browser.exceptions import TimeoutError as BrowserTimeoutError
 from tools.browser.utils.logging import get_browser_logger
 
 

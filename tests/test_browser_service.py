@@ -5,7 +5,6 @@ extract_information, search_page, find_links, collect_documents), automatic memo
 RAII context managers, and CrawlerEngine multi-page web research crawling.
 """
 
-import json
 import unittest
 from unittest.mock import MagicMock, patch
 import httpx
@@ -13,14 +12,13 @@ import httpx
 from tools.browser.config import BrowserConfig
 from tools.browser.constants import PageStatus
 from tools.browser.core.browser import Browser
-from tools.browser.models import FetchResult, PageMetadata, PageState, LinkInfo
+from tools.browser.models import FetchResult, PageMetadata
 from tools.browser.services import (
     ContentRouter,
     JSONParser,
     TextParser,
     PDFParser,
     LanguageDetector,
-    CrawlerEngine,
 )
 
 

@@ -5,7 +5,6 @@ logins, SPA rendering delays, infinite scrolling, file uploads/downloads,
 redirects, and server errors.
 """
 
-import os
 import threading
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, HTTPServer

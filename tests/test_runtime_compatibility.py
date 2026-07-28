@@ -1,8 +1,6 @@
 import unittest
-import io
 import tempfile
 import os
-from pathlib import Path
 from agents.runtime.compatibility import ExecutionCompatibilityLayer
 from agents.runtime.fallbacks import requests_fallback, pandas_fallback, numpy_fallback
 

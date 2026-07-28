@@ -1,7 +1,7 @@
 """Procedural Memory layer for reusable workflows and successful selectors."""
 
 import logging
-from typing import List, Dict, Any, Optional
+from typing import List
 
 from tools.browser.memory.models import MemoryItem, MemoryType, RelevanceScore
 from tools.browser.memory.vector_store import BaseVectorStore

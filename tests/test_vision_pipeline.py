@@ -8,9 +8,8 @@ import io
 import os
 import json
 import shutil
-import time
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
 from tools.browser.vision.models import (
     AnnotationMode,

@@ -1,9 +1,6 @@
 """Comprehensive Unit, Integration, Concurrency, and End-to-End Tests for Phase 6 Memory Platform."""
 
 import asyncio
-import os
-import tempfile
-import pytest
 
 from tools.memory.facade.facade import MemoryToolFacade
 from tools.memory.models.memory_models import (
@@ -11,8 +8,6 @@ from tools.memory.models.memory_models import (
     MemoryType,
     MemoryLink,
     MemoryQuery,
-    MemorySearchResult,
-    MemoryConsolidationResult,
 )
 from tools.memory.registry.memory_registry import MemoryRegistry
 from tools.memory.index.memory_index import MemoryIndex
@@ -33,9 +28,9 @@ def test_memory_providers():
     async def _test():
         st_p = ShortTermMemoryProvider(capacity=10)
         lt_p = LongTermMemoryProvider()
-        s_p = SessionMemoryProvider()
-        w_p = WorkingMemoryProvider()
-        k_p = KnowledgeMemoryProvider()
+        SessionMemoryProvider()
+        WorkingMemoryProvider()
+        KnowledgeMemoryProvider()
 
         # Store items
         item1 = MemoryItem(content="User asked about quantum computing", importance=0.8)

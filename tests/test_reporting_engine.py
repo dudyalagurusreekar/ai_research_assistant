@@ -7,7 +7,7 @@ budget snapshot integration, and JSON/Markdown/HTML report exports.
 import json
 import time
 
-from tools.browser.budget import BudgetLimit, BudgetManager, ResourceCategory
+from tools.browser.budget import BudgetManager, ResourceCategory
 from tools.browser.reporting.base import ReportFormat, ReportMetadata
 from tools.browser.reporting.engine import ReportingEngine
 

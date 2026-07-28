@@ -12,7 +12,6 @@ from tools.browser.tabs.models import TabEvent, TabEventRecord, TabGroup, TabInf
 from tools.browser.tabs.strategies import ConservativeStrategy, ParallelStrategy
 from tools.browser.tabs.coordinator import (
     MultiTabCoordinator,
-    TabLimitExceeded,
     TabNotFoundError,
 )
 
@@ -266,7 +265,7 @@ class TestMultiTabCoordinator:
 
     def test_switch_tab_with_navigation(self, coordinator, mock_browser):
         """Switching with a URL should navigate the tab."""
-        tab1_id = coordinator.active_tab_id
+        coordinator.active_tab_id
         tab2 = coordinator.open_tab("https://original.com")
         
         coordinator.switch_to_tab(tab2.tab_id, navigate_url="https://new.com")
@@ -350,7 +349,7 @@ class TestMultiTabCoordinator:
         tab1 = coordinator.open_tab("https://a.com", group_name="batch")
         tab2 = coordinator.open_tab("https://b.com", group_name="batch")
         
-        initial_count = coordinator.get_tab_count()
+        coordinator.get_tab_count()
         closed = coordinator.close_group("batch")
         
         assert closed >= 1  # At least one tab closed
@@ -368,7 +367,7 @@ class TestMultiTabCoordinator:
 
     def test_close_active_tab_auto_switch(self, coordinator):
         """Closing the active tab should auto-switch to another tab."""
-        initial_id = coordinator.active_tab_id
+        coordinator.active_tab_id
         tab2 = coordinator.open_tab("https://new.com")
         
         # tab2 is active, close it

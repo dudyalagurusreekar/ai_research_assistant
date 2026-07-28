@@ -1,7 +1,7 @@
 """DocumentArtifactManager implementation integrating Phase 2 ArtifactStore and Phase 1 EventBus."""
 
 import json
-from typing import List, Optional, Dict, Any
+from typing import List, Optional
 from core.models.artifact import Artifact
 from core.models.event import Event
 from core.interfaces.event_bus import IEventBus

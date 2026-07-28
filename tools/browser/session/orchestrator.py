@@ -17,7 +17,6 @@ from tools.browser.core.browser import Browser
 from tools.browser.executor import BrowserActionExecutor
 from tools.browser.memory.manager import MemoryManager
 from tools.browser.recovery import RecoveryEngine
-from tools.browser.reporting import ReportingEngine
 from tools.browser.session.hooks import LoggingHook, SessionHook
 from tools.browser.session.models import (
     GoalResult,
@@ -33,7 +32,6 @@ logger = logging.getLogger("SessionOrchestrator")
 
 class SessionError(Exception):
     """Raised when a session operation violates lifecycle constraints."""
-    pass
 
 
 class SessionOrchestrator:

@@ -29,4 +29,3 @@ class IRouter(ABC):
         Returns:
             RoutingDecision if a matching tool/capability is found, else None.
         """
-        pass

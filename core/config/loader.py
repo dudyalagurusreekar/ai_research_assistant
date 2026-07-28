@@ -1,7 +1,7 @@
 """Configuration Loader reading environment variables and .env files."""
 
 import os
-from typing import Any, Dict, Optional
+from typing import Optional
 from core.config.settings import AppConfig, EventConfig, SessionConfig
 from core.exceptions.base import ConfigError
 from core.exceptions.codes import ErrorCode

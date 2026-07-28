@@ -3,20 +3,17 @@
 import asyncio
 import os
 import tempfile
-import pytest
 
 from tools.search.facade.facade import SearchToolFacade
 from tools.search.models.search_models import (
     SearchQuery,
     SearchResultItem,
-    SearchRankScore,
     QueryIntent,
     KnowledgeIndexEntry,
 )
 from tools.search.registry.provider_registry import SearchProviderRegistry
 from tools.search.planner.query_planner import QueryPlanner
 from tools.search.executor.search_executor import SearchExecutor
-from tools.search.normalizer.result_normalizer import ResultNormalizer
 from tools.search.ranking.ranking_engine import RankingEngine
 from tools.search.fetcher.content_fetcher import ContentFetcher
 from tools.search.cache.search_cache import SearchCache
@@ -24,7 +21,6 @@ from tools.search.index.knowledge_index import KnowledgeIndex
 from tools.search.providers.web_provider import WebSearchProvider
 from tools.search.providers.academic_provider import AcademicSearchProvider
 from tools.search.providers.github_provider import GitHubSearchProvider
-from tools.search.providers.local_provider import LocalDocumentSearchProvider
 from tools.search.tool import SearchTool
 from core.events import AsyncEventBus
 

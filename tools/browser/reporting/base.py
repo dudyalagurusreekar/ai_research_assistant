@@ -1,15 +1,13 @@
 """Base classes, enums, DTOs, and exception types for execution reporting.
 """
 
-import time
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 
 class ReportingError(Exception):
     """Base exception for all Reporting Engine errors."""
-    pass
 
 
 class ReportFormat(str, Enum):

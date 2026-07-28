@@ -17,17 +17,14 @@ logger = logging.getLogger("RecoveryEngine.Base")
 
 class RecoveryError(Exception):
     """Base class for all recovery engine errors."""
-    pass
 
 
 class RecoveryStrategyError(RecoveryError):
     """Raised when a specific recovery strategy encounters an internal error."""
-    pass
 
 
 class SessionRestorationError(RecoveryError):
     """Raised when browser session/context restoration fails during crash recovery."""
-    pass
 
 
 @dataclass
@@ -96,7 +93,6 @@ class BaseRecoveryStrategy(abc.ABC):
     @abc.abstractmethod
     def name(self) -> str:
         """String identifier of the recovery strategy."""
-        pass
 
     @abc.abstractmethod
     def attempt(self, ctx: RecoveryContext) -> RecoveryResult:
@@ -111,4 +107,3 @@ class BaseRecoveryStrategy(abc.ABC):
         Raises:
             RecoveryStrategyError: If execution encounters unrecoverable errors.
         """
-        pass

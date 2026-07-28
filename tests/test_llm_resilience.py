@@ -12,11 +12,6 @@ import litellm
 from utils.resilience import (
     resilient_completion,
     AllModelsFailedError,
-    RateLimitError,
-    QuotaExceededError,
-    TimeoutError,
-    ProviderUnavailableError,
-    registry,
     circuit_breaker,
     request_cache,
 )

@@ -9,7 +9,7 @@ SeleniumStrategy, MockAutomationStrategy).
 from abc import ABC, abstractmethod
 from typing import Dict, Any, List, Optional, Union
 from tools.browser.config import BrowserConfig
-from tools.browser.automation.models import ElementSpec, SessionState, NetworkRequestLog, NetworkResponseLog
+from tools.browser.automation.models import ElementSpec, SessionState
 
 
 class AutomationStrategy(ABC):
@@ -26,7 +26,6 @@ class AutomationStrategy(ABC):
     @abstractmethod
     async def initialize(self) -> None:
         """Launch underlying browser process, create context and default page."""
-        pass
 
     @abstractmethod
     async def navigate(
@@ -45,7 +44,6 @@ class AutomationStrategy(ABC):
         Returns:
             Dict[str, Any]: Basic navigation metadata (url, status_code, title).
         """
-        pass
 
     @abstractmethod
     async def click(
@@ -64,7 +62,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if click succeeded.
         """
-        pass
 
     @abstractmethod
     async def double_click(
@@ -83,7 +80,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if double click succeeded.
         """
-        pass
 
     @abstractmethod
     async def hover(
@@ -100,7 +96,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if hover succeeded.
         """
-        pass
 
     @abstractmethod
     async def clear_input(
@@ -117,7 +112,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if clear succeeded.
         """
-        pass
 
     @abstractmethod
     async def press_key(
@@ -136,7 +130,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if key press succeeded.
         """
-        pass
 
     @abstractmethod
     async def check_checkbox(
@@ -155,7 +148,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if checkbox check state was set successfully.
         """
-        pass
 
     @abstractmethod
     async def wait_for_navigation(
@@ -172,7 +164,6 @@ class AutomationStrategy(ABC):
         Returns:
             Dict[str, Any]: Navigation details.
         """
-        pass
 
     @abstractmethod
     async def type_text(
@@ -193,7 +184,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if typing succeeded.
         """
-        pass
 
     @abstractmethod
     async def fill_input(
@@ -212,7 +202,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if fill succeeded.
         """
-        pass
 
     @abstractmethod
     async def fill_form(
@@ -231,7 +220,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if form was filled and submitted.
         """
-        pass
 
     @abstractmethod
     async def select_option(
@@ -250,7 +238,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if option was selected.
         """
-        pass
 
     @abstractmethod
     async def scroll(
@@ -269,7 +256,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if scroll completed.
         """
-        pass
 
     @abstractmethod
     async def wait_for_element(
@@ -288,7 +274,6 @@ class AutomationStrategy(ABC):
         Returns:
             ElementSpec: Details of the located element.
         """
-        pass
 
     @abstractmethod
     async def execute_js(self, script: str, arg: Any = None) -> Any:
@@ -301,7 +286,6 @@ class AutomationStrategy(ABC):
         Returns:
             Any: Result evaluated from JS execution.
         """
-        pass
 
     @abstractmethod
     async def take_screenshot(
@@ -320,7 +304,6 @@ class AutomationStrategy(ABC):
         Returns:
             bytes: PNG binary image payload.
         """
-        pass
 
     @abstractmethod
     async def wait_for_function(
@@ -339,7 +322,6 @@ class AutomationStrategy(ABC):
         Returns:
             Any: Evaluated JS return value.
         """
-        pass
 
     @abstractmethod
     async def wait_for_url(
@@ -356,7 +338,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True when URL matches.
         """
-        pass
 
     @abstractmethod
     async def wait_for_network_idle(
@@ -371,12 +352,10 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True when network is idle.
         """
-        pass
 
     @abstractmethod
     async def get_console_logs(self) -> List[Dict[str, Any]]:
         """Retrieve recorded browser console messages log."""
-        pass
 
     @abstractmethod
     async def submit_form(
@@ -393,7 +372,6 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if form was submitted.
         """
-        pass
 
     @abstractmethod
     async def capture_pdf(self, path: Optional[str] = None) -> bytes:
@@ -405,7 +383,6 @@ class AutomationStrategy(ABC):
         Returns:
             bytes: PDF binary document payload.
         """
-        pass
 
     @abstractmethod
     async def download_file(
@@ -424,7 +401,6 @@ class AutomationStrategy(ABC):
         Returns:
             str: Saved local file path.
         """
-        pass
 
     @abstractmethod
     async def upload_file(
@@ -443,32 +419,26 @@ class AutomationStrategy(ABC):
         Returns:
             bool: True if upload succeeded.
         """
-        pass
 
     @abstractmethod
     async def get_page_source(self) -> str:
         """Retrieve current fully-rendered HTML DOM content as string."""
-        pass
 
     @abstractmethod
     async def get_url(self) -> str:
         """Retrieve active page URL."""
-        pass
 
     @abstractmethod
     async def get_title(self) -> str:
         """Retrieve active page document title."""
-        pass
 
     @abstractmethod
     async def get_cookies(self) -> List[Dict[str, Any]]:
         """Export browser cookies from current context."""
-        pass
 
     @abstractmethod
     async def set_cookies(self, cookies: List[Dict[str, Any]]) -> None:
         """Inject browser cookies into active context."""
-        pass
 
     @abstractmethod
     async def export_storage_state(self, path: Optional[str] = None) -> SessionState:
@@ -480,7 +450,6 @@ class AutomationStrategy(ABC):
         Returns:
             SessionState: Serialized state container.
         """
-        pass
 
     @abstractmethod
     async def import_storage_state(self, state: Union[str, Dict[str, Any], SessionState]) -> None:
@@ -489,14 +458,11 @@ class AutomationStrategy(ABC):
         Args:
             state (Union[str, Dict[str, Any], SessionState]): File path, dict, or DTO.
         """
-        pass
 
     @abstractmethod
     async def get_network_logs(self) -> Dict[str, Any]:
         """Retrieve intercepted network requests and responses log."""
-        pass
 
     @abstractmethod
     async def close(self) -> None:
         """Close page, browser context, and underlying browser driver instance."""
-        pass

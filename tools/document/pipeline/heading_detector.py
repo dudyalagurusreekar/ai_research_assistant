@@ -1,8 +1,9 @@
 """HeadingDetectorStep for detecting section hierarchy from Markdown, HTML, or plain text headings."""
 
 import re
+from typing import List
 from tools.document.interfaces.pipeline import IPipelineStep
-from tools.document.models.document import NormalizedDocument, DocumentSection
+from tools.document.models.document import NormalizedDocument
 from tools.document.models.context import ProcessingContext
 
 

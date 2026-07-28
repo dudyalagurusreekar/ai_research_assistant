@@ -9,13 +9,11 @@ import time
 import urllib.request
 from typing import Any, Dict, Optional
 
-from tools.browser.exceptions import BrowserError
 from tools.browser.models.response import ActionResult
 from tools.browser.recovery.base import (
     BaseRecoveryStrategy,
     RecoveryContext,
     RecoveryResult,
-    RecoveryStrategyError,
     SessionRestorationError,
 )
 

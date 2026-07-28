@@ -6,8 +6,7 @@ and budget-aware scaling limits.
 
 from unittest.mock import MagicMock
 
-from tools.browser.budget import BudgetLimit, BudgetManager, ResourceCategory, BudgetStatus
-from tools.browser.compressor.base import CompressedContext, CompressionStrategyType
+from tools.browser.budget import BudgetLimit, BudgetManager, BudgetStatus
 from tools.browser.compressor.pipeline import PromptCompressor
 from tools.browser.compressor.strategies import (
     AbstractiveCompressorStrategy,

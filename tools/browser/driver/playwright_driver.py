@@ -1,8 +1,6 @@
 """Playwright Browser Driver implementation."""
 
-import asyncio
 import logging
-from typing import Optional
 from tools.browser.driver.base import IBrowserDriver
 
 logger = logging.getLogger("Tools.Browser.PlaywrightDriver")

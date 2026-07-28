@@ -1,7 +1,6 @@
 """Static Analysis Engine inspecting code quality, complexity, and security patterns."""
 
 import re
-from typing import List, Dict, Any
 from tools.code.interfaces.code_interfaces import IStaticAnalysisEngine
 from tools.code.models.code_models import NormalizedCodeProject, StaticAnalysisResult
 from infrastructure.logging.logger import StructuredLogger

@@ -4,7 +4,6 @@ Uses Python's tracemalloc to analyze memory growth over sequential loads, execut
 concurrent page interactions to verify loop thread-safety, and compiles benchmark performance metrics.
 """
 
-import os
 import time
 import unittest
 import tracemalloc

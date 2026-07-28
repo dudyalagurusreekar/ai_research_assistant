@@ -1,7 +1,6 @@
 """Long-Term Memory Provider strategy implementation."""
 
-import asyncio
-from typing import List, Dict, Optional, Any
+from typing import List, Dict, Optional
 from tools.memory.interfaces.memory_interfaces import IMemoryProvider
 from tools.memory.models.memory_models import MemoryItem, MemoryType, MemoryQuery
 from infrastructure.artifacts import ArtifactStore

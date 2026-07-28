@@ -1,8 +1,8 @@
 """Retrieval, Comparison, Summarization, and Vector Extension Interfaces."""
 
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Optional
-from tools.document.models.document import NormalizedDocument, DocumentChunk
+from typing import List, Any
+from tools.document.models.document import NormalizedDocument
 from tools.document.models.retrieval import SearchResult, DocumentComparisonResult, DocumentSummary
 
 
@@ -17,7 +17,6 @@ class IRetrievalEngine(ABC):
         top_k: int = 5,
     ) -> List[SearchResult]:
         """Perform ranked keyword/BM25 search across documents or chunks."""
-        pass
 
 
 class IDocumentComparator(ABC):
@@ -30,7 +29,6 @@ class IDocumentComparator(ABC):
         doc_b: NormalizedDocument,
     ) -> DocumentComparisonResult:
         """Compare structural and text differences between two documents."""
-        pass
 
 
 class IDocumentSummarizer(ABC):
@@ -43,7 +41,6 @@ class IDocumentSummarizer(ABC):
         max_sentences: int = 5,
     ) -> DocumentSummary:
         """Extract key sentences and structural summary from document."""
-        pass
 
 
 class IVectorSearchEngine(ABC):
@@ -52,9 +49,7 @@ class IVectorSearchEngine(ABC):
     @abstractmethod
     async def embed_and_index(self, document: NormalizedDocument) -> bool:
         """Extension point to embed chunks and index in vector store."""
-        pass
 
     @abstractmethod
     async def vector_search(self, query: str, top_k: int = 5) -> List[SearchResult]:
         """Extension point to search indexed chunks via vector embeddings."""
-        pass

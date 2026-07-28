@@ -9,7 +9,7 @@ import json
 import logging
 import time
 from typing import Any, Dict, List, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from utils.resilience import resilient_completion, AllModelsFailedError
 from config.model import resolve_model_config

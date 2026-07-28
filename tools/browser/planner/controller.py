@@ -1,15 +1,13 @@
 import logging
-from typing import Dict, Any, Optional
+from typing import Any, Optional
 
 logger = logging.getLogger("ExecutionController")
 
 class BudgetExceededError(Exception):
     """Raised when an execution budget (steps, tokens) is exceeded."""
-    pass
 
 class LoopDetectedError(Exception):
     """Raised when an infinite loop of repeating actions/failures is detected."""
-    pass
 
 
 class ExecutionController:

@@ -1,7 +1,7 @@
 """Knowledge Index for storing and searching normalized document metadata."""
 
 import re
-from typing import List, Dict, Any
+from typing import List, Dict
 from tools.search.interfaces.provider import IKnowledgeIndex
 from tools.search.models.search_models import KnowledgeIndexEntry
 from infrastructure.logging.logger import StructuredLogger

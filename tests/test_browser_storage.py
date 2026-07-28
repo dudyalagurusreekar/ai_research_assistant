@@ -1,7 +1,6 @@
 """Unit Tests for Unified Storage Package (ArtifactStore and CheckpointStore)."""
 
 import os
-import time
 import shutil
 import unittest
 import tempfile

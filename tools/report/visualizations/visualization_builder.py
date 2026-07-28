@@ -1,6 +1,6 @@
 """Visualization Builder constructing Markdown tables and comparison matrices."""
 
-from typing import List, Dict, Any
+from typing import List
 from tools.report.interfaces.report_interfaces import IVisualizationBuilder
 from tools.report.models.report_models import VisualizationElement
 from infrastructure.logging.logger import StructuredLogger

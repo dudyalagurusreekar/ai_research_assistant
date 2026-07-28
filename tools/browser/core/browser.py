@@ -12,9 +12,8 @@ from typing import Optional, Dict, Any, List, Union
 from urllib.parse import urlparse
 
 from tools.browser.config import BrowserConfig
-from tools.browser.constants import PageStatus, BrowserAction
-from tools.browser.exceptions import BrowserError, ValidationError
-from tools.browser.models.request import BrowserRequest, NavigationParams, ActionParams
+from tools.browser.constants import PageStatus
+from tools.browser.models.request import NavigationParams, ActionParams
 from tools.browser.models.response import (
     BrowserResponse,
     PageMetadata,
@@ -31,7 +30,7 @@ from tools.browser.parsers.factory import ParserFactory
 from tools.browser.services.content_router import ContentRouter
 from tools.browser.services.language import LanguageDetector
 from tools.browser.crawler import CrawlerEngine
-from tools.browser.utils.helpers import generate_request_id, sanitize_url, validate_url, clean_text
+from tools.browser.utils.helpers import generate_request_id, sanitize_url, validate_url
 from tools.browser.utils.logging import get_browser_logger
 
 

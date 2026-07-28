@@ -1,10 +1,9 @@
 """Unified NormalizedDocument data model for the Document Intelligence Platform."""
 
 from dataclasses import dataclass, field
-from datetime import datetime
 from typing import Dict, List, Any, Optional
 from core.utils.id_generator import generate_id
-from core.utils.time_utils import utc_now, utc_isoformat
+from core.utils.time_utils import utc_isoformat
 
 
 @dataclass

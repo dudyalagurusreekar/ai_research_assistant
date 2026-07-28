@@ -7,7 +7,6 @@ to detect matching state cycles.
 import hashlib
 import json
 import logging
-from typing import Any, Dict, Optional
 
 from tools.browser.core.browser import Browser
 

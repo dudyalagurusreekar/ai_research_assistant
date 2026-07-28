@@ -4,8 +4,8 @@ Parses raw HTML, filters out static structure, extracts interactive elements,
 and maps them to unique reference IDs and CSS selectors for LLM reasoning.
 """
 
-from typing import List, Dict, Any, Optional
-from bs4 import BeautifulSoup, Tag
+from typing import List, Dict, Optional
+from bs4 import Tag
 
 
 class InteractiveNode:

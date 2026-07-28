@@ -1,8 +1,7 @@
 """Project Indexer building NormalizedCodeProject models."""
 
 import os
-import asyncio
-from typing import List, Optional
+from typing import Optional
 from tools.code.interfaces.code_interfaces import IProjectIndexer, ILanguageRegistry
 from tools.code.models.code_models import NormalizedCodeProject, CodeFile
 from tools.code.registry.language_registry import LanguageRegistry

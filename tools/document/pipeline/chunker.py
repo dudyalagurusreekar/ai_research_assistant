@@ -1,6 +1,5 @@
 """ChunkerStep for generating sliding-window and heading-aware semantic chunks."""
 
-import re
 from typing import List, Optional
 from tools.document.interfaces.pipeline import IPipelineStep
 from tools.document.models.document import NormalizedDocument, DocumentChunk

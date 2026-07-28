@@ -2,7 +2,7 @@
 
 import re
 import math
-from typing import Set, Dict
+from typing import Dict
 from tools.document.interfaces.retrieval import IDocumentComparator
 from tools.document.models.document import NormalizedDocument
 from tools.document.models.retrieval import DocumentComparisonResult

@@ -6,7 +6,6 @@ and execution traces.
 
 import logging
 import re
-from typing import Any, Dict, List, Set
 
 from tools.browser.detector.base import (
     BaseCompletionStrategy,
@@ -250,7 +249,7 @@ class ExecutionAnomalyStrategy(BaseCompletionStrategy):
             return CompletionStatus(CompletionState.INCOMPLETE, 0.0, "History trace is too short.")
 
         # 1. Check for consecutive failures
-        failed_steps = [step for step in ctx.history if not step.get("success")]
+        [step for step in ctx.history if not step.get("success")]
         consecutive_failures_count = 0
         for step in reversed(ctx.history):
             if not step.get("success"):

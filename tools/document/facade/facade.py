@@ -1,7 +1,7 @@
 """DocumentToolFacade - Single Public Entry Point for Document Intelligence Platform."""
 
 import os
-from typing import Optional, Union, BinaryIO, List, Dict, Any
+from typing import Optional, Union, BinaryIO, List, Any
 from core.interfaces.event_bus import IEventBus
 from core.events.bus import AsyncEventBus
 from core.models.event import Event

@@ -5,9 +5,9 @@ and concise text summary, enforcing strict token budgets to minimize LLM prompt 
 and latency.
 """
 
-from typing import Dict, Any, List, Optional
+from typing import Dict, List, Optional
 from dataclasses import dataclass, field
-from bs4 import BeautifulSoup, Tag
+from bs4 import Tag
 import logging
 
 from tools.browser.parsers.cleaner import HTMLCleaner

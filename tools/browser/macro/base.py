@@ -18,22 +18,18 @@ logger = logging.getLogger("MacroEngine.Base")
 
 class MacroError(Exception):
     """Base class for all macro-related errors."""
-    pass
 
 
 class MacroValidationError(MacroError):
     """Raised when macro parameter validation fails."""
-    pass
 
 
 class MacroExecutionError(MacroError):
     """Raised when a macro execution step fails."""
-    pass
 
 
 class MacroRollbackError(MacroError):
     """Raised when a rollback operation fails during recovery."""
-    pass
 
 
 class MacroExecutionContext:
@@ -155,13 +151,11 @@ class BaseMacro(abc.ABC):
     @abc.abstractmethod
     def name(self) -> str:
         """The macro string identifier (e.g., 'macro_search')."""
-        pass
 
     @property
     @abc.abstractmethod
     def description(self) -> str:
         """A brief description of what the macro accomplishes."""
-        pass
 
     @abc.abstractmethod
     def validate(self, params: Dict[str, Any]) -> None:
@@ -173,7 +167,6 @@ class BaseMacro(abc.ABC):
         Raises:
             MacroValidationError: If validation fails.
         """
-        pass
 
     @abc.abstractmethod
     def execute(self, params: Dict[str, Any]) -> ActionResult:
@@ -188,7 +181,6 @@ class BaseMacro(abc.ABC):
         Raises:
             MacroExecutionError: If execution fails.
         """
-        pass
 
     def rollback(self, params: Dict[str, Any]) -> None:
         """Optionally roll back browser changes on failure.

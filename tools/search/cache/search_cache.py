@@ -1,8 +1,7 @@
 """Search Cache wrapping shared multi-domain cache engine."""
 
 import hashlib
-import json
-from typing import Optional, Dict, Any
+from typing import Optional, Dict
 from tools.search.models.search_models import SearchQuery, NormalizedSearchResult
 from infrastructure.cache import MultiDomainCache
 from infrastructure.logging.logger import StructuredLogger

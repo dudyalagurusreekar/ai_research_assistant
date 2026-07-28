@@ -6,20 +6,16 @@ form submission, selector validation, retries, and ActionResult telemetry.
 """
 
 import os
-import time
 import json
 import unittest
 import tempfile
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from threading import Thread
-from pathlib import Path
 
 from tools.browser.config import BrowserConfig
 from tools.browser.constants import BrowserEngineType
 from tools.browser.core.browser import Browser
 from tools.browser.tool import BrowserTool
-from tools.browser.models.response import ActionResult
-from tools.browser.exceptions import ValidationError, UploadError
 
 
 class LocalHTTPTestServer:

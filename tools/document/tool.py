@@ -1,7 +1,7 @@
 """Smolagents BaseTool wrapper and Capability Registry registration for DocumentToolFacade."""
 
 import asyncio
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 from tools.base import BaseTool
 from tools.document.facade.facade import DocumentToolFacade
 from core.models.metadata import ToolMetadata

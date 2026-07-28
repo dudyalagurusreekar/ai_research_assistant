@@ -7,8 +7,7 @@ and escape recovery suggestions.
 import pytest
 from unittest.mock import MagicMock
 
-from tools.browser.detector import CompletionState
-from tools.browser.loop.base import LoopDetectionResult, LoopType
+from tools.browser.loop.base import LoopType
 from tools.browser.loop.detector import LoopDetector
 from tools.browser.loop.fingerprint import BrowserStateFingerprinter
 

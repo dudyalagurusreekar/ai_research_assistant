@@ -6,10 +6,9 @@ to produce a structured `PageState` DTO.
 """
 
 from typing import Optional
-from bs4 import BeautifulSoup
 
 from tools.browser.core.base_parser import BaseParser
-from tools.browser.exceptions import DOMParseError, ParsingError
+from tools.browser.exceptions import DOMParseError
 from tools.browser.models.page import PageState
 from tools.browser.models.response import FetchResult, PageMetadata
 from tools.browser.parsers.cleaner import HTMLCleaner

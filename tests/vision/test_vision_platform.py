@@ -1,21 +1,10 @@
 """Comprehensive Unit, Integration, Concurrency, and End-to-End Tests for Phase 8 Vision Intelligence Platform."""
 
 import asyncio
-import os
-import tempfile
-import pytest
 
 from tools.vision.facade.facade import VisionToolFacade
 from tools.vision.models.vision_models import (
-    NormalizedVisionResult,
     VisionAnalysisType,
-    DetectedRegion,
-    BoundingBox,
-    OCRTextRegion,
-    VisualTable,
-    VisualChart,
-    DiagramNode,
-    DiagramEdge,
 )
 from tools.vision.registry.vision_registry import VisionProviderRegistry
 from tools.vision.providers.default_vision_provider import DefaultVisionProvider

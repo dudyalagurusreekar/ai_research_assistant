@@ -17,18 +17,15 @@ class ISearchProvider(ABC):
     @abstractmethod
     def provider_name(self) -> str:
         """Name of the search provider."""
-        pass
 
     @property
     @abstractmethod
     def supported_intents(self) -> List[str]:
         """List of intent types supported by this provider."""
-        pass
 
     @abstractmethod
     async def search(self, query: SearchQuery) -> List[SearchResultItem]:
         """Execute search query and return normalized result items."""
-        pass
 
 
 class ISearchProviderRegistry(ABC):
@@ -37,17 +34,14 @@ class ISearchProviderRegistry(ABC):
     @abstractmethod
     def register(self, provider: ISearchProvider) -> None:
         """Register a search provider."""
-        pass
 
     @abstractmethod
     def get_provider(self, name: str) -> Optional[ISearchProvider]:
         """Get provider by name."""
-        pass
 
     @abstractmethod
     def list_providers(self) -> List[ISearchProvider]:
         """List all registered providers."""
-        pass
 
 
 class IQueryPlanner(ABC):
@@ -56,7 +50,6 @@ class IQueryPlanner(ABC):
     @abstractmethod
     async def plan_query(self, raw_query: str, options: Optional[Dict[str, Any]] = None) -> SearchQuery:
         """Analyze raw query string and construct an optimized SearchQuery plan."""
-        pass
 
 
 class ISearchExecutor(ABC):
@@ -69,7 +62,6 @@ class ISearchExecutor(ABC):
         providers: List[ISearchProvider],
     ) -> NormalizedSearchResult:
         """Execute parallel search across providers with retries, timeouts, and failover."""
-        pass
 
 
 class IRankingEngine(ABC):
@@ -82,7 +74,6 @@ class IRankingEngine(ABC):
         raw_items: List[SearchResultItem],
     ) -> List[SearchResultItem]:
         """Deduplicate, score, and rank search result items."""
-        pass
 
 
 class IContentFetcher(ABC):
@@ -95,7 +86,6 @@ class IContentFetcher(ABC):
         options: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """Fetch web page or document and route files to Document Tool if necessary."""
-        pass
 
 
 class IKnowledgeIndex(ABC):
@@ -104,9 +94,7 @@ class IKnowledgeIndex(ABC):
     @abstractmethod
     async def index_entry(self, entry: KnowledgeIndexEntry) -> str:
         """Add entry to knowledge index."""
-        pass
 
     @abstractmethod
     async def search_index(self, query: str, top_k: int = 10) -> List[KnowledgeIndexEntry]:
         """Query knowledge index."""
-        pass

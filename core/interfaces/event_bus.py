@@ -13,14 +13,11 @@ class IEventBus(ABC):
     @abstractmethod
     async def publish(self, event: Event) -> None:
         """Publish an event to all subscribed handlers asynchronously."""
-        pass
 
     @abstractmethod
     def subscribe(self, event_type: str, handler: EventHandler) -> None:
         """Subscribe a handler to events of event_type."""
-        pass
 
     @abstractmethod
     def unsubscribe(self, event_type: str, handler: EventHandler) -> bool:
         """Unsubscribe a handler from event_type."""
-        pass

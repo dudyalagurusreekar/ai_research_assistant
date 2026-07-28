@@ -5,9 +5,8 @@ navigation cycles, and potential execution loops without polling.
 """
 
 import logging
-import time
 from typing import Any, Dict, List, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from tools.browser.browser.events import (
     BrowserEvent,

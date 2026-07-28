@@ -1,7 +1,6 @@
 """Unified VisionToolFacade for the Vision Intelligence Platform."""
 
 import json
-import asyncio
 from typing import Dict, List, Any, Optional
 
 from core.interfaces.tool import ITool

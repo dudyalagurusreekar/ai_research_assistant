@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock, patch
-from tools.browser.planner.planner import BrowserPlanner, PlannerResult
+from tools.browser.planner.planner import BrowserPlanner
 from tools.browser.models.response import ActionResult
 
 class TestBrowserPlannerIncremental(unittest.TestCase):

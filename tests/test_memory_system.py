@@ -2,7 +2,6 @@
 
 import time
 import unittest
-from typing import Dict, Any
 
 from tools.browser.memory.models import MemoryItem, MemoryType
 from tools.browser.memory.vector_store import LightweightTFIDFStore

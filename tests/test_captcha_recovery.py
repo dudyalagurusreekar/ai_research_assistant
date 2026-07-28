@@ -1,4 +1,3 @@
-import pytest
 from tools.browser.recovery.strategies import CaptchaRecoveryStrategy
 from tools.browser.recovery.base import RecoveryContext
 from tools.browser.models.response import ActionResult
