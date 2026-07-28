@@ -7,7 +7,6 @@ domain parsing, text cleaning, and unique request ID generation.
 import re
 import uuid
 from urllib.parse import urlparse, urlunparse
-from typing import Optional
 
 from tools.browser.exceptions import ValidationError
 

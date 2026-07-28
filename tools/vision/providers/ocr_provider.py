@@ -1,7 +1,6 @@
 """Tesseract / Pillow OCR Provider strategy implementation."""
 
 import time
-import asyncio
 from typing import Any
 from tools.vision.interfaces.vision_interfaces import IVisionProvider
 from tools.vision.models.vision_models import (

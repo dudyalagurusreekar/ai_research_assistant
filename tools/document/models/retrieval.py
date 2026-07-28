@@ -2,7 +2,6 @@
 
 from dataclasses import dataclass, field
 from typing import Dict, List, Any, Optional
-from tools.document.models.document import DocumentChunk, NormalizedDocument
 
 
 @dataclass

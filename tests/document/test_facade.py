@@ -2,7 +2,7 @@
 
 import asyncio
 from tools.document.facade.facade import DocumentToolFacade
-from tools.document.models.document import NormalizedDocument, DocumentMetadata
+from tools.document.models.document import NormalizedDocument
 
 
 def test_document_tool_facade_parse_and_extract():

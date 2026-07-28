@@ -6,12 +6,11 @@ the LLM Planner/Tool wrapper and the low-level Browser API.
 
 import logging
 import time
-import json
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, List
 
 from tools.browser.core.browser import Browser
 from tools.browser.models.response import ActionResult, ActionMetrics
-from tools.browser.exceptions import ValidationError, BrowserError
+from tools.browser.exceptions import ValidationError
 from tools.browser.automation.commands import validate_selector_syntax
 
 logger = logging.getLogger("BrowserActionExecutor")
@@ -42,7 +41,7 @@ class BrowserActionExecutor:
 
     def _detect_bot_blocking(self, url: str, title: str, text: str) -> bool:
         """Detect if the current page is a CAPTCHA or bot blocking page."""
-        url_lower = url.lower()
+        url.lower()
         title_lower = title.lower()
         text_lower = (text or "").lower()
 
@@ -266,7 +265,7 @@ class BrowserActionExecutor:
                 coordinator = self._get_tab_coordinator()
                 closed = coordinator.close_tab(tab_id)
                 res = ActionResult(
-                    url=post_url, title=post_title, success=closed,
+                    url="", title="", success=closed,
                     data={"closed_tab_id": tab_id},
                 )
             elif action_lower == "switch_tab":
@@ -283,7 +282,7 @@ class BrowserActionExecutor:
                 coordinator = self._get_tab_coordinator()
                 tabs = coordinator.list_tabs()
                 res = ActionResult(
-                    url=post_url, title=post_title, success=True,
+                    url="", title="", success=True,
                     data={"tabs": [t.to_dict() for t in tabs], "count": len(tabs)},
                 )
             # ── Vision Actions ──
@@ -355,7 +354,6 @@ class BrowserActionExecutor:
             res.success = False
             err_msg = "BlockedState: Bot protection or CAPTCHA detected."
             res.errors.append(err_msg)
-            from tools.browser.exceptions import BrowserError
             # This specific string helps the RecoveryEngine classify it as CAPTCHA_INTERRUPTION
             self._logger.warning(err_msg)
 

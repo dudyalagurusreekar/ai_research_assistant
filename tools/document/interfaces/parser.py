@@ -1,7 +1,7 @@
 """Parser & ParserRegistry Interfaces."""
 
 from abc import ABC, abstractmethod
-from typing import Optional, Union, BinaryIO, Dict, List
+from typing import Optional, Union, BinaryIO, List
 from tools.document.models.document import NormalizedDocument
 from tools.document.models.format import DocumentFormat
 from tools.document.models.context import ProcessingContext
@@ -14,7 +14,6 @@ class IDocumentParser(ABC):
     @abstractmethod
     def supported_formats(self) -> List[DocumentFormat]:
         """Return list of supported document formats for this parser."""
-        pass
 
     @abstractmethod
     async def parse(
@@ -23,7 +22,6 @@ class IDocumentParser(ABC):
         context: ProcessingContext,
     ) -> NormalizedDocument:
         """Parse source document into NormalizedDocument."""
-        pass
 
 
 class IParserRegistry(ABC):
@@ -32,14 +30,11 @@ class IParserRegistry(ABC):
     @abstractmethod
     def register(self, parser: IDocumentParser) -> None:
         """Register a document parser strategy."""
-        pass
 
     @abstractmethod
     def get_parser(self, doc_format: DocumentFormat) -> Optional[IDocumentParser]:
         """Retrieve parser strategy for a given format."""
-        pass
 
     @abstractmethod
     def list_supported_formats(self) -> List[DocumentFormat]:
         """List all supported formats across registered parsers."""
-        pass

@@ -1,6 +1,5 @@
 """Memory Consolidator implementing importance decay, summarization, and forgetting policies."""
 
-import asyncio
 from typing import List
 from tools.memory.interfaces.memory_interfaces import IMemoryConsolidator, IMemoryProvider
 from tools.memory.models.memory_models import MemoryType, MemoryConsolidationResult

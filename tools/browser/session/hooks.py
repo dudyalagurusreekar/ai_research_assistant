@@ -6,8 +6,7 @@ logging, metrics, and custom event handling throughout the session lifecycle.
 
 import abc
 import logging
-import time
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 from tools.browser.session.models import GoalResult, SessionMetadata, SessionState
 
@@ -28,7 +27,6 @@ class SessionHook(abc.ABC):
         Args:
             metadata: Current session metadata snapshot.
         """
-        pass
 
     def on_session_pause(self, metadata: SessionMetadata) -> None:
         """Called when the session is paused.
@@ -36,7 +34,6 @@ class SessionHook(abc.ABC):
         Args:
             metadata: Current session metadata snapshot.
         """
-        pass
 
     def on_session_resume(self, metadata: SessionMetadata) -> None:
         """Called when the session resumes from PAUSED state.
@@ -44,7 +41,6 @@ class SessionHook(abc.ABC):
         Args:
             metadata: Current session metadata snapshot.
         """
-        pass
 
     def on_session_close(self, metadata: SessionMetadata) -> None:
         """Called when the session closes (normally or due to error).
@@ -52,7 +48,6 @@ class SessionHook(abc.ABC):
         Args:
             metadata: Final session metadata snapshot.
         """
-        pass
 
     def on_goal_start(self, goal: str, metadata: SessionMetadata) -> None:
         """Called when a new goal begins execution.
@@ -61,7 +56,6 @@ class SessionHook(abc.ABC):
             goal: Natural language goal description.
             metadata: Current session metadata snapshot.
         """
-        pass
 
     def on_goal_complete(self, result: GoalResult, metadata: SessionMetadata) -> None:
         """Called when a goal finishes execution (success or failure).
@@ -70,7 +64,6 @@ class SessionHook(abc.ABC):
             result: The completed goal result.
             metadata: Current session metadata snapshot.
         """
-        pass
 
     def on_state_change(
         self, old_state: SessionState, new_state: SessionState, metadata: SessionMetadata
@@ -82,7 +75,6 @@ class SessionHook(abc.ABC):
             new_state: New session state.
             metadata: Current session metadata snapshot.
         """
-        pass
 
     def on_error(self, error: Exception, metadata: SessionMetadata) -> None:
         """Called when an error occurs during session execution.
@@ -91,7 +83,6 @@ class SessionHook(abc.ABC):
             error: The exception that was raised.
             metadata: Current session metadata snapshot.
         """
-        pass
 
 
 class LoggingHook(SessionHook):

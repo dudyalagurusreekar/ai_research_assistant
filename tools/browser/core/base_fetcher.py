@@ -6,7 +6,6 @@ future HeadlessFetcher, MockFetcher) must implement.
 """
 
 from abc import ABC, abstractmethod
-from typing import Optional
 
 from tools.browser.config import BrowserConfig
 from tools.browser.models.request import NavigationParams
@@ -44,7 +43,6 @@ class BaseFetcher(ABC):
             FetchError: If network request encounters fatal error.
             TimeoutError: If request exceeds specified timeout limit.
         """
-        pass
 
     @abstractmethod
     async def fetch_async(self, params: NavigationParams) -> FetchResult:
@@ -56,9 +54,7 @@ class BaseFetcher(ABC):
         Returns:
             FetchResult: Raw network response result.
         """
-        pass
 
     @abstractmethod
     def close(self) -> None:
         """Release underlying network sockets, sessions, or browser driver resources."""
-        pass

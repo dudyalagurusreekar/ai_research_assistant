@@ -7,11 +7,9 @@ and production-ready scenarios.
 import pytest
 from unittest.mock import MagicMock
 
-from tools.browser.models.response import ActionResult
 from tools.browser.detector.base import (
     CompletionContext,
     CompletionState,
-    CompletionStatus,
     InvalidObjectiveError,
 )
 from tools.browser.detector.pipeline import CompletionDetector

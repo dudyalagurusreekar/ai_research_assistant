@@ -12,24 +12,19 @@ class IRegistry(ABC):
     @abstractmethod
     def register_tool(self, tool: ITool) -> None:
         """Register a tool instance."""
-        pass
 
     @abstractmethod
     def unregister_tool(self, name: str) -> bool:
         """Unregister a tool by name."""
-        pass
 
     @abstractmethod
     def get_tool(self, name: str) -> Optional[ITool]:
         """Retrieve tool by name."""
-        pass
 
     @abstractmethod
     def list_tools(self) -> List[ToolMetadata]:
         """List metadata of all registered tools."""
-        pass
 
     @abstractmethod
     def find_by_capability(self, capability: str) -> List[ITool]:
         """Find tools supporting a specific capability string."""
-        pass

@@ -5,11 +5,7 @@ scroll position mapping, focused element tracking, state diffing,
 history serialization, and rollback restoration.
 """
 
-import os
-import time
-import json
 import unittest
-import tempfile
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from threading import Thread
 
@@ -17,7 +13,6 @@ from tools.browser.config import BrowserConfig
 from tools.browser.constants import BrowserEngineType
 from tools.browser.core.browser import Browser
 from tools.browser.state_manager import BrowserStateMemoryManager, BrowserStateSnapshot
-from tests.test_browser_action_engine import LocalHTTPTestServer
 
 
 class LocalStateTestServer:
@@ -174,7 +169,7 @@ class TestBrowserStateMemoryManager(unittest.TestCase):
         self.browser.open_url(self.base_url)
 
         # Phase 1: Set theme=dark, capture version 0
-        snap0 = self.manager.capture_state()
+        self.manager.capture_state()
 
         # Phase 2: Set theme=blue, capture version 1
         self.browser.execute_javascript("window.localStorage.setItem('theme', 'blue');")

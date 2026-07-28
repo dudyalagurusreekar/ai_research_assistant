@@ -1,8 +1,7 @@
 """Unified WorkflowEngineFacade for the Research Workflow Engine."""
 
 import json
-import asyncio
-from typing import Dict, List, Any, Optional
+from typing import Dict, Any, Optional
 
 from core.interfaces.tool import ITool
 from core.models.metadata import ToolMetadata
@@ -11,10 +10,8 @@ from core.models.event import Event
 from core.events import AsyncEventBus
 from tools.workflow.models.workflow_models import (
     NormalizedWorkflow,
-    WorkflowTask,
     TaskStatus,
     WorkflowState,
-    WorkflowCheckpoint,
 )
 from tools.workflow.planner.workflow_planner import WorkflowPlanner
 from tools.workflow.scheduler.task_scheduler import TaskScheduler

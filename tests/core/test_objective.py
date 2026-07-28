@@ -3,7 +3,6 @@
 import unittest
 from core.objective import (
     Objective,
-    Constraint,
     Priority,
     ObjectiveStatus,
 )

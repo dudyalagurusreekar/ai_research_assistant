@@ -5,7 +5,7 @@ Validates stateless LLM JSON cleaning/parsing and BrowserMonitor telemetry/loop 
 
 import unittest
 from unittest.mock import patch, MagicMock
-from tools.browser.llm import LLMClient, LLMResponse
+from tools.browser.llm import LLMClient
 from tools.browser.monitor import BrowserMonitor
 from tools.browser.browser.events import EventDispatcher, BrowserEvent, BrowserEventType
 

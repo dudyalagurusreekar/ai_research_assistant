@@ -1,16 +1,12 @@
 """Comprehensive Unit, Integration, Concurrency, and End-to-End Tests for Phase 9 External Integration Platform."""
 
 import asyncio
-import os
-import pytest
 
 from tools.integration.facade.facade import IntegrationToolFacade
 from tools.integration.models.integration_models import (
-    NormalizedIntegrationResult,
     IntegrationRequest,
     AuthenticationConfig,
     AuthType,
-    ProtocolType,
 )
 from tools.integration.registry.integration_registry import IntegrationRegistry
 from tools.integration.auth.auth_manager import AuthenticationManager

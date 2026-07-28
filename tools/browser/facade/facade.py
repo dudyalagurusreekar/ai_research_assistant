@@ -137,7 +137,7 @@ class BrowserToolFacade(ITool):
         old_dom_hash = self.executor.state.dom_version_hash
 
         # 1. Enforce rule engine wait strategy
-        recommended_wait = self.rule_engine.get_wait_strategy(action)
+        self.rule_engine.get_wait_strategy(action)
 
         # 2. Execute deterministic browser action
         exec_result = await self.executor.execute_action(action, parameters)

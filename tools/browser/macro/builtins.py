@@ -5,8 +5,7 @@ file upload, file download, page capture, structured scraping, and comparison.
 """
 
 import json
-import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict
 
 from tools.browser.macro.base import (
     BaseMacro,

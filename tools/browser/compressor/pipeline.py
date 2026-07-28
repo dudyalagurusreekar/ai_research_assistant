@@ -13,7 +13,6 @@ from tools.browser.budget.manager import BudgetManager
 from tools.browser.compressor.base import (
     BaseCompressorStrategy,
     CompressedContext,
-    CompressionStrategyType,
 )
 from tools.browser.compressor.strategies import (
     ExtractiveCompressorStrategy,

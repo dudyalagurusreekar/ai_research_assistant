@@ -6,7 +6,6 @@ from tools.document.parsers.base import BaseDocumentParser
 from tools.document.models.document import NormalizedDocument, DocumentImage
 from tools.document.models.format import DocumentFormat
 from tools.document.models.context import ProcessingContext
-from tools.document.exceptions import DocumentParsingError
 
 try:
     from PIL import Image

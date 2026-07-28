@@ -1,7 +1,6 @@
 """JavaScript / TypeScript Language Provider strategy implementation."""
 
 import re
-import asyncio
 from typing import List
 from tools.code.interfaces.code_interfaces import ILanguageProvider
 from tools.code.models.code_models import CodeFile, CodeSymbol, SymbolType

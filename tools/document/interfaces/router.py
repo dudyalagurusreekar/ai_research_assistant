@@ -19,7 +19,6 @@ class IFileRouter(ABC):
         context: Optional[ProcessingContext] = None,
     ) -> NormalizedDocument:
         """Validate input file, detect format, select parser, and execute initial parsing."""
-        pass
 
     @abstractmethod
     def resolve_parser(
@@ -29,4 +28,3 @@ class IFileRouter(ABC):
         filename: Optional[str] = None,
     ) -> IDocumentParser:
         """Resolve correct IDocumentParser for input source."""
-        pass

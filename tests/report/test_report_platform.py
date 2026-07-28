@@ -1,17 +1,12 @@
 """Comprehensive Unit, Integration, Concurrency, and End-to-End Tests for Phase 11 Report Generation Platform."""
 
 import asyncio
-import json
-import pytest
 
 from tools.report.facade.facade import ReportToolFacade
 from tools.report.models.report_models import (
     NormalizedReport,
     ReportSection,
-    CitationItem,
-    VisualizationElement,
     ExportFormat,
-    ReportValidationResult,
 )
 from tools.report.registry.report_template_registry import ReportTemplateRegistry
 from tools.report.citations.citation_manager import CitationManager
@@ -75,6 +70,31 @@ def test_report_composer():
         assert len(rep.sections) >= 4
         assert len(rep.citations) == 1
         assert rep.metrics.word_count > 0
+
+    asyncio.run(_test())
+
+
+def test_ara_v1_1_report_composer():
+    """Verify ARA V1.1 report composition injects confidence and limitations."""
+    async def _test():
+        composer = ReportComposer()
+        rep = await composer.compose_report(
+            title="ARA V1.1 Test Report",
+            template_name="ara_v1_1_report",
+            sources=[{"title": "Search Result", "url": "https://example.com/search"}],
+        )
+
+        assert rep.report_id != ""
+        assert len(rep.sections) == 7
+        
+        # Verify the Confidence Assessment and Limitations sections are populated
+        conf_sec = next((s for s in rep.sections if s.title == "Confidence Assessment"), None)
+        assert conf_sec is not None
+        assert "**Score:**" in conf_sec.content
+
+        limit_sec = next((s for s in rep.sections if s.title == "Limitations"), None)
+        assert limit_sec is not None
+        assert "Identified Limitations" in limit_sec.content or "No significant limitations" in limit_sec.content
 
     asyncio.run(_test())
 

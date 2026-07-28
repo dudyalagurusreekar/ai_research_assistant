@@ -4,9 +4,8 @@ This module provides the `ParserFactory` class, implementing the Strategy Patter
 by instantiating concrete `BaseParser` strategy implementations based on configuration settings.
 """
 
-from typing import Dict, Type, Union, Optional
+from typing import Dict, Type
 
-from tools.browser.config import BrowserConfig
 from tools.browser.core.base_parser import BaseParser
 from tools.browser.exceptions import ConfigurationError
 

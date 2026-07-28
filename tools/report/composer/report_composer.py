@@ -1,13 +1,14 @@
 """Report Composer assembling multi-source findings into NormalizedReport."""
 
 import time
-import asyncio
 from typing import List, Dict, Any, Optional
 from tools.report.interfaces.report_interfaces import IReportComposer, IReportTemplateRegistry
 from tools.report.models.report_models import NormalizedReport, ReportSection, ReportMetrics
 from tools.report.registry.report_template_registry import ReportTemplateRegistry
 from tools.report.citations.citation_manager import CitationManager
 from tools.report.visualizations.visualization_builder import VisualizationBuilder
+from tools.report.validator.self_verification import SelfVerificationEngine
+from tools.report.validator.confidence_engine import ConfidenceEngine
 from infrastructure.logging.logger import StructuredLogger
 
 
@@ -18,6 +19,8 @@ class ReportComposer(IReportComposer):
         self._logger = StructuredLogger("ReportComposer")
         self._registry = template_registry or ReportTemplateRegistry()
         self._vis_builder = VisualizationBuilder()
+        self._verification_engine = SelfVerificationEngine()
+        self._confidence_engine = ConfidenceEngine()
 
     async def compose_report(
         self,
@@ -85,6 +88,38 @@ class ReportComposer(IReportComposer):
                     )
 
         report.citations = citation_mgr.get_citations()
+
+        # ARA V1.1 Verification & Confidence Injection
+        if template_name == "ara_v1_1_report":
+            # Extract final answer draft
+            final_answer_sec = next((s for s in report.sections if s.title == "Final Answer"), None)
+            draft_text = final_answer_sec.content if final_answer_sec and final_answer_sec.content.strip() else " ".join(s.content for s in report.sections)
+
+            # Verification
+            context = {"evidence": sources or []}
+            verification_result = self._verification_engine.verify(draft_text, context)
+            
+            # Confidence
+            confidence_result = self._confidence_engine.calculate_confidence(
+                draft_text, sources or [], verification_result
+            )
+
+            # Inject into sections
+            conf_sec = next((s for s in report.sections if s.title == "Confidence Assessment"), None)
+            if conf_sec:
+                score = confidence_result.get("score", 0.0)
+                exps = confidence_result.get("explanations", [])
+                conf_sec.content = f"**Score:** {score}\n\n**Explanations:**\n" + "\n".join(f"- {e}" for e in exps)
+
+            limit_sec = next((s for s in report.sections if s.title == "Limitations"), None)
+            if limit_sec:
+                issues = verification_result.issues
+                uncerts = confidence_result.get("uncertainties", [])
+                combined = list(set(issues + uncerts))
+                if combined:
+                    limit_sec.content = "**Identified Limitations and Uncertainties:**\n" + "\n".join(f"- {u}" for u in combined)
+                else:
+                    limit_sec.content = "No significant limitations identified."
 
         # Calculate metrics
         gen_time_ms = (time.time() - start_time) * 1000

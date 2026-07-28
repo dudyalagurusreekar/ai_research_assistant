@@ -1,6 +1,5 @@
 """Unit tests for Async Event Bus."""
 
-import asyncio
 import unittest
 from core.events import AsyncEventBus
 from core.models import Event

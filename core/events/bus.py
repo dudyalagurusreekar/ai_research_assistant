@@ -1,9 +1,8 @@
 """Async Event Bus implementation."""
 
-import asyncio
 import inspect
 import logging
-from typing import Dict, List, Set
+from typing import Dict, Set
 from core.interfaces.event_bus import EventHandler, IEventBus
 from core.models.event import Event
 from core.exceptions.base import EventError

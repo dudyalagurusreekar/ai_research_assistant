@@ -1,6 +1,5 @@
 """Diagram Interpreter extracting flowchart nodes and directed connections."""
 
-import asyncio
 from typing import List, Tuple, Any
 from tools.vision.interfaces.vision_interfaces import IDiagramInterpreter
 from tools.vision.models.vision_models import DiagramNode, DiagramEdge, BoundingBox

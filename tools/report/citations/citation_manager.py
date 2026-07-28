@@ -1,6 +1,6 @@
 """Citation Manager managing reference attribution and bibliography generation."""
 
-from typing import List, Dict, Optional
+from typing import List, Optional
 from tools.report.interfaces.report_interfaces import ICitationManager
 from tools.report.models.report_models import CitationItem
 from infrastructure.logging.logger import StructuredLogger

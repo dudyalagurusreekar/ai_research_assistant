@@ -8,7 +8,6 @@ from core.interfaces.tool import ITool
 from core.models.tool_result import ToolResult
 from core.events import AsyncEventBus
 from tools.search.models.search_models import (
-    SearchQuery,
     NormalizedSearchResult,
     KnowledgeIndexEntry,
 )

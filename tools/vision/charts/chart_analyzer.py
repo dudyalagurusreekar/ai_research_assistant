@@ -1,6 +1,5 @@
 """Chart Analyzer extracting data series and labels from graphs and charts."""
 
-import asyncio
 from typing import List, Any
 from tools.vision.interfaces.vision_interfaces import IChartAnalyzer
 from tools.vision.models.vision_models import VisualChart

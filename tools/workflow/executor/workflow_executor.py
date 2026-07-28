@@ -4,7 +4,7 @@
 
 import time
 import asyncio
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 from tools.workflow.interfaces.workflow_interfaces import IWorkflowExecutor
 from tools.workflow.models.workflow_models import WorkflowTask, TaskStatus
 from infrastructure.logging.logger import StructuredLogger

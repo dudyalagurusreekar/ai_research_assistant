@@ -1,7 +1,7 @@
 """Episodic Memory layer for execution history and logs."""
 
 import logging
-from typing import List, Optional
+from typing import List
 
 from tools.browser.memory.models import MemoryItem, MemoryType, RelevanceScore
 from tools.browser.memory.vector_store import BaseVectorStore

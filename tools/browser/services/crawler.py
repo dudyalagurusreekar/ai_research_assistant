@@ -6,8 +6,7 @@ with configurable depth limits, domain restrictions, rate limiting, and visited 
 
 from collections import deque
 import time
-from typing import List, Set, Optional, Dict, Any, TYPE_CHECKING
-from urllib.parse import urlparse
+from typing import List, Set, Optional, TYPE_CHECKING
 
 from tools.browser.models.response import BrowserResponse
 from tools.browser.utils.helpers import extract_domain, sanitize_url

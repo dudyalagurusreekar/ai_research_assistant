@@ -8,7 +8,6 @@ from typing import List
 
 class BudgetManagerError(Exception):
     """Base exception for all Budget Manager errors."""
-    pass
 
 
 class BudgetExceededError(BudgetManagerError):

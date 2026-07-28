@@ -4,22 +4,18 @@ Tests macro registration, execution, nested macros, parameter validation,
 error classification, retry policies, and rollback strategies.
 """
 
-import json
-import time
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
 from tools.browser.macro.base import (
     BaseMacro,
     MacroExecutionContext,
-    MacroExecutionError,
-    MacroRollbackError,
     MacroValidationError,
     global_registry,
     register_macro,
 )
 from tools.browser.macro.engine import MacroActionEngine
-from tools.browser.models.response import ActionResult, ActionMetrics
+from tools.browser.models.response import ActionResult
 
 
 # ─────────────────────────────────────────────

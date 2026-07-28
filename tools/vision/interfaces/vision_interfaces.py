@@ -20,12 +20,10 @@ class IVisionProvider(ABC):
     @abstractmethod
     def provider_name(self) -> str:
         """Provider identifier (e.g., 'default_vision', 'tesseract_ocr')."""
-        pass
 
     @abstractmethod
     async def analyze(self, image_input: Any, analysis_type: VisionAnalysisType) -> NormalizedVisionResult:
         """Process image input and return NormalizedVisionResult."""
-        pass
 
 
 class IVisionProviderRegistry(ABC):
@@ -34,17 +32,14 @@ class IVisionProviderRegistry(ABC):
     @abstractmethod
     def register(self, provider: IVisionProvider) -> None:
         """Register a vision provider strategy."""
-        pass
 
     @abstractmethod
     def get_provider(self, name: str) -> Optional[IVisionProvider]:
         """Get provider by name."""
-        pass
 
     @abstractmethod
     def list_providers(self) -> List[IVisionProvider]:
         """List all registered providers."""
-        pass
 
 
 class IImageProcessor(ABC):
@@ -53,7 +48,6 @@ class IImageProcessor(ABC):
     @abstractmethod
     async def preprocess(self, image_input: Any, target_size: Optional[tuple[int, int]] = None) -> Dict[str, Any]:
         """Preprocess image, extract dimensions, binarize, and normalize."""
-        pass
 
 
 class ILayoutAnalyzer(ABC):
@@ -62,7 +56,6 @@ class ILayoutAnalyzer(ABC):
     @abstractmethod
     async def analyze_layout(self, image_input: Any) -> List[DetectedRegion]:
         """Segment page layout into structural regions."""
-        pass
 
 
 class IChartAnalyzer(ABC):
@@ -71,7 +64,6 @@ class IChartAnalyzer(ABC):
     @abstractmethod
     async def analyze_chart(self, image_input: Any) -> List[VisualChart]:
         """Extract chart type, titles, axis labels, and data series."""
-        pass
 
 
 class ITableRecognizer(ABC):
@@ -80,7 +72,6 @@ class ITableRecognizer(ABC):
     @abstractmethod
     async def recognize_tables(self, image_input: Any) -> List[VisualTable]:
         """Extract visual table grid and cells into structured tables."""
-        pass
 
 
 class IDiagramInterpreter(ABC):
@@ -89,7 +80,6 @@ class IDiagramInterpreter(ABC):
     @abstractmethod
     async def interpret_diagram(self, image_input: Any) -> tuple[List[DiagramNode], List[DiagramEdge]]:
         """Identify flowchart nodes and directed edge relationships."""
-        pass
 
 
 class IScreenshotAnalyzer(ABC):
@@ -98,4 +88,3 @@ class IScreenshotAnalyzer(ABC):
     @abstractmethod
     async def analyze_screenshot(self, image_input: Any) -> NormalizedVisionResult:
         """Analyze browser screenshot for UI elements and page layout."""
-        pass

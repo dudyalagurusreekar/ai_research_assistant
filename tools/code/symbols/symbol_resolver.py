@@ -1,6 +1,6 @@
 """Symbol Resolver for consolidating and searching cross-reference code symbols."""
 
-from typing import List, Dict, Optional
+from typing import List
 from tools.code.interfaces.code_interfaces import ISymbolResolver
 from tools.code.models.code_models import NormalizedCodeProject, CodeSymbol
 from infrastructure.logging.logger import StructuredLogger

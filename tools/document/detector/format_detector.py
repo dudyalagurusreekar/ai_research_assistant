@@ -1,7 +1,6 @@
 """Format Detector implementation combining Magic Bytes, MIME Type, and File Extension."""
 
 import os
-import mimetypes
 from typing import Optional, Union, BinaryIO
 from tools.document.interfaces.detector import IFormatDetector
 from tools.document.models.format import DocumentFormat, FormatDetectionResult

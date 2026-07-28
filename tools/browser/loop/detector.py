@@ -5,8 +5,7 @@ filters polling behaviors, and recommends escape recovery options.
 """
 
 import logging
-from collections import defaultdict
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 from tools.browser.core.browser import Browser
 from tools.browser.loop.base import LoopDetectionResult, LoopType

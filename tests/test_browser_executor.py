@@ -4,11 +4,8 @@ Validates action normalization, validation, executing commands, state tracking,
 and JSON serialization.
 """
 
-import os
-import time
 import json
 import unittest
-import tempfile
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from threading import Thread
 
@@ -16,7 +13,6 @@ from tools.browser.config import BrowserConfig
 from tools.browser.constants import BrowserEngineType
 from tools.browser.core.browser import Browser
 from tools.browser.executor import BrowserActionExecutor
-from tools.browser.models.response import ActionResult
 
 
 class LocalHTTPTestServer:

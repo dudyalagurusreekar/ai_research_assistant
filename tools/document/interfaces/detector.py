@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 from typing import Optional, Union, BinaryIO
-from tools.document.models.format import FormatDetectionResult, DocumentFormat
+from tools.document.models.format import FormatDetectionResult
 
 
 class IFormatDetector(ABC):
@@ -16,4 +16,3 @@ class IFormatDetector(ABC):
         filename: Optional[str] = None,
     ) -> FormatDetectionResult:
         """Detect document format from input source."""
-        pass

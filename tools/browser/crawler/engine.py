@@ -10,7 +10,7 @@ import time
 from typing import List, Set, Optional, Dict, Any, Callable, TYPE_CHECKING
 
 from tools.browser.crawler.models import CrawlNode, CrawlStats, CrawlResult
-from tools.browser.crawler.strategies import TraversalStrategy, BFSTraversal, DFSTraversal
+from tools.browser.crawler.strategies import TraversalStrategy, BFSTraversal
 from tools.browser.crawler.robots import RobotsTxtHandler
 from tools.browser.crawler.sitemap import SitemapParser
 from tools.browser.models.page import PageState

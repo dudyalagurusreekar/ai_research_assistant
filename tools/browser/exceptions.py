@@ -24,17 +24,14 @@ class BrowserError(Exception):
 
 class ConfigurationError(BrowserError):
     """Raised when browser configuration is invalid or missing required values."""
-    pass
 
 
 class ValidationError(BrowserError):
     """Raised when request parameters, URLs, or inputs fail validation checks."""
-    pass
 
 
 class NavigationError(BrowserError):
     """Base class for errors occurring during browser navigation actions."""
-    pass
 
 
 class FetchError(NavigationError):
@@ -59,74 +56,59 @@ class FetchError(NavigationError):
 
 class TimeoutError(FetchError):
     """Raised when a network operation or browser navigation exceeds timeout thresholds."""
-    pass
 
 
 class HTTPError(FetchError):
     """Raised when an HTTP request returns an error status code (4xx or 5xx)."""
-    pass
 
 
 class NetworkError(FetchError):
     """Raised when underlying socket or network connectivity fails."""
-    pass
 
 
 class ParsingError(BrowserError):
     """Base class for DOM parsing or content extraction failures."""
-    pass
 
 
 class DOMParseError(ParsingError):
     """Raised when HTML or document structure cannot be parsed properly."""
-    pass
 
 
 class ContentExtractionError(ParsingError):
     """Raised when target elements or structured content extraction fails."""
-    pass
 
 
 class UnsupportedEngineError(ConfigurationError):
     """Raised when requesting a browser driver/engine that is not supported."""
-    pass
 
 
 class AutomationError(BrowserError):
     """Base exception class for dynamic browser automation errors."""
-    pass
 
 
 class ElementNotFoundError(AutomationError):
     """Raised when a target DOM element cannot be located."""
-    pass
 
 
 class InteractionError(AutomationError):
     """Raised when an interactive action fails."""
-    pass
 
 
 class ScriptExecutionError(AutomationError):
     """Raised when custom JavaScript execution fails."""
-    pass
 
 
 class SessionError(AutomationError):
     """Raised when browser session state operation fails."""
-    pass
 
 
 class DialogError(AutomationError):
     """Raised when handling JavaScript dialog alerts/prompts encounters an error."""
-    pass
 
 
 class DownloadError(AutomationError):
     """Raised when file download operation fails or times out."""
-    pass
 
 
 class UploadError(AutomationError):
     """Raised when file upload operation fails."""
-    pass

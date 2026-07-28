@@ -3,7 +3,7 @@ import tempfile
 import os
 import json
 import time
-from tools.browser.reporting_legacy import ReportingEngine, ExecutionReport
+from tools.browser.reporting_legacy import ReportingEngine
 from tools.browser.planner.state import PlannerState
 
 class TestBrowserReporting(unittest.TestCase):

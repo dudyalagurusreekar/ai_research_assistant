@@ -7,8 +7,6 @@ providing robust tracking, selector validation, success verification, and retrie
 from abc import ABC, abstractmethod
 import time
 import asyncio
-import re
-import os
 import json
 from typing import Any, Dict, List, Optional, Union
 from tools.browser.automation.base import AutomationStrategy
@@ -77,7 +75,6 @@ class BrowserCommand(ABC):
         Returns:
             Any: Result of the action.
         """
-        pass
 
     async def verify(self, strategy: AutomationStrategy) -> Dict[str, Any]:
         """Perform action-specific state verification. Returns verification details dict."""
@@ -463,7 +460,7 @@ class CommandRunner:
 
         # 2. Pre-Action State Snapshot (capturing log indices)
         start_reqs = len(strategy.observer.requests) if hasattr(strategy, "observer") else 0
-        start_resps = len(strategy.observer.responses) if hasattr(strategy, "observer") else 0
+        len(strategy.observer.responses) if hasattr(strategy, "observer") else 0
         start_console = len(strategy.observer.console_logs) if hasattr(strategy, "observer") else 0
         start_errors = len(strategy.observer.page_errors) if hasattr(strategy, "observer") else 0
 

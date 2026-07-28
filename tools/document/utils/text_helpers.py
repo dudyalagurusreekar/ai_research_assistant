@@ -2,7 +2,6 @@
 
 import re
 import hashlib
-from typing import List
 
 
 def clean_text_content(text: str) -> str:

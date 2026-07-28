@@ -6,7 +6,7 @@ and used by LLM agents.
 """
 
 import json
-from typing import Optional, Any, Dict, List
+from typing import Optional
 
 from tools.base import BaseTool
 from tools.browser.core.browser import Browser

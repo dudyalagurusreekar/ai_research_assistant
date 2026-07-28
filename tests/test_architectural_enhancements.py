@@ -18,7 +18,7 @@ class TestObjectiveTracker(unittest.TestCase):
     def test_milestone_lifecycle(self):
         tracker = ObjectiveTracker(objective="Extract AI definition and download PDF")
         m1 = tracker.add_milestone("definition", "Extract AI definition")
-        m2 = tracker.add_milestone("pdf_download", "Download PDF document")
+        tracker.add_milestone("pdf_download", "Download PDF document")
 
         self.assertFalse(tracker.is_complete())
         self.assertEqual(len(tracker.get_pending_milestones()), 2)

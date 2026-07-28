@@ -3,7 +3,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum, unique
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 from core.utils.id_generator import generate_id
 from core.utils.time_utils import utc_now
 

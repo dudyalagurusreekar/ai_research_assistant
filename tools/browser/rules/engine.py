@@ -1,6 +1,6 @@
 """Rule Engine for deterministic browser decisions, retries, and wait strategies."""
 
-from typing import Any, Dict, Optional
+from typing import Optional
 
 
 class BrowserRuleEngine:

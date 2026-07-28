@@ -1,7 +1,6 @@
 """Screenshot Analyzer specialized for browser screenshots and application UI state."""
 
 import time
-import asyncio
 from typing import Any
 from tools.vision.interfaces.vision_interfaces import IScreenshotAnalyzer
 from tools.vision.models.vision_models import (

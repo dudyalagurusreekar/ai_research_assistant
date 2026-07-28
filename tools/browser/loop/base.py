@@ -3,12 +3,11 @@
 
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 
 class LoopDetectorError(Exception):
     """Base exception for all loop detection errors."""
-    pass
 
 
 class LoopType(str, Enum):

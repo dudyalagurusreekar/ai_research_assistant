@@ -5,8 +5,6 @@ from typing import Optional
 from core.interfaces.registry import IRegistry
 from core.interfaces.router import IRouter, RoutingDecision
 from core.models.request import Request
-from core.exceptions.base import RoutingError
-from core.exceptions.codes import ErrorCode
 
 logger = logging.getLogger("Core.CapabilityRouter")
 

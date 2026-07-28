@@ -1,7 +1,7 @@
 """Typed Configuration settings for Document Intelligence Platform."""
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Any
+from typing import Dict, Any
 
 
 @dataclass

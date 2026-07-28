@@ -5,7 +5,7 @@ forecasting, and issues optimization recommendations.
 """
 
 import logging
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Optional, Tuple
 
 from tools.browser.budget.base import (
     BudgetExceededError,

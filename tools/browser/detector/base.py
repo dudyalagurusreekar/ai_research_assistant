@@ -7,7 +7,7 @@ import abc
 import logging
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 from tools.browser.core.browser import Browser
 
@@ -16,12 +16,10 @@ logger = logging.getLogger("CompletionDetector.Base")
 
 class CompletionDetectorError(Exception):
     """Base exception for all completion detection errors."""
-    pass
 
 
 class InvalidObjectiveError(CompletionDetectorError):
     """Raised when the goal/objective parameter is empty or invalid."""
-    pass
 
 
 class CompletionState(str, Enum):
@@ -90,7 +88,6 @@ class BaseCompletionStrategy(abc.ABC):
     @abc.abstractmethod
     def name(self) -> str:
         """Name of the strategy."""
-        pass
 
     @abc.abstractmethod
     def evaluate(self, ctx: CompletionContext) -> CompletionStatus:
@@ -102,4 +99,3 @@ class BaseCompletionStrategy(abc.ABC):
         Returns:
             CompletionStatus: Evaluated status and metrics.
         """
-        pass

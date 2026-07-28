@@ -1,7 +1,6 @@
 """Python Language Provider strategy implementing AST symbol parsing."""
 
 import ast
-import asyncio
 from typing import List
 from tools.code.interfaces.code_interfaces import ILanguageProvider
 from tools.code.models.code_models import CodeFile, CodeSymbol, SymbolType

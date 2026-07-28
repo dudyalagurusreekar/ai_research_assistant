@@ -1,7 +1,7 @@
 """Typed Configuration Objects for the Core Foundation."""
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 
 @dataclass

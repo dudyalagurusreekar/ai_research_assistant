@@ -4,12 +4,11 @@
 import abc
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Tuple
 
 
 class PromptCompressorError(Exception):
     """Base exception for all prompt compression errors."""
-    pass
 
 
 class CompressionStrategyType(str, Enum):
@@ -60,7 +59,6 @@ class BaseCompressorStrategy(abc.ABC):
     @abc.abstractmethod
     def strategy_type(self) -> CompressionStrategyType:
         """The strategy categorization type."""
-        pass
 
     @abc.abstractmethod
     def compress(
@@ -79,4 +77,3 @@ class BaseCompressorStrategy(abc.ABC):
         Returns:
             Tuple[List[Dict[str, Any]], List[str]]: Compressed step list, and list of preserved details.
         """
-        pass

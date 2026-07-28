@@ -1,7 +1,5 @@
 """GraphQL Protocol Connector strategy implementation."""
 
-import asyncio
-from typing import Any
 from tools.integration.interfaces.integration_interfaces import IConnector
 from tools.integration.models.integration_models import IntegrationRequest, IntegrationResponse, ProtocolType
 from infrastructure.logging.logger import StructuredLogger

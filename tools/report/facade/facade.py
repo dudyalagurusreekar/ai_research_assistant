@@ -1,7 +1,6 @@
 """Unified ReportToolFacade for the Report Generation Platform."""
 
 import json
-import asyncio
 from typing import Dict, List, Any, Optional
 
 from core.interfaces.tool import ITool
@@ -16,8 +15,6 @@ from tools.report.models.report_models import (
 )
 from tools.report.registry.report_template_registry import ReportTemplateRegistry
 from tools.report.composer.report_composer import ReportComposer
-from tools.report.citations.citation_manager import CitationManager
-from tools.report.visualizations.visualization_builder import VisualizationBuilder
 from tools.report.validator.report_validator import ReportValidator
 from tools.report.export.export_engine import ExportEngine
 from infrastructure.logging.logger import StructuredLogger

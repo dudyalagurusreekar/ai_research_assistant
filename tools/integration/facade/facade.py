@@ -1,8 +1,7 @@
 """Unified IntegrationToolFacade for the External Integration Platform."""
 
 import json
-import asyncio
-from typing import Dict, List, Any, Optional
+from typing import Dict, Any, Optional
 
 from core.interfaces.tool import ITool
 from core.models.metadata import ToolMetadata
@@ -13,9 +12,7 @@ from tools.integration.models.integration_models import (
     NormalizedIntegrationResult,
     IntegrationRequest,
     AuthenticationConfig,
-    AuthType,
     ConnectorMetadata,
-    ProtocolType,
 )
 from tools.integration.registry.integration_registry import IntegrationRegistry
 from tools.integration.auth.auth_manager import AuthenticationManager

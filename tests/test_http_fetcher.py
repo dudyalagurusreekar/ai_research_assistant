@@ -12,7 +12,7 @@ from unittest.mock import MagicMock, patch
 import httpx
 
 from tools.browser.config import BrowserConfig
-from tools.browser.constants import BrowserEngineType, HttpMethod
+from tools.browser.constants import BrowserEngineType
 from tools.browser.core.base_fetcher import BaseFetcher
 from tools.browser.core.browser import Browser
 from tools.browser.exceptions import (

@@ -7,7 +7,7 @@ and pruning raw DOM trees into minimal interactive element maps.
 
 import os
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 from tools.browser.storage.artifact_store import ArtifactStore
 from tools.browser.context.pruner import DOMPruner, PrunedDOM

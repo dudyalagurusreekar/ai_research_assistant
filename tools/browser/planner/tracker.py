@@ -5,7 +5,7 @@ Explicitly tracks required task outcomes and milestones (e.g., "definition extra
 whether the task is complete rather than deciding on its own.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 from typing import Any, Dict, List, Optional
 import logging

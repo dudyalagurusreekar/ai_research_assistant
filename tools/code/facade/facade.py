@@ -1,7 +1,6 @@
 """Unified CodeToolFacade for the Code Intelligence Platform."""
 
 import json
-import asyncio
 from typing import Dict, List, Any, Optional
 
 from core.interfaces.tool import ITool
@@ -11,7 +10,6 @@ from core.models.event import Event
 from core.events import AsyncEventBus
 from tools.code.models.code_models import (
     NormalizedCodeProject,
-    CodeSymbol,
     DependencyItem,
     StaticAnalysisResult,
     ExecutionResult,

@@ -1,6 +1,6 @@
 """Pipeline Registry managing ordered document processing steps."""
 
-from typing import List, Optional, Dict
+from typing import List, Optional
 from tools.document.interfaces.pipeline import IPipelineStep, IPipelineRegistry
 from infrastructure.logging.logger import StructuredLogger
 

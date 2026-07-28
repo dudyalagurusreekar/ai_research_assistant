@@ -69,6 +69,7 @@ class FetcherFactory:
                 cls._registry[key] = PlaywrightFetcher
             elif key == BrowserEngineType.MOCK.value:
                 # Dynamically define a MockFetcher for testing
+                from tools.browser.models.response import FetchResult
                 class MockFetcher(BaseFetcher):
                     def fetch(self, params):
                         return FetchResult(url=params.url, status_code=200, content=b"<html><body>Mock Page</body></html>", success=True)

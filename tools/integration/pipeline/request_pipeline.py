@@ -2,7 +2,7 @@
 
 import time
 import asyncio
-from typing import Dict, Any, Optional
+from typing import Optional
 from tools.integration.interfaces.integration_interfaces import IRequestPipeline, IConnector, IAuthenticationManager
 from tools.integration.models.integration_models import IntegrationRequest, NormalizedIntegrationResult
 from tools.integration.auth.auth_manager import AuthenticationManager

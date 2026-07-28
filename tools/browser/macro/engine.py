@@ -6,10 +6,9 @@ timeouts, and rollback routines on failure.
 
 import logging
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict
 
 from tools.browser.macro.base import (
-    MacroError,
     MacroExecutionContext,
     MacroExecutionError,
     MacroRollbackError,

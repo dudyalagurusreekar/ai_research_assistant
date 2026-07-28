@@ -1,7 +1,6 @@
 """ProcessingPipeline execution engine."""
 
 import time
-from typing import Optional
 from tools.document.interfaces.pipeline import IProcessingPipeline, IPipelineRegistry
 from tools.document.models.document import NormalizedDocument
 from tools.document.models.context import ProcessingContext

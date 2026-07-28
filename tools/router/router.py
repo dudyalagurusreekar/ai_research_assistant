@@ -5,7 +5,7 @@ multiple tool capabilities (Browser, Files, Code, Search, API, Memory) rather
 than assuming all operations require browser automation.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 from typing import Any, Callable, Dict, List, Optional
 import logging

@@ -6,7 +6,7 @@ Every action executed through this facade automatically mutates and notifies the
 event-driven BrowserState single source of truth.
 """
 
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional
 import logging
 
 from tools.browser.core.browser import Browser

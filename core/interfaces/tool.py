@@ -13,7 +13,6 @@ class ITool(ABC):
     @abstractmethod
     def metadata(self) -> ToolMetadata:
         """Return the metadata descriptor for this tool."""
-        pass
 
     @abstractmethod
     async def execute(self, parameters: Dict[str, Any]) -> ToolResult:
@@ -25,4 +24,3 @@ class ITool(ABC):
         Returns:
             ToolResult encapsulating output and artifacts.
         """
-        pass

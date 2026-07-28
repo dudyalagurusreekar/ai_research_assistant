@@ -5,7 +5,7 @@ leak across the API boundary into the agent context.
 """
 
 import json
-from typing import Any, Dict, List
+from typing import Any
 
 
 def sanitize_payload(obj: Any, depth: int = 0, max_depth: int = 5) -> Any:

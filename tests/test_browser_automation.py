@@ -15,11 +15,9 @@ from pathlib import Path
 from tools.browser.config import BrowserConfig
 from tools.browser.constants import BrowserEngineType, BrowserAction
 from tools.browser.exceptions import UnsupportedEngineError
-from tools.browser.automation.exceptions import AutomationError, ElementNotFoundError, ScriptExecutionError
 from tools.browser.automation.factory import AutomationStrategyFactory, MockAutomationStrategy
-from tools.browser.automation.playwright_strategy import PlaywrightStrategy
 from tools.browser.automation.engine import BrowserAutomationEngine
-from tools.browser.automation.commands import ClickCommand, TypeCommand, ScrollCommand, CommandRunner
+from tools.browser.automation.commands import ClickCommand, CommandRunner
 from tools.browser.automation.models import SessionState, NetworkRequestLog, NetworkResponseLog, DialogLog
 from tools.browser.automation.observer import NetworkObserver
 from tools.browser.core.browser import Browser

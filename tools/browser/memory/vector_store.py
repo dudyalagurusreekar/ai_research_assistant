@@ -6,7 +6,7 @@ import json
 import logging
 import math
 import os
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Optional
 
 from tools.browser.memory.models import MemoryItem
 
@@ -76,7 +76,7 @@ class LightweightTFIDFStore(BaseVectorStore):
         if item_id not in self.items:
             return False
             
-        item = self.items.pop(item_id)
+        self.items.pop(item_id)
         self.total_docs -= 1
         
         # We don't bother decrementing DF perfectly for this lightweight fallback,

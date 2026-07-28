@@ -1,4 +1,3 @@
-import pytest
 from tools.browser.macro.search_strategies import SearchStrategyCoordinator
 
 class MockBrowser:

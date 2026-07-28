@@ -1,7 +1,6 @@
 """Unified MemoryToolFacade for the Memory Platform."""
 
 import json
-import asyncio
 from typing import Dict, List, Any, Optional
 
 from core.interfaces.tool import ITool
@@ -69,8 +68,9 @@ class MemoryToolFacade(ITool):
                 item = await self.remember(content, memory_type=m_type, **kwargs_copy)
                 return json.dumps(item.to_dict(), indent=2)
             elif action in ["recall", "search", "query"]:
-                q_text = kwargs.get("query", kwargs.get("q", ""))
-                res = await self.recall(q_text, **kwargs)
+                kwargs_copy = dict(kwargs)
+                q_text = kwargs_copy.pop("query", kwargs_copy.pop("q", ""))
+                res = await self.recall(q_text, **kwargs_copy)
                 return json.dumps(res.to_dict(), indent=2)
             elif action in ["link", "connect"]:
                 src = kwargs.get("source_id", "")

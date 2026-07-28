@@ -4,14 +4,13 @@ Validates graph structure, cycles, topological sorting, optimizations, and execu
 including branching routing, loops, retries, and error handling.
 """
 
-import json
 import unittest
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 from tools.browser.config import BrowserConfig
 from tools.browser.constants import BrowserEngineType
 from tools.browser.core.browser import Browser
-from tools.browser.models.response import ActionResult, ActionMetrics
+from tools.browser.models.response import ActionResult
 from tools.browser.planner.graph import TaskGraph, TaskNode, TaskStatus
 from tools.browser.planner.engine import TaskPlannerEngine
 from tests.test_browser_action_engine import LocalHTTPTestServer

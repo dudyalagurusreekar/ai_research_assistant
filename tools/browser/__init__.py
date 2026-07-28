@@ -4,8 +4,7 @@ from tools.browser.facade.facade import BrowserToolFacade
 from tools.browser.driver.base import IBrowserDriver
 from tools.browser.driver.playwright_driver import PlaywrightDriver
 from tools.browser.state.models import BrowserStateModel
-
-BrowserTool = BrowserToolFacade
+from tools.browser.tool import BrowserTool
 
 __all__ = [
     "BrowserToolFacade",

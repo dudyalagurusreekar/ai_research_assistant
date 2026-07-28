@@ -7,8 +7,7 @@ selector discovery, execution, verification, and failure recovery.
 import os
 import json
 import time
-import litellm
-from utils.resilience import resilient_completion, AllModelsFailedError
+from utils.resilience import resilient_completion
 from typing import Dict, Any, List, Optional
 
 from config.model import resolve_model_config
@@ -16,7 +15,7 @@ from tools.browser.core.browser import Browser
 from tools.browser.models.response import ActionResult
 from tools.browser.planner.simplifier import DOMSimplifier
 from tools.browser.planner.state import PlannerState
-from tools.browser.planner.prompts import SYSTEM_INSTRUCTIONS, PROMPT_TEMPLATE
+from tools.browser.planner.prompts import SYSTEM_INSTRUCTIONS
 from tools.browser.context_manager import ContextLifecycleManager
 from tools.browser.reporting_legacy import ReportingEngine
 from tools.browser.storage.checkpoint_store import CheckpointStore

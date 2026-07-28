@@ -1,7 +1,7 @@
 """DocumentSummarizer implementation for extractive text summarization."""
 
 import re
-from typing import List, Dict
+from typing import Dict
 from tools.document.interfaces.retrieval import IDocumentSummarizer
 from tools.document.models.document import NormalizedDocument
 from tools.document.models.retrieval import DocumentSummary

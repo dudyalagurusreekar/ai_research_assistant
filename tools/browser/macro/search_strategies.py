@@ -21,7 +21,6 @@ class BaseSearchStrategy(ABC):
         Returns:
             Dict[str, Any]: Standardized action dictionary or result.
         """
-        pass
 
 class ExternalSearchStrategy(BaseSearchStrategy):
     """Strategy for generic external search (Google via DuckDuckGo, Bing, etc)."""

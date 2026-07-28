@@ -1,7 +1,7 @@
 """Ranking and Deduplication Engine for Search & Knowledge Platform."""
 
 import re
-from typing import List, Set, Dict, Any
+from typing import List, Set
 from urllib.parse import urlparse
 from tools.search.interfaces.provider import IRankingEngine
 from tools.search.models.search_models import SearchQuery, SearchResultItem, SearchRankScore

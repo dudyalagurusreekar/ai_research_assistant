@@ -4,7 +4,8 @@ import os
 import time
 import random
 import logging
-from typing import Any, Dict, List, Generator
+from typing import Any, List, Generator
+import json
 
 import litellm
 from litellm import ModelResponse
@@ -12,12 +13,11 @@ from litellm import ModelResponse
 from utils.resilience.errors import (
     classify_exception,
     AllModelsFailedError,
-    AllModelsFailedError as RouterFailoverError,
 )
 from utils.resilience.circuit_breaker import CircuitBreaker
 from utils.resilience.registry import ProviderRegistry
 from utils.resilience.router import ProviderRouter
-from utils.resilience.cache import RequestCache, serialize_message
+from utils.resilience.cache import RequestCache
 
 logger = logging.getLogger("LLMResilience.Client")
 
@@ -114,7 +114,6 @@ def save_resilience_metrics(metrics: dict) -> None:
 
 def increment_resilience_metric(key_path: str) -> None:
     """Atomically increments a nested metric key."""
-    import json
     metrics = get_resilience_metrics()
     parts = key_path.split(".")
 

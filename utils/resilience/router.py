@@ -1,7 +1,7 @@
 """Provider router for dynamically selecting the best available LLM provider."""
 
 import logging
-from typing import List, Dict
+from typing import Dict
 from utils.resilience.registry import ProviderRegistry
 from utils.resilience.circuit_breaker import CircuitBreaker
 from utils.resilience.errors import AllModelsFailedError

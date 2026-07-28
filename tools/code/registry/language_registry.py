@@ -1,7 +1,6 @@
 """Language Strategy Registry implementation."""
 
-import os
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 from tools.code.interfaces.code_interfaces import ILanguageProvider, ILanguageRegistry
 from tools.code.providers.python_provider import PythonLanguageProvider
 from tools.code.providers.js_provider import JavaScriptLanguageProvider

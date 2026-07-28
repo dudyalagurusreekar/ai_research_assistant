@@ -1,7 +1,6 @@
 """Content Fetcher integrating Browser Tool and Document Intelligence Platform."""
 
 import os
-import urllib.parse
 from typing import Dict, Any, Optional
 from tools.search.interfaces.provider import IContentFetcher
 from infrastructure.logging.logger import StructuredLogger
@@ -25,7 +24,7 @@ class ContentFetcher(IContentFetcher):
         options: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """Fetch content from URL or path and route files to Document Intelligence Platform if applicable."""
-        opts = options or {}
+        options or {}
         self._logger.info(f"Fetching content for '{url_or_path}'")
 
         # Check if local file or downloadable document extension

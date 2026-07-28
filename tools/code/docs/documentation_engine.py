@@ -1,7 +1,5 @@
 """Documentation Engine for generating Markdown API docs from NormalizedCodeProject."""
 
-import asyncio
-from typing import List
 from tools.code.interfaces.code_interfaces import IDocumentationEngine
 from tools.code.models.code_models import NormalizedCodeProject, DocGenResult
 from infrastructure.logging.logger import StructuredLogger

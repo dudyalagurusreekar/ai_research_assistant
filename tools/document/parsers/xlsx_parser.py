@@ -2,7 +2,6 @@
 
 import io
 import zipfile
-import xml.etree.ElementTree as ET
 from typing import List, Union, BinaryIO
 from tools.document.parsers.base import BaseDocumentParser
 from tools.document.models.document import NormalizedDocument, DocumentTable

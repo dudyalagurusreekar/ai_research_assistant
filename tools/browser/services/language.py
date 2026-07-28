@@ -5,7 +5,6 @@ the document primary language without forcing translation.
 """
 
 import re
-from typing import Optional
 from tools.browser.models.response import PageMetadata
 
 
