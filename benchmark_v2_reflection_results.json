@@ -1,0 +1,218 @@
+{
+  "results": [
+    {
+      "id": "R1",
+      "category": "High Quality Complete Execution",
+      "query": "Who won the Nobel Prize in Physics in 2023?",
+      "action": "proceed",
+      "expected_action": "proceed",
+      "action_correct": true,
+      "evidence_quality": "high",
+      "completeness_score": 1.0,
+      "confidence_score": 0.98,
+      "hallucination_risk": 0.05,
+      "nodes_injected": 0,
+      "nodes_pruned": 0,
+      "latency_ms": 2.2
+    },
+    {
+      "id": "R2",
+      "category": "Conflicting Evidence Resolution",
+      "query": "When was CRISPR gene editing invented?",
+      "action": "resolve_conflict",
+      "expected_action": "resolve_conflict",
+      "action_correct": true,
+      "evidence_quality": "conflicting",
+      "completeness_score": 1.0,
+      "confidence_score": 0.98,
+      "hallucination_risk": 0.05,
+      "nodes_injected": 1,
+      "nodes_pruned": 0,
+      "latency_ms": 1.15
+    },
+    {
+      "id": "R3",
+      "category": "Weak Evidence Gathering Injection",
+      "query": "Analyze solid state battery advancements in 2024",
+      "action": "gather_evidence",
+      "expected_action": "gather_evidence",
+      "action_correct": true,
+      "evidence_quality": "insufficient",
+      "completeness_score": 0.0,
+      "confidence_score": 0.0,
+      "hallucination_risk": 0.5,
+      "nodes_injected": 1,
+      "nodes_pruned": 0,
+      "latency_ms": 0.8
+    },
+    {
+      "id": "R4",
+      "category": "Redundant DAG Node Pruning",
+      "query": "Summarize README.md",
+      "action": "prune_steps",
+      "expected_action": "prune_steps",
+      "action_correct": true,
+      "evidence_quality": "moderate",
+      "completeness_score": 0.5,
+      "confidence_score": 0.59,
+      "hallucination_risk": 0.45,
+      "nodes_injected": 0,
+      "nodes_pruned": 1,
+      "latency_ms": 0.76
+    }
+  ],
+  "summary": {
+    "total_decisions": 4,
+    "action_breakdown": {
+      "proceed": 1,
+      "replan": 0,
+      "prune_steps": 1,
+      "gather_evidence": 1,
+      "resolve_conflict": 1,
+      "halt_error": 0
+    },
+    "total_nodes_pruned": 1,
+    "total_tasks_injected": 2,
+    "decisions": [
+      {
+        "decision_id": "ref_430e05f0",
+        "action": "proceed",
+        "rationale": "Execution quality meets criteria; proceeding to report synthesis",
+        "impact_summary": "Zero changes required",
+        "nodes_added": 0,
+        "nodes_removed": [],
+        "reasoning": {
+          "completeness_score": 1.0,
+          "coherence_score": 0.97,
+          "hallucination_risk_score": 0.05,
+          "confidence_score": 0.98,
+          "unaddressed_aspects": []
+        },
+        "evidence": {
+          "quality": "high",
+          "quality_score": 1.0,
+          "source_count": 2,
+          "freshness_score": 0.95,
+          "conflict_detected": false,
+          "conflicting_sources": [],
+          "missing_keys": []
+        },
+        "critic": {
+          "redundant_nodes": [],
+          "dead_end_nodes": [],
+          "suggested_prunings": [],
+          "missing_capabilities": []
+        },
+        "iteration": 1,
+        "timestamp": "2026-07-28T18:43:10.039002+00:00"
+      },
+      {
+        "decision_id": "ref_2e91d033",
+        "action": "resolve_conflict",
+        "rationale": "Conflicting claims detected between sources (browser_tool, search_tool). Injecting conflict resolution task.",
+        "impact_summary": "Injected conflict resolution sub-task",
+        "nodes_added": 1,
+        "nodes_removed": [],
+        "reasoning": {
+          "completeness_score": 1.0,
+          "coherence_score": 0.97,
+          "hallucination_risk_score": 0.05,
+          "confidence_score": 0.98,
+          "unaddressed_aspects": []
+        },
+        "evidence": {
+          "quality": "conflicting",
+          "quality_score": 0.7,
+          "source_count": 2,
+          "freshness_score": 0.95,
+          "conflict_detected": true,
+          "conflicting_sources": [
+            "browser_tool",
+            "search_tool"
+          ],
+          "missing_keys": []
+        },
+        "critic": {
+          "redundant_nodes": [],
+          "dead_end_nodes": [],
+          "suggested_prunings": [],
+          "missing_capabilities": []
+        },
+        "iteration": 1,
+        "timestamp": "2026-07-28T18:43:10.040131+00:00"
+      },
+      {
+        "decision_id": "ref_f55c8291",
+        "action": "gather_evidence",
+        "rationale": "Evidence quality is insufficient (score=0.00). Injecting deep evidence gathering.",
+        "impact_summary": "Injected deep evidence sub-task",
+        "nodes_added": 1,
+        "nodes_removed": [],
+        "reasoning": {
+          "completeness_score": 0.0,
+          "coherence_score": 0.5,
+          "hallucination_risk_score": 0.5,
+          "confidence_score": 0.0,
+          "unaddressed_aspects": [
+            "No task outputs collected"
+          ]
+        },
+        "evidence": {
+          "quality": "insufficient",
+          "quality_score": 0.0,
+          "source_count": 0,
+          "freshness_score": 0.0,
+          "conflict_detected": false,
+          "conflicting_sources": [],
+          "missing_keys": []
+        },
+        "critic": {
+          "redundant_nodes": [],
+          "dead_end_nodes": [],
+          "suggested_prunings": [],
+          "missing_capabilities": []
+        },
+        "iteration": 1,
+        "timestamp": "2026-07-28T18:43:10.040926+00:00"
+      },
+      {
+        "decision_id": "ref_582ad138",
+        "action": "prune_steps",
+        "rationale": "Identified 1 redundant and 0 dead-end DAG nodes for pruning.",
+        "impact_summary": "Pruned 1 nodes from DAG",
+        "nodes_added": 0,
+        "nodes_removed": [
+          "dup_node_2"
+        ],
+        "reasoning": {
+          "completeness_score": 0.5,
+          "coherence_score": 0.78,
+          "hallucination_risk_score": 0.45,
+          "confidence_score": 0.59,
+          "unaddressed_aspects": []
+        },
+        "evidence": {
+          "quality": "moderate",
+          "quality_score": 0.65,
+          "source_count": 1,
+          "freshness_score": 0.95,
+          "conflict_detected": false,
+          "conflicting_sources": [],
+          "missing_keys": []
+        },
+        "critic": {
+          "redundant_nodes": [
+            "dup_node_2"
+          ],
+          "dead_end_nodes": [],
+          "suggested_prunings": [
+            "dup_node_2"
+          ],
+          "missing_capabilities": []
+        },
+        "iteration": 1,
+        "timestamp": "2026-07-28T18:43:10.041731+00:00"
+      }
+    ]
+  }
+}

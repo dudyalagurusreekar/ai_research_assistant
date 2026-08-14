@@ -1,0 +1,32 @@
+{
+  "total_datasets_tested": 2,
+  "avg_analysis_latency_ms": 2.66,
+  "avg_quality_score": 1.0,
+  "success_rate": "100%",
+  "results": [
+    {
+      "id": "D1",
+      "dataset_name": "Financial Market Performance",
+      "rows": 5,
+      "cols": 5,
+      "quality_score": 1.0,
+      "insights_count": 3,
+      "charts_rendered": 3,
+      "ml_task": "clustering",
+      "latency_ms": 3.7,
+      "status": "PASS"
+    },
+    {
+      "id": "D2",
+      "dataset_name": "Healthcare Clinical Metrics",
+      "rows": 5,
+      "cols": 6,
+      "quality_score": 1.0,
+      "insights_count": 3,
+      "charts_rendered": 3,
+      "ml_task": "clustering",
+      "latency_ms": 1.61,
+      "status": "PASS"
+    }
+  ]
+}

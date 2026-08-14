@@ -24,3 +24,10 @@ scratch/
 debug.txt
 logs2.txt
 tests_output.log
+
+# Node & Next.js
+node_modules/
+.next/
+
+# Local Storage
+.storage/

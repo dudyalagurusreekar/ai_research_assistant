@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-08-02T01:18:28Z",
+  "sprint": "Sprint 12 - Universal Connector & Integration Platform",
+  "metrics": {
+    "initialization_ms": 2.56,
+    "health_check_ms": 0.08,
+    "active_connectors_count": 12,
+    "permission_evals_count": 8,
+    "permission_eval_ms": 0.19,
+    "service_latencies_ms": {
+      "gmail": 0.13,
+      "google_drive": 0.09,
+      "github": 0.09,
+      "slack": 0.08,
+      "jira": 0.11,
+      "notion": 0.08,
+      "calendar": 0.08,
+      "database": 0.54,
+      "cloud_storage": 0.1
+    },
+    "avg_service_latency_ms": 0.14,
+    "sync_latency_ms": 0.56,
+    "bridges_latency_ms": 0.27,
+    "metrics_export_latency_ms": 0.06
+  }
+}

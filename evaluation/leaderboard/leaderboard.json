@@ -1,0 +1,942 @@
+[
+  {
+    "entry_id": "lead_39afc738",
+    "version": "v1.0",
+    "sprint": "Sprint 1-4 Baseline",
+    "run_timestamp": "2026-06-01T00:00:00Z",
+    "pass_rate": 82.5,
+    "quality_score": 0.81,
+    "security_pass_rate": 95.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_ea476688",
+    "version": "v2.5",
+    "sprint": "Sprint 5-9 Multi-Agent",
+    "run_timestamp": "2026-07-01T00:00:00Z",
+    "pass_rate": 91.0,
+    "quality_score": 0.89,
+    "security_pass_rate": 98.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_209eb34f",
+    "version": "v3.0",
+    "sprint": "Sprint 10-12 Universal Platform",
+    "run_timestamp": "2026-07-20T00:00:00Z",
+    "pass_rate": 94.5,
+    "quality_score": 0.93,
+    "security_pass_rate": 99.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_87411954",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T11:29:29Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_eccd1561",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T11:29:29Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_05936bb4",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T11:30:57Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_addf8899",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T11:31:13Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_bd51d65f",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T11:31:13Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_6b419a8b",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T15:46:25Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_b8903b19",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T15:46:25Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_4029a467",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:05:15Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_13a48587",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:05:15Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_52f4dc3d",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:10:21Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_baad6cbe",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:10:21Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_fb0966ac",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:14:21Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_631848fe",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:14:21Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_547df6ed",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:17:33Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_c24b59eb",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:17:33Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_cbb13a24",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:19:54Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_a0e644ed",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:19:54Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_e701ae17",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:27:08Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_e3c775bd",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:27:08Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_31df528e",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:27:28Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_2282087f",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:27:29Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_b2edec39",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:29:50Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_34389688",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T19:29:50Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_7d6a1d88",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:11:43Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_14736648",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:11:43Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_b3f1b2ab",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:13:42Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_c2f19b43",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:13:42Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_77f8bfa6",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:15:35Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_d16b6d6f",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:15:35Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_ca79a7ea",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:17:37Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_0ea6c092",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:17:37Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_3bfa91e3",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:20:10Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_d8e64ce6",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:20:10Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_ca9483ac",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:22:10Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_e276879d",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:22:10Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_66e0aa5b",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:24:32Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_719d32e3",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:24:32Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_0440b253",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:27:09Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_1490c814",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:27:09Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_888b6497",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:29:27Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_e4fd9e88",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:29:27Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_a61517ec",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:31:19Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_0e3bfc3b",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:31:19Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_f14e2857",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:33:30Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_59c3d428",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:33:30Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_e2d9a25b",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:40:03Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_15a9d68e",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:40:03Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_8e92dc71",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:41:56Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_3bb71561",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:41:56Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_91d52806",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:57:50Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_fedc90ee",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:57:50Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_d58b2854",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:58:55Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_ace98319",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T21:58:55Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_a0e15016",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:00:01Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_9bc6a054",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:00:01Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_ef594187",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:01:13Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_2342d7d1",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:01:13Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_3fe6b0e8",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:02:25Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_894fc4b2",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:02:25Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_4937306a",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:03:26Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_4a342fce",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:03:26Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_ea23f8e4",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:05:08Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_1d602b9e",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:05:08Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_459e4be2",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:07:26Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_f9c4f4fd",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:07:26Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_5a45e9b9",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:08:53Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_fcd1c170",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:08:53Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_f4fc783e",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:22:24Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_be6ea60b",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:22:24Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_a0ce2469",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:34:40Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_58fb9fe8",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T22:34:40Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_07b83b5d",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T23:11:52Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_c10f8295",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T23:11:52Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_77c91a9c",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T23:17:30Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_0352cc7c",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T23:17:31Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_02c4b107",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T23:20:40Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_634f1e13",
+    "version": "v3.5",
+    "sprint": "Sprint 14",
+    "run_timestamp": "2026-08-02T23:20:40Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_33106122",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:20:58Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_c4c3b4c0",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:20:58Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_c996457e",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:20:59Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_46679bfe",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:21:10Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_841bcb77",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:22:13Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_50432de6",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:22:13Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_36ab333f",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:22:13Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_7e92a86b",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:23:17Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_a0c0ae83",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:23:17Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_2a2beb53",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:23:17Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_b8356bc9",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:48:42Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_ac04c5de",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:50:28Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_f465747f",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:51:37Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  },
+  {
+    "entry_id": "lead_75537cf7",
+    "version": "v1.0",
+    "sprint": "Sprint 12",
+    "run_timestamp": "2026-08-03T23:51:38Z",
+    "pass_rate": 100.0,
+    "quality_score": 0.97,
+    "security_pass_rate": 100.0,
+    "verdict": "APPROVED"
+  }
+]

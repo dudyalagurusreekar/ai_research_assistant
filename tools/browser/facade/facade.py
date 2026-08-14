@@ -14,6 +14,7 @@ from tools.browser.rules.engine import BrowserRuleEngine
 from tools.browser.verification.verifier import BrowserActionVerifier
 from tools.browser.recovery.engine import BrowserRecoveryEngine
 from tools.browser.metrics.tracker import BrowserMetricsTracker
+from tools.browser.platform.engine import BrowserPlatformEngine
 
 
 class BrowserToolFacade(ITool):
@@ -36,6 +37,7 @@ class BrowserToolFacade(ITool):
         self.verifier = BrowserActionVerifier()
         self.recovery = BrowserRecoveryEngine()
         self.metrics = BrowserMetricsTracker()
+        self.platform_engine = BrowserPlatformEngine()
 
         self._metadata = ToolMetadata(
             name="browser_tool",

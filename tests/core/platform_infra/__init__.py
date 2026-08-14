@@ -1,0 +1,1 @@
+"""Platform Infra tests package."""

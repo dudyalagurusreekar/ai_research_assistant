@@ -1,0 +1,15 @@
+{
+  "total_benchmark_tasks": 5,
+  "cold_start_avg_confidence": 0.0,
+  "warm_start_avg_confidence": 1.0,
+  "confidence_improvement_pct": 100.0,
+  "total_experience_records": 15,
+  "learning_summary": {
+    "total_experiences": 15,
+    "successful_experiences": 15,
+    "overall_success_rate": 1.0,
+    "tool_count": 6,
+    "provider_count": 4,
+    "learning_enabled": true
+  }
+}

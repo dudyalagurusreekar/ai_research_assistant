@@ -1,58 +1,71 @@
-# AI Research Assistant Platform - Production Deployment Guide
+# AI Research Assistant (ARA) v1.0.0 — Production Deployment Guide
 
-## Version 1.0 Release Candidate
-
-This document provides step-by-step instructions for deploying the **AI Research Assistant Platform** (Architecture Version 1.0) into production environments using Docker, Docker Compose, or Kubernetes.
+This guide provides step-by-step instructions for deploying **AI Research Assistant (ARA) v1.0.0** into production environments using Docker Compose, Nginx Reverse Proxy, PostgreSQL (pgvector), Redis, MinIO, Prometheus, Grafana, and Kubernetes.
 
 ---
 
 ## 1. System Requirements & Prerequisites
 
-- **Python**: 3.10+ (Python 3.13 recommended)
-- **Container Runtime**: Docker 20.10+ / Containerd
-- **Orchestration**: Kubernetes 1.25+ / Docker Compose 2.0+
-- **Memory**: Minimum 2 GB RAM (4 GB recommended)
-- **Storage**: Minimum 10 GB disk space for persistent artifacts
+- **OS**: Linux (Ubuntu 22.04 LTS / Debian 12 / RHEL 9), macOS, or Windows Server
+- **Docker**: Docker Engine 24.0+ & Docker Compose v2.20+
+- **Memory**: Minimum 4 GB RAM (8 GB recommended for heavy RAG & browser automation)
+- **CPU**: 2+ vCPU cores
+- **Disk**: 20 GB persistent storage for vector indices, database files, and MinIO artifacts
 
 ---
 
-## 2. Environment Configuration Reference
+## 2. Production Docker Compose Stack
 
-Configure the following environment variables in `.env` or your secret store:
+### Launch Production Stack
+```bash
+# 1. Clone repository
+git clone https://github.com/dudyalagurusreekar/ai_research_assistant.git
+cd ai_research_assistant
 
-| Parameter | Default | Description |
-| :--- | :--- | :--- |
-| `ENVIRONMENT` | `production` | Deployment environment (`development`, `staging`, `production`) |
-| `LOG_LEVEL` | `INFO` | Logging level (`DEBUG`, `INFO`, `WARNING`, `ERROR`) |
-| `PORT` | `8000` | HTTP service listening port |
-| `MAX_CONCURRENT_WORKFLOWS` | `20` | Maximum parallel workflow tasks |
+# 2. Configure production environment
+cp .env.example .env
+
+# 3. Launch full production multi-container stack
+docker compose -f docker-compose.prod.yml up -d --build
+
+# 4. Verify running containers
+docker compose -f docker-compose.prod.yml ps
+```
+
+### Stack Components
+- **Nginx Reverse Proxy** (`:80`): Rate-limiting, SSL/TLS, Security Headers, Proxying to API backend
+- **ARA Application Server** (`:8000` internal): Multi-stage non-root Python container
+- **PostgreSQL + pgvector** (`:5432`): Relational data and vector embedding storage
+- **Redis Cache** (`:6379`): Session state and execution caching
+- **MinIO Object Storage** (`:9000`, `:9001`): Report PDF, artifact, download, and screenshot storage
+- **Prometheus** (`:9090`): Application metric scraper
+- **Grafana** (`:3000`): Production dashboard visualization
 
 ---
 
-## 3. Docker Container Deployment
+## 3. Observability & Telemetry Verification
 
-### Local Docker Build & Run
-```bash
-# Build image
-docker build -t ai-research-assistant:1.0.0 .
-
-# Run container
-docker run -d --name ai_assistant -p 8000:8000 --env-file .env ai-research-assistant:1.0.0
-```
-
-### Docker Compose Deployment
-```bash
-docker-compose up -d --build
-```
+- **API Liveness Probe**: `curl -f http://localhost/health`
+- **Prometheus Scrape Endpoint**: `curl http://localhost/metrics`
+- **Grafana Dashboards**: Access `http://localhost:3000` (User: `admin`, Password: `admin_production_password`)
 
 ---
 
-## 4. Kubernetes Deployment
+## 4. Automated Backup & Recovery Strategy
+
+### Running Database & Object Storage Backups
+```bash
+# Execute automated backup script
+python scripts/backup_db.py
+```
+Backups are saved to `.storage/backups/postgres_backup_<timestamp>.json` and `.storage/backups/minio_snapshot_<timestamp>.json`.
+
+---
+
+## 5. Security & Vulnerability Auditing
 
 ```bash
-# Apply Kubernetes manifests
-kubectl apply -f deployment/k8s-manifests.yaml
-
-# Verify pod status and readiness
-kubectl get pods -l app=ai-research-assistant
+# Run security audit script
+python scripts/security_scan.py
 ```
+Validates zero hardcoded secrets, non-root container user compliance, and dependency security.
