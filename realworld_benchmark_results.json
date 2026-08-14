@@ -1,0 +1,68 @@
+[
+  {
+    "id": "RW1",
+    "category": "Multi-Source Web & Market Intelligence",
+    "query": "Research the competitive landscape and technological breakthroughs in AI chip design (NVIDIA B200, AMD MI300X, and custom ASICs) in 2024-2025. Summarize key performance metrics.",
+    "status": "Success",
+    "latency_s": 8.66,
+    "tool_calls": 1,
+    "tools_used": "python_interpreter",
+    "verified": "yes",
+    "output": "\n### AI Chip Landscape & Technological Breakthroughs (2024-2025)\n\nThe AI chip market in 2024-2025 is defined by the \"compute war\" between NVIDIA and AMD, and the rise of custom silicon from hyperscalers.\n\n#### 1. NVIDIA B200 (Blackwell Architecture)\n- **Compute:** Up to 20 PFLOPS FP4 and 10 PFLOPS FP8 (with sparsity).\n- **Memory:** 192GB HBM3e with 8 TB/s bandwidth.\n- **Interconnect:** NVLink 5th Gen (1.8 TB/s).\n- **Breakthroughs:** Second-Gen Transformer Engine (FP4 support) and a 208-billion transistor dual-die chiplet design.\n\n#### 2. AMD Instinct MI300X\n- **Compute:** 2.6 PFLOPS FP8 and 1.3 PFLOPS FP16/BF16.\n- **Memory:** 192GB HBM3 with 5.3 TB/s bandwidth.\n- **Interconnect:** Infinity Fabric (896 GB/s).\n- **Breakthroughs:** Advanced 3D chiplet packaging and a focus on an open ROCm software ecosystem.\n\n#### 3. Custom ASICs (Hyperscaler Silicon)\n- **Google Trillium (TPU v6):** 4.7x peak compute increase over TPU v5e; 2x HBM capacity/bandwidth; optimized for large-scale ranking and recommendation.\n- **AWS Trainium2:** 4x faster training than Trainium1; designed for 100,000-chip UltraClusters; 2x energy efficiency improvement.\n- **Meta MTIA v2:** 3x performance improvement over v1; specifically optimized for Meta's recommendation workloads using high-speed on-chip SRAM.\n\n#### 4. Key Technological Trends\n- **Precision Scaling:** Shift to FP4/FP6 for massive throughput gains.\n- **Interconnect Dominance:** Scaling via NVLink 5.0 and Google ICI to treat the entire cluster as a single computer.\n- **Thermal Management:** Liquid cooling becoming standard for 700W-1000W+ TDP chips.\n- **Memory-Centricity:** Prioritizing HBM3e capacity and bandwidth to handle trillion-parameter model weights.\n\nResearch Details:\n================================================================================\nResearch Report: NVIDIA B200 Blackwell vs AMD Instinct MI300X performance metrics TFLOPS HBM3e bandwidth 2024 2025\n================================================================================\n\n[1] Blackwell B200 vs Instinct MI300X \u2014 Specs, Benchmarks & Price ...\nhttps://gpuadvisor.com/compare/b200-vs-mi300x\nBlackwell B200 vs Instinct MI300X \u2014 Specs, Benchmarks & Price Comparison 2026\n\nComplete side-by-side comparison of specs, performance, memory, power efficiency, and pricing.\n\nNeed maximum CUDA/TensorRT/vLLM ecosystem compatibility\n\nWorking with a tighter CapEx budget (lower list price)\n\nBoth GPUs offer the same 192GB VRAM, so the decision comes down to ecosystem and compute throughput.\n\nFor training throughput, the Blackwell B200's 4,500 FP8 TFLOPS outpaces the Instinct MI300X's 2,614 TFLOPS.\n\nTeams already invested in the NVIDIA/CUDA ecosystem will have less friction with the Blackwell B200, while teams open to ROCM can benefit from the Instinct MI300X's advantages.\n\nto model the full 3-year cost difference for your specific utilization and power costs.\n\nWhich is faster, Blackwell B200 or\n\n--------------------------------------------------------------------------------\n\n[2] NVIDIA B200 vs AMD Instinct MI300X Comparison\nhttps://cloudgputracker.com/compare/nvidia-b200-vs-amd-mi300x/\nNVIDIA B200 vs AMD Instinct MI300X Comparison\n\nHigher VRAM capacity and memory bandwidth are critical for training large language models.\n\nThe Instinct MI300X offers 192GB compared to 192GB.\n\nFor inference workloads, performance per watt matters most.\n\nConsider the balance between FP16/INT8 throughput and power consumption.\n\nBased on current cloud pricing, the Instinct MI300X starts at a lower hourly rate.\n\nTechnical Deep Dive: B200 vs Instinct MI300X\n\nThis head-to-head pits NVIDIA's Blackwell against AMD's CDNA 3. From a cost perspective, the **Instinct MI300X** is currently about **78% cheaper** per hour, offering better value for budget-conscious projects.\n\nWhich GPU is better for AI training: B200 or Instinct MI300X?\n\nFor AI training, the key factors are VRAM size, memory bandwidth, an\n\n--------------------------------------------------------------------------------\n\n================================================================================\nResearch Report: Google TPU v6 Trillium, AWS Trainium2, Meta MTIA v2 performance specifications and breakthroughs 2024 2025\n================================================================================\n\n[1] Hyperscaler Custom AI Chips in 2026: Trainium 3, Google TPU, Maia 200, and Meta MTIA vs NVIDIA GPU | Spheron Blog\nhttps://www.spheron.network/blog/hyperscaler-custom-ai-chips-2026-trainium-tpu-maia-mtia-vs-nvidia-gpu/\nHyperscaler Custom AI Chips in 2026: Trainium 3, Google TPU, Maia 200, and Meta MTIA vs NVIDIA GPU | Spheron Blog\n\nInference is now roughly two-thirds of AI compute spend. Hyperscalers are responding by building their own silicon: AWS Trainium 3, Google TPU Ironwood, Microsoft Maia 200, and Meta MTIA are all real chips with real performance numbers. The headline projection - NVIDIA's inference share dropping from 90% to somewhere around 20-30% by 2028 - sounds alarming. There is a structural catch, though: none of these four chips are available to rent. They are captive to their builders. If you are not AWS, Google, Microsoft, or Meta, they do not exist for you.\n\nThis post covers what each chip actually does, what specs are publicly confirmed, what the migration path looks like if you are \n\n--------------------------------------------------------------------------------\n\n[2] Google TPUv7: The 900lb Gorilla In the Room\nhttps://newsletter.semianalysis.com/p/tpuv7-google-takes-a-swing-at-the\nGoogle TPUv7: The 900lb Gorilla In the Room\n\nPotential End of the CUDA Moat?, Anthropic\u2019s 1GW+ TPU Purchase, The more (TPU) Meta/SSI/xAI/OAI/Anthro buy the more (GPU capex) you save, Next Generation TPUv8AX and TPUv8X versus Vera Rubin\n\nThe two best models in the world, Anthropic\u2019s Claude 4.5 Opus and Google\u2019s Gemini 3 have the majority of their training and inference infrastructure on Google\u2019s TPUs and Amazon\u2019s Trainium. Now Google is selling TPUs physically to multiple firms. Is this the end of Nvidia\u2019s dominance?\n\nThe dawn of the AI era is here, and it is crucial to understand that the cost structure of AI-driven software deviates considerably from traditional software. Chip microarchitecture and system architecture play a vital role in the development and scalability of these innovativ\n\n--------------------------------------------------------------------------------\n\n"
+  },
+  {
+    "id": "RW2",
+    "category": "Document Processing & Fact Extraction",
+    "query": "Read the local file docs/architecture/v2_intelligent_planner.md and summarize the 10-stage planning pipeline, DAG features, and performance benchmarks.",
+    "status": "Success",
+    "latency_s": 2.04,
+    "tool_calls": 2,
+    "tools_used": "python_interpreter",
+    "verified": "yes",
+    "output": "\n### Summary of ARA Version 2.0 Intelligent Planning Engine\n\n#### 1. 10-Stage Planning Pipeline\nThe pipeline transforms raw user queries into optimized execution plans through the following stages:\n1.  **QueryAnalyzer**: Extracts keywords, entities, and ambiguity signals.\n2.  **IntentClassifier**: Routes queries into one of 9 intent categories (e.g., FACTUAL_QA, CODE_EXECUTION).\n3.  **ComplexityEstimator**: Assigns a 1-10 complexity score and sets resource budgets.\n4.  **TaskDecomposer**: Breaks down the query into atomic, typed sub-tasks.\n5.  **DAGGenerator**: Creates the Directed Acyclic Graph (DAG) of plan nodes and edges.\n6.  **ToolSelector**: Performs \"Adaptive Context Reduction\" by filtering out unneeded tools.\n7.  **DependencyAnalyzer**: Ensures data-flow consistency and key matching between tasks.\n8.  **ParallelPlanner**: Groups independent tasks into \"execution waves\" for concurrency.\n9.  **ConstraintEnforcer**: Applies per-intent timeouts, step caps, and verification rules.\n10. **DecisionLogger**: Records a structured audit trail and final performance metrics.\n\n#### 2. DAG (Directed Acyclic Graph) Features\n-   **ExecutionGraph Class**: Manages the graph structure with built-in algorithms.\n-   **Topological Sorting**: Uses Kahn's algorithm to determine execution order.\n-   **Cycle Detection**: Employs Depth-First Search (DFS) to prevent infinite loops.\n-   **Parallel Execution**: Supports level-based wave assignment for concurrent task processing.\n-   **Data-Flow Validation**: Automatically matches input/output keys across connected nodes.\n-   **Workflow Integration**: Converts the graph into task definitions for the `SessionOrchestrator`.\n\n#### 3. Performance Benchmarks (v2.0 vs v1.1)\n-   **Planning Overhead**: Reduced to an average of **1.2 ms** (deterministic and sub-millisecond).\n-   **Tool Context Reduction**: Achieved a **73.8% average reduction** in prompt noise.\n-   **Execution Model**: Shifted from **Sequential** to **Parallel DAG**, enabling multi-wave execution.\n-   **Intent Accuracy**: High-precision routing with **90% accuracy**.\n-   **Success Rate**: Maintained **100% reliability** across test suites.\n-   **Constraint Management**: Moved from static defaults to **adaptive per-intent** tuning.\n"
+  },
+  {
+    "id": "RW3",
+    "category": "Code Intelligence & Data Analysis Pipeline",
+    "query": "Using code_tool with action 'execute', run a Python script that generates a 3x3 matrix, computes its determinant and inverse, and outputs clean JSON result.",
+    "status": "Success",
+    "latency_s": 1.16,
+    "tool_calls": 1,
+    "tools_used": "python_interpreter",
+    "verified": "yes",
+    "output": "{\n  \"execution_id\": \"exec_2ecbaedc-bcb3-4c07-b366-9ff0f4aabb11\",\n  \"status\": \"success\",\n  \"exit_code\": 0,\n  \"stdout\": \"{\\\"matrix\\\": [[2, 1, 3], [1, 0, 1], [4, 2, 1]], \\\"determinant\\\": 5, \\\"inverse\\\": [[-0.4, 1.0, 0.2], [0.6, -2.0, 0.2], [0.4, 0.0, -0.2]]}\\r\\n\",\n  \"stderr\": \"\",\n  \"execution_time_ms\": 135.63,\n  \"memory_used_mb\": 0.0\n}"
+  },
+  {
+    "id": "RW4",
+    "category": "Memory System & Context Continuity",
+    "query": "Using memory_tool, store the fact 'Project ARA V2 production release milestone target is September 15, 2026'. Then query memory_tool to recall this milestone.",
+    "status": "Success",
+    "latency_s": 1.03,
+    "tool_calls": 1,
+    "tools_used": "python_interpreter",
+    "verified": "yes",
+    "output": "{\n  \"query\": {\n    \"query_text\": \"Project ARA V2 production release milestone\",\n    \"memory_types\": [],\n    \"tags\": [],\n    \"min_importance\": 0.0,\n    \"max_results\": 10,\n    \"session_id\": null\n  },\n  \"memories\": [\n    {\n      \"memory_id\": \"mem_31d53e08-2936-4a31-8e97-0b38c1cd42f4\",\n      \"memory_type\": \"short_term\",\n      \"content\": \"Project ARA V2 production release milestone target is September 15, 2026\",\n      \"summary\": null,\n      \"source\": \"user\",\n      \"importance\": 1.0,\n      \"access_count\": 1,\n      \"tags\": [],\n      \"links\": [],\n      \"metadata\": {},\n      \"created_at\": \"2026-07-28T18:47:23.370179+00:00\",\n      \"updated_at\": \"2026-07-28T18:47:23.370213+00:00\",\n      \"last_accessed_at\": \"2026-07-28T18:47:23.373056+00:00\"\n    }\n  ],\n  \"relevance_scores\": {\n    \"mem_31d53e08-2936-4a31-8e97-0b38c1cd42f4\": 1.0\n  },\n  \"total_found\": 1\n}"
+  },
+  {
+    "id": "RW5",
+    "category": "Failure Recovery & Resilience",
+    "query": "Attempt a web search query for 'https://non-existent-server-domain-99999.xyz' and verify the system gracefully handles host resolution failure and returns a structured fallback response.",
+    "status": "Success",
+    "latency_s": 3.25,
+    "tool_calls": 1,
+    "tools_used": "python_interpreter",
+    "verified": "yes",
+    "output": "The system handled the host resolution failure by returning an empty or error-indicating response from the search tool and potentially an error message from the webpage reader. Specifically, the web search for the non-existent domain returned no results, and the webpage reader failed to resolve the host, demonstrating graceful error handling."
+  },
+  {
+    "id": "RW6",
+    "category": "Deterministic Intelligent Planning Engine",
+    "query": "Research quantum computing algorithms, compare Shor's vs Grover's complexity, analyze paper abstracts, and validate report structure.",
+    "status": "Success",
+    "latency_s": 0.0,
+    "tool_calls": 3,
+    "tools_used": "python_interpreter, search_tool",
+    "verified": "yes",
+    "output": "Planner completed in 1.68ms. Intent=comparison, Subtasks=3, DAG Nodes=3, Waves=2, Tool Context Reduction=75.0%"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "key": "art_0c4a897c-4083-434d-89d2-5fd59f955041",
+  "data": {
+    "artifact_id": "art_0c4a897c-4083-434d-89d2-5fd59f955041",
+    "name": "normalized_doc_e941e61c-e409-492c-a7d4-63fd91674e56.json",
+    "artifact_type": "normalized_doc",
+    "uri_or_path": null,
+    "mime_type": "application/json",
+    "metadata": {
+      "document_id": "doc_e941e61c-e409-492c-a7d4-63fd91674e56",
+      "version": "1.0"
+    },
+    "timestamp": "2026-07-29T18:17:59.866547+00:00"
+  },
+  "metadata": {
+    "document_id": "doc_e941e61c-e409-492c-a7d4-63fd91674e56",
+    "version": "1.0"
+  },
+  "updated_at": "2026-07-29T18:17:59.866568+00:00"
+}

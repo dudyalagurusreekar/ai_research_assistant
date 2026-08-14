@@ -45,6 +45,9 @@ from tools.report.tool import ReportTool
 # GAIA Benchmark Tools
 from tools.benchmark.tool import BenchmarkTool
 
+# Data Intelligence Tools
+from tools.data.tool import DataTool
+
 # Research Tools
 from tools.research import ResearchTool
 
@@ -95,5 +98,6 @@ registry.register(IntegrationTool())
 registry.register(WorkflowTool())
 registry.register(ReportTool())
 registry.register(BenchmarkTool())
+registry.register(DataTool())
 
 

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ara-platform-deployment
+  labels:
+    app: ara-platform
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ara-platform
+  template:
+    metadata:
+      labels:
+        app: ara-platform
+    spec:
+      containers:
+      - name: ara-platform
+        image: ara-platform:v3.0.0
+        ports:
+        - containerPort: 8000
+        - containerPort: 9090
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10

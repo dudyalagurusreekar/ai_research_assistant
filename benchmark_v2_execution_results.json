@@ -1,0 +1,331 @@
+{
+  "queries": [
+    {
+      "id": "E1",
+      "category": "Factual QA",
+      "query": "Who won the Nobel Prize in Physics in 2023?",
+      "total_tasks": 2,
+      "successful_tasks": 2,
+      "cached_tasks": 0,
+      "degraded_tasks": 0,
+      "wave_count": 2,
+      "efficiency": 1.0,
+      "latency_ms": 2.03
+    },
+    {
+      "id": "E2",
+      "category": "Comparison",
+      "query": "Compare GPT-4 versus Claude in reasoning tasks",
+      "total_tasks": 5,
+      "successful_tasks": 5,
+      "cached_tasks": 0,
+      "degraded_tasks": 0,
+      "wave_count": 2,
+      "efficiency": 3.81,
+      "latency_ms": 1.63
+    },
+    {
+      "id": "E3",
+      "category": "Document Analysis",
+      "query": "Read the PDF file and summarize the content",
+      "total_tasks": 2,
+      "successful_tasks": 2,
+      "cached_tasks": 0,
+      "degraded_tasks": 0,
+      "wave_count": 2,
+      "efficiency": 1.0,
+      "latency_ms": 1.33
+    },
+    {
+      "id": "E4",
+      "category": "Code Execution",
+      "query": "Using code_tool, execute a Python fibonacci script",
+      "total_tasks": 1,
+      "successful_tasks": 1,
+      "cached_tasks": 0,
+      "degraded_tasks": 0,
+      "wave_count": 1,
+      "efficiency": 1.0,
+      "latency_ms": 1.49
+    },
+    {
+      "id": "E5",
+      "category": "Multi-step Research",
+      "query": "Research latest solid-state battery advancements in 2024",
+      "total_tasks": 4,
+      "successful_tasks": 4,
+      "cached_tasks": 0,
+      "degraded_tasks": 0,
+      "wave_count": 4,
+      "efficiency": 1.0,
+      "latency_ms": 1.71
+    },
+    {
+      "id": "E6",
+      "category": "Repeated Query (Cache Test)",
+      "query": "Who won the Nobel Prize in Physics in 2023?",
+      "total_tasks": 2,
+      "successful_tasks": 2,
+      "cached_tasks": 2,
+      "degraded_tasks": 0,
+      "wave_count": 2,
+      "efficiency": 1.0,
+      "latency_ms": 1.62
+    },
+    {
+      "id": "E7",
+      "category": "Repeated Comparison (Cache Test)",
+      "query": "Compare GPT-4 versus Claude in reasoning tasks",
+      "total_tasks": 5,
+      "successful_tasks": 5,
+      "cached_tasks": 5,
+      "degraded_tasks": 0,
+      "wave_count": 2,
+      "efficiency": 1.0,
+      "latency_ms": 2.6
+    }
+  ],
+  "telemetry": {
+    "registry": {
+      "total_tools": 8,
+      "healthy_tools": 8,
+      "descriptors": {
+        "search_tool": {
+          "name": "search_tool",
+          "version": "1.0.0",
+          "description": "Deep web & academic database search engine",
+          "capabilities": [
+            "search",
+            "web_search",
+            "academic_search"
+          ],
+          "task_types": [
+            "factual_qa",
+            "multi_step_research",
+            "comparison"
+          ],
+          "estimated_latency_ms": 1500.0,
+          "actual_latency_ms": 393.2,
+          "cost_per_call": 0.002,
+          "reliability_score": 0.9,
+          "health_status": "degraded",
+          "consecutive_failures": 1,
+          "total_calls": 7,
+          "successful_calls": 6,
+          "failed_calls": 1,
+          "fallback_tools": [
+            "browser_tool",
+            "python_interpreter"
+          ]
+        },
+        "browser_tool": {
+          "name": "browser_tool",
+          "version": "1.0.0",
+          "description": "Autonomous browser navigation and DOM parsing",
+          "capabilities": [
+            "browse",
+            "web_browsing",
+            "scrape"
+          ],
+          "task_types": [
+            "multi_step_research",
+            "web_browsing"
+          ],
+          "estimated_latency_ms": 3500.0,
+          "actual_latency_ms": 1792.0,
+          "cost_per_call": 0.005,
+          "reliability_score": 0.98,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_calls": 3,
+          "successful_calls": 3,
+          "failed_calls": 0,
+          "fallback_tools": [
+            "search_tool",
+            "python_interpreter"
+          ]
+        },
+        "document_tool": {
+          "name": "document_tool",
+          "version": "1.0.0",
+          "description": "PDF/DOCX/HTML ingestion, chunking, and entity parsing",
+          "capabilities": [
+            "document",
+            "pdf_parse",
+            "file_read"
+          ],
+          "task_types": [
+            "document_analysis",
+            "report_generation"
+          ],
+          "estimated_latency_ms": 2500.0,
+          "actual_latency_ms": 2000.0,
+          "cost_per_call": 0.003,
+          "reliability_score": 0.97,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_calls": 1,
+          "successful_calls": 1,
+          "failed_calls": 0,
+          "fallback_tools": [
+            "python_interpreter"
+          ]
+        },
+        "code_tool": {
+          "name": "code_tool",
+          "version": "1.0.0",
+          "description": "Secure Python sandbox execution environment",
+          "capabilities": [
+            "code",
+            "python_exec",
+            "sandbox"
+          ],
+          "task_types": [
+            "code_execution",
+            "data_analysis"
+          ],
+          "estimated_latency_ms": 800.0,
+          "actual_latency_ms": 640.0,
+          "cost_per_call": 0.001,
+          "reliability_score": 1.0,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_calls": 1,
+          "successful_calls": 1,
+          "failed_calls": 0,
+          "fallback_tools": [
+            "python_interpreter"
+          ]
+        },
+        "memory_tool": {
+          "name": "memory_tool",
+          "version": "1.0.0",
+          "description": "RAG vector memory store and recall graph",
+          "capabilities": [
+            "memory",
+            "vector_store",
+            "recall"
+          ],
+          "task_types": [
+            "memory_operation"
+          ],
+          "estimated_latency_ms": 200.0,
+          "actual_latency_ms": 200.0,
+          "cost_per_call": 0.0005,
+          "reliability_score": 0.99,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_calls": 0,
+          "successful_calls": 0,
+          "failed_calls": 0,
+          "fallback_tools": [
+            "python_interpreter"
+          ]
+        },
+        "vision_tool": {
+          "name": "vision_tool",
+          "version": "1.0.0",
+          "description": "Multi-modal vision and OCR image analysis",
+          "capabilities": [
+            "vision",
+            "ocr",
+            "chart_analysis"
+          ],
+          "task_types": [
+            "vision_analysis"
+          ],
+          "estimated_latency_ms": 2000.0,
+          "actual_latency_ms": 2000.0,
+          "cost_per_call": 0.008,
+          "reliability_score": 0.94,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_calls": 0,
+          "successful_calls": 0,
+          "failed_calls": 0,
+          "fallback_tools": [
+            "python_interpreter"
+          ]
+        },
+        "report_tool": {
+          "name": "report_tool",
+          "version": "1.0.0",
+          "description": "Report structure generator and validator",
+          "capabilities": [
+            "report",
+            "validate",
+            "format"
+          ],
+          "task_types": [
+            "report_generation"
+          ],
+          "estimated_latency_ms": 500.0,
+          "actual_latency_ms": 500.0,
+          "cost_per_call": 0.001,
+          "reliability_score": 0.98,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_calls": 0,
+          "successful_calls": 0,
+          "failed_calls": 0,
+          "fallback_tools": [
+            "python_interpreter"
+          ]
+        },
+        "python_interpreter": {
+          "name": "python_interpreter",
+          "version": "1.0.0",
+          "description": "Core orchestration and synthesis python runtime",
+          "capabilities": [
+            "python",
+            "orchestrate",
+            "synthesize"
+          ],
+          "task_types": [
+            "general_qa",
+            "comparison",
+            "data_analysis"
+          ],
+          "estimated_latency_ms": 100.0,
+          "actual_latency_ms": 21.0,
+          "cost_per_call": 0.0,
+          "reliability_score": 1.0,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_calls": 7,
+          "successful_calls": 7,
+          "failed_calls": 0,
+          "fallback_tools": []
+        }
+      }
+    },
+    "cache": {
+      "total_entries": 17,
+      "total_lookups": 50,
+      "hits": 14,
+      "misses": 36,
+      "hit_rate_pct": 28.0,
+      "estimated_latency_saved_ms": 4063.2
+    },
+    "fallbacks": {
+      "total_fallback_events": 1,
+      "successful_fallbacks": 1,
+      "events": [
+        {
+          "event_id": "fbe_52790891",
+          "primary_tool": "search_tool",
+          "fallback_tool": "browser_tool",
+          "task_id": "node_1ed36dd4",
+          "reason": "Primary tool failed: Simulated 503 Search API Error",
+          "success": true,
+          "timestamp": "2026-07-28T18:43:06.011314+00:00"
+        }
+      ]
+    }
+  },
+  "fallback_test": {
+    "primary_tool_failed": "search_tool",
+    "fallback_used": "browser_tool",
+    "success_rate_pct": 100.0
+  }
+}

@@ -1,23 +1,14 @@
 """Model Context Protocol (MCP) Connector strategy implementation."""
 
-from tools.integration.interfaces.integration_interfaces import IConnector
+from tools.integration.sdk.base_connector import BaseConnector
 from tools.integration.models.integration_models import IntegrationRequest, IntegrationResponse, ProtocolType
-from infrastructure.logging.logger import StructuredLogger
 
 
-class MCPConnector(IConnector):
+class MCPConnector(BaseConnector):
     """Model Context Protocol (MCP) connector strategy interacting with MCP tools, prompts, and resources."""
 
     def __init__(self) -> None:
-        self._logger = StructuredLogger("MCPConnector")
-
-    @property
-    def connector_name(self) -> str:
-        return "mcp"
-
-    @property
-    def protocol(self) -> ProtocolType:
-        return ProtocolType.MCP
+        super().__init__(name="mcp", protocol=ProtocolType.MCP, description="Generic MCP tool connector")
 
     async def execute(self, request: IntegrationRequest) -> IntegrationResponse:
         """Execute MCP tool or resource invocation."""

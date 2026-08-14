@@ -1,0 +1,287 @@
+{
+  "results": [
+    {
+      "id": "L1",
+      "category": "Routine Planning",
+      "prompt": "Check session status and summarize checklist",
+      "complexity": 2,
+      "model_id": "ollama/phi3:latest",
+      "provider_type": "local",
+      "tier": "routine",
+      "routing_accurate": true,
+      "is_cached": false,
+      "latency_ms": 0.6,
+      "tokens": 230,
+      "cost": 0.0
+    },
+    {
+      "id": "L2",
+      "category": "Routine Summarization",
+      "prompt": "Provide a 2-bullet summary of README.md",
+      "complexity": 3,
+      "model_id": "ollama/phi3:latest",
+      "provider_type": "local",
+      "tier": "routine",
+      "routing_accurate": true,
+      "is_cached": false,
+      "latency_ms": 0.36,
+      "tokens": 230,
+      "cost": 0.0
+    },
+    {
+      "id": "L3",
+      "category": "Balanced Factual QA",
+      "prompt": "Who won the Nobel Prize in Physics in 2023?",
+      "complexity": 5,
+      "model_id": "gemini/gemini-2.5-flash",
+      "provider_type": "cloud_gemini",
+      "tier": "balanced",
+      "routing_accurate": true,
+      "is_cached": false,
+      "latency_ms": 0.3,
+      "tokens": 230,
+      "cost": 4.7e-05
+    },
+    {
+      "id": "L4",
+      "category": "Balanced Comparison",
+      "prompt": "Compare GPT-4 vs Claude on coding tasks",
+      "complexity": 6,
+      "model_id": "gemini/gemini-2.5-flash",
+      "provider_type": "cloud_gemini",
+      "tier": "balanced",
+      "routing_accurate": true,
+      "is_cached": false,
+      "latency_ms": 0.25,
+      "tokens": 230,
+      "cost": 4.7e-05
+    },
+    {
+      "id": "L5",
+      "category": "Advanced Reasoning",
+      "prompt": "Synthesize a 10-page paper on quantum computing an",
+      "complexity": 8,
+      "model_id": "gemini/gemini-2.5-pro",
+      "provider_type": "cloud_gemini",
+      "tier": "advanced",
+      "routing_accurate": true,
+      "is_cached": false,
+      "latency_ms": 0.22,
+      "tokens": 230,
+      "cost": 0.000588
+    },
+    {
+      "id": "L6",
+      "category": "Routine Planning",
+      "prompt": "Check session status and summarize checklist",
+      "complexity": 2,
+      "model_id": "ollama/phi3:latest",
+      "provider_type": "local",
+      "tier": "routine",
+      "routing_accurate": true,
+      "is_cached": true,
+      "latency_ms": 0.18,
+      "tokens": 230,
+      "cost": 0.0
+    },
+    {
+      "id": "L7",
+      "category": "Balanced Factual QA",
+      "prompt": "Who won the Nobel Prize in Physics in 2023?",
+      "complexity": 5,
+      "model_id": "gemini/gemini-2.5-flash",
+      "provider_type": "cloud_gemini",
+      "tier": "balanced",
+      "routing_accurate": true,
+      "is_cached": true,
+      "latency_ms": 0.14,
+      "tokens": 230,
+      "cost": 0.0
+    }
+  ],
+  "telemetry": {
+    "registry": {
+      "total_providers": 7,
+      "available_providers": 7,
+      "total_tokens_processed": 1330,
+      "total_cost_accumulated": 0.001582,
+      "descriptors": {
+        "ollama/phi3:latest": {
+          "model_id": "ollama/phi3:latest",
+          "name": "Phi-3 Mini (Local)",
+          "provider_type": "local",
+          "tier": "routine",
+          "context_window": 8192,
+          "input_cost_per_1k": 0.0,
+          "output_cost_per_1k": 0.0,
+          "estimated_latency_ms": 300.0,
+          "actual_latency_ms": 192.0,
+          "reliability_score": 1.0,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_requests": 2,
+          "total_tokens_processed": 460,
+          "total_cost_accumulated": 0.0,
+          "fallback_models": [
+            "ollama/llama3:latest",
+            "gemini/gemini-2.5-flash"
+          ]
+        },
+        "ollama/llama3:latest": {
+          "model_id": "ollama/llama3:latest",
+          "name": "Llama-3 8B (Local)",
+          "provider_type": "local",
+          "tier": "routine",
+          "context_window": 8192,
+          "input_cost_per_1k": 0.0,
+          "output_cost_per_1k": 0.0,
+          "estimated_latency_ms": 450.0,
+          "actual_latency_ms": 450.0,
+          "reliability_score": 0.98,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_requests": 0,
+          "total_tokens_processed": 0,
+          "total_cost_accumulated": 0.0,
+          "fallback_models": [
+            "gemini/gemini-2.5-flash"
+          ]
+        },
+        "gemini/gemini-2.5-flash": {
+          "model_id": "gemini/gemini-2.5-flash",
+          "name": "Google Gemini 2.5 Flash",
+          "provider_type": "cloud_gemini",
+          "tier": "balanced",
+          "context_window": 1048576,
+          "input_cost_per_1k": 0.0001,
+          "output_cost_per_1k": 0.0004,
+          "estimated_latency_ms": 800.0,
+          "actual_latency_ms": 512.0,
+          "reliability_score": 1.0,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_requests": 2,
+          "total_tokens_processed": 460,
+          "total_cost_accumulated": 9.4e-05,
+          "fallback_models": [
+            "openai/gpt-4o-mini",
+            "ollama/phi3:latest"
+          ]
+        },
+        "gemini/gemini-2.5-pro": {
+          "model_id": "gemini/gemini-2.5-pro",
+          "name": "Google Gemini 2.5 Pro",
+          "provider_type": "cloud_gemini",
+          "tier": "advanced",
+          "context_window": 2097152,
+          "input_cost_per_1k": 0.00125,
+          "output_cost_per_1k": 0.005,
+          "estimated_latency_ms": 2200.0,
+          "actual_latency_ms": 1760.0,
+          "reliability_score": 0.83,
+          "health_status": "degraded",
+          "consecutive_failures": 1,
+          "total_requests": 2,
+          "total_tokens_processed": 230,
+          "total_cost_accumulated": 0.000588,
+          "fallback_models": [
+            "anthropic/claude-3-5-sonnet",
+            "openai/gpt-4o"
+          ]
+        },
+        "openai/gpt-4o-mini": {
+          "model_id": "openai/gpt-4o-mini",
+          "name": "OpenAI GPT-4o Mini",
+          "provider_type": "cloud_openai",
+          "tier": "balanced",
+          "context_window": 128000,
+          "input_cost_per_1k": 0.00015,
+          "output_cost_per_1k": 0.0006,
+          "estimated_latency_ms": 900.0,
+          "actual_latency_ms": 900.0,
+          "reliability_score": 0.98,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_requests": 0,
+          "total_tokens_processed": 0,
+          "total_cost_accumulated": 0.0,
+          "fallback_models": [
+            "gemini/gemini-2.5-flash"
+          ]
+        },
+        "openai/gpt-4o": {
+          "model_id": "openai/gpt-4o",
+          "name": "OpenAI GPT-4o",
+          "provider_type": "cloud_openai",
+          "tier": "advanced",
+          "context_window": 128000,
+          "input_cost_per_1k": 0.0025,
+          "output_cost_per_1k": 0.01,
+          "estimated_latency_ms": 1800.0,
+          "actual_latency_ms": 1440.0,
+          "reliability_score": 0.99,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_requests": 1,
+          "total_tokens_processed": 180,
+          "total_cost_accumulated": 0.0009,
+          "fallback_models": [
+            "anthropic/claude-3-5-sonnet",
+            "gemini/gemini-2.5-pro"
+          ]
+        },
+        "anthropic/claude-3-5-sonnet": {
+          "model_id": "anthropic/claude-3-5-sonnet",
+          "name": "Anthropic Claude 3.5 Sonnet",
+          "provider_type": "cloud_anthropic",
+          "tier": "advanced",
+          "context_window": 200000,
+          "input_cost_per_1k": 0.003,
+          "output_cost_per_1k": 0.015,
+          "estimated_latency_ms": 1900.0,
+          "actual_latency_ms": 1900.0,
+          "reliability_score": 0.97,
+          "health_status": "healthy",
+          "consecutive_failures": 0,
+          "total_requests": 0,
+          "total_tokens_processed": 0,
+          "total_cost_accumulated": 0.0,
+          "fallback_models": [
+            "openai/gpt-4o",
+            "gemini/gemini-2.5-pro"
+          ]
+        }
+      }
+    },
+    "cache": {
+      "total_entries": 6,
+      "total_lookups": 8,
+      "hits": 2,
+      "misses": 6,
+      "hit_rate_pct": 25.0,
+      "tokens_saved": 460,
+      "cost_saved": 4.7e-05
+    },
+    "failover": {
+      "failover_attempts": 1,
+      "successful_failovers": 1,
+      "failover_success_rate_pct": 100.0
+    },
+    "policy": {
+      "prefer_local_for_routine": true,
+      "enable_response_caching": true,
+      "default_ttl_seconds": 7200.0,
+      "enable_fallback_chain": true,
+      "max_fallback_attempts": 3,
+      "circuit_breaker_threshold": 3,
+      "routine_complexity_max": 3,
+      "balanced_complexity_max": 6,
+      "advanced_complexity_max": 8
+    }
+  },
+  "failover_test": {
+    "primary_failed": "gemini/gemini-2.5-flash",
+    "fallback_used": "openai/gpt-4o",
+    "success": true
+  }
+}

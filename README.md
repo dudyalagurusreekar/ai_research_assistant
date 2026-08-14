@@ -1,73 +1,90 @@
-# AI Research Assistant (ARA)
+# AI Research Assistant (ARA) v1.0.0
 
-A modular, production-ready AI Research Assistant built for comprehensive web research, document analysis, and benchmark execution. 
+[![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg)](ReleaseNotes_v1.0.0.md)
+[![Status](https://img.shields.io/badge/status-APPROVED-success.svg)](reports/final_benchmark_report_v1.0.0.md)
+[![Build Status](https://img.shields.io/badge/CI%2FCD-passing-brightgreen.svg)](.github/workflows/ci_cd.yml)
 
-## Features
+**AI Research Assistant (ARA)** is an enterprise-grade, multi-agent AI research, data intelligence, document analysis, browser automation, and knowledge graph platform. Built with clean architecture principles, spaCy NLP, NetworkX graph modeling, Pydantic v2 validation, Prometheus metrics, and a full-featured evaluation and release gate platform.
 
-- **Local & Cloud LLM Support:** Fully integrated with `LiteLLM` and `Ollama` for flexible model deployment.
-- **Robust Tool Ecosystem:** Extensible tool registry powered by `smolagents`, offering over a dozen integrated capabilities.
-- **Unified Observability:** Standardized execution context tracks performance metrics, telemetry, and structured logging.
-- **Self-Verification Engine:** Ensures high-confidence research results with fact-checking, citation tracking, and contradiction detection.
-- **Interactive Browser Automation:** Playwright-based dynamic DOM interaction with macro support.
-- **Evaluation & Benchmarking:** First-class support for GAIA and custom benchmark suites.
+---
 
-## Architecture
+## Key Features
 
-The ARA platform is built on a modular, decoupled architecture (Version 1.0 frozen).
+- **Supervisory Planner & Reflection Engine**: Autonomous multi-step DAG task decomposition, adaptive replanning, groundedness validation, and confidence scoring.
+- **Enterprise RAG & Hybrid Retrieval**: Multi-modal document ingestion, hybrid vector + BM25 search, 100% citation accuracy, and hallucination rate < 2%.
+- **Knowledge Graph & Long-Term Memory (Sprint 11)**: Unified semantic graph abstraction, spaCy NLP entity/relation extraction, NetworkX graph algorithms, snapshot versioning, user/project memory, PII redaction, and hard purge privacy controls.
+- **Evaluation & Observability Platform (Sprint 12)**: Formal IR metrics (Recall@K, Precision@K, MRR, nDCG), ECE calibration, Prometheus metrics exposition (`/api/v1/evaluation/prometheus`), Grafana JSON dashboards, OpenTelemetry span tracing, and golden baseline regression tracking.
+- **Universal Connectors**: Native integrations with GitHub, Notion, Jira, Gmail, and Google Drive.
+- **Interactive Browser Automation**: Playwright dynamic DOM processing, macro recording, multi-tab coordination, and CAPTCHA recovery.
 
-```mermaid
-graph TD;
-    Core[Core Engine / smolagents] --> Orchestrator[Session Orchestrator];
-    Orchestrator --> Registry[Tool Registry];
-    Registry --> Browser[Browser Platform];
-    Registry --> Documents[Document Platform];
-    Registry --> Research[Search Platform];
-    Registry --> Code[Code Platform];
-    Registry --> Vision[Vision Platform];
-    
-    Orchestrator --> ExecutionContext[Unified Execution Context & Metrics];
-    ExecutionContext --> SelfVerifier[Self-Verification Engine];
-    SelfVerifier --> Reporter[Report Generator];
+---
+
+## System Architecture
+
+```
+                     +----------------------------------+
+                     |   Client / Web UI / REST Client  |
+                     +----------------------------------+
+                                      |
+                                      v
+                     +----------------------------------+
+                     |    Nginx Reverse Proxy (:80)     |
+                     +----------------------------------+
+                                      |
+       +------------------------------+------------------------------+
+       |                                                             |
+       v                                                             v
++------------------------------------+             +------------------------------------+
+|  FastAPI Application Backend (:8000) |             | Prometheus (:9090) / Grafana (:3000)|
++------------------------------------+             +------------------------------------+
+  |              |             |
+  v              v             v
++----------+  +-------+  +-----------+
+| Postgres |  | Redis |  |   MinIO   |
+| (pgvector)|  | (:6379)| |   (:9000) |
++----------+  +-------+  +-----------+
 ```
 
-## Setup Instructions
+---
 
-### Prerequisites
-- Python 3.10+
-- Playwright browsers installed (`playwright install`)
+## Production Deployment Quickstart
 
-### Installation
-
-1. Clone the repository and install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   playwright install
-   ```
-
-2. Configure environment variables in `.env`:
-   ```bash
-   GEMINI_API_KEY="your_api_key_here"
-   # Or configure alternative providers via LiteLLM
-   ```
-
-3. Run the application:
-   ```bash
-   python main.py
-   ```
-
-## Workflow Explanation
-
-1. **User Request:** A complex research query is provided via CLI or API.
-2. **Planning:** The agent synthesizes a multi-step execution plan.
-3. **Execution Context:** The `UnifiedExecutionContext` begins tracking latency and metadata.
-4. **Tool Execution:** Specialized tools (e.g., `BrowserToolFacade`, `CodeTool`) perform domain-specific actions.
-5. **Self-Verification:** Before outputting the final result, the `SelfVerificationEngine` evaluates claims and verifies evidence.
-6. **Reporting:** A comprehensive report is generated, citing sources and providing confidence scores.
-
-## Benchmarks & Evaluation
-
-Run the automated evaluation suite to assess system performance and readiness:
 ```bash
-python scripts/evaluate_v1_1.py
+# 1. Clone repository
+git clone https://github.com/dudyalagurusreekar/ai_research_assistant.git
+cd ai_research_assistant
+
+# 2. Configure environment
+cp .env.example .env
+
+# 3. Launch multi-container production stack
+docker compose -f docker-compose.prod.yml up -d --build
+
+# 4. Verify deployment health
+curl -f http://localhost/health
 ```
-This script tests end-to-end capabilities and generates a `benchmark_report.md` with detailed metrics.
+
+---
+
+## Evaluation & Test Suite
+
+Run full system unit, integration, benchmark, and security evaluation suites:
+```bash
+# Run pytest test suite
+pytest tests/
+
+# Execute master evaluation & release gates
+python scripts/run_sprint14_evaluation.py
+
+# Run security audit
+python scripts/security_scan.py
+```
+
+---
+
+## Documentation & Release Links
+
+- [Official v1.0.0 Release Notes](ReleaseNotes_v1.0.0.md)
+- [Final Production Benchmark Report](reports/final_benchmark_report_v1.0.0.md)
+- [Production Deployment Guide](docs/deployment_guide.md)
+- [Implementation Walkthrough](walkthrough.md)

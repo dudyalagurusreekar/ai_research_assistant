@@ -1,0 +1,42 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "ARA v1.0 Production Platform Dashboard",
+    "tags": ["ara", "production", "evaluation", "observability"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Overall Quality Score",
+        "type": "stat",
+        "targets": [{"expr": "ara_evaluation_quality_score"}],
+        "gridPos": {"x": 0, "y": 0, "w": 6, "h": 4}
+      },
+      {
+        "id": 2,
+        "title": "Overall Pass Rate (%)",
+        "type": "stat",
+        "targets": [{"expr": "ara_evaluation_pass_rate"}],
+        "gridPos": {"x": 6, "y": 0, "w": 6, "h": 4}
+      },
+      {
+        "id": 3,
+        "title": "Average Execution Latency (ms)",
+        "type": "graph",
+        "targets": [{"expr": "ara_evaluation_latency_ms"}],
+        "gridPos": {"x": 12, "y": 0, "w": 12, "h": 4}
+      },
+      {
+        "id": 4,
+        "title": "Evaluation Runs Counter",
+        "type": "stat",
+        "targets": [{"expr": "ara_evaluation_runs_total"}],
+        "gridPos": {"x": 0, "y": 4, "w": 6, "h": 4}
+      }
+    ]
+  },
+  "overwrite": true
+}

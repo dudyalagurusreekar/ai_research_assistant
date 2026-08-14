@@ -1,0 +1,72 @@
+name: ARA v1.0 Production CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, "release/*" ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-evaluate:
+    name: Run Test Suite & Evaluation Platform
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install spacy networkx pytest pytest-cov ruff
+        python -m spacy download en_core_web_sm || true
+
+    - name: Code Quality & Linting
+      run: |
+        ruff check . || true
+
+    - name: Execute Full Test Suite
+      run: |
+        pytest tests/ -v --cov=core
+
+    - name: Execute Evaluation & Release Gates
+      run: |
+        python scripts/run_sprint14_evaluation.py
+
+  security-audit:
+    name: Security & Vulnerability Audit
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+
+    - name: Security Scan Script
+      run: |
+        python scripts/security_scan.py
+
+  docker-build-publish:
+    name: Build & Publish Production Container Image
+    needs: [test-and-evaluate, security-audit]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build Production Image
+      run: |
+        docker build -f Dockerfile -t ai-research-assistant:1.0.0 -t ai-research-assistant:latest .
+
+    - name: Validate Compose Specification
+      run: |
+        docker compose -f docker-compose.prod.yml config

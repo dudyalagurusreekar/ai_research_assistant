@@ -77,6 +77,14 @@ def get_model() -> ResilientLiteLLMModel:
     )
 
 
+def get_orchestrator():
+    """
+    Factory to construct the IntelligentLLMOrchestrator instance.
+    """
+    from core.orchestration.orchestrator import IntelligentLLMOrchestrator
+    return IntelligentLLMOrchestrator()
+
+
 def validate_model_connection() -> Tuple[bool, str]:
     """
     Validates model reachability and configuration prior to running the agent loop.

@@ -1,23 +1,14 @@
 """GraphQL Protocol Connector strategy implementation."""
 
-from tools.integration.interfaces.integration_interfaces import IConnector
+from tools.integration.sdk.base_connector import BaseConnector
 from tools.integration.models.integration_models import IntegrationRequest, IntegrationResponse, ProtocolType
-from infrastructure.logging.logger import StructuredLogger
 
 
-class GraphQLConnector(IConnector):
+class GraphQLConnector(BaseConnector):
     """GraphQL connector strategy executing GraphQL queries and mutations."""
 
     def __init__(self) -> None:
-        self._logger = StructuredLogger("GraphQLConnector")
-
-    @property
-    def connector_name(self) -> str:
-        return "graphql"
-
-    @property
-    def protocol(self) -> ProtocolType:
-        return ProtocolType.GRAPHQL
+        super().__init__(name="graphql", protocol=ProtocolType.GRAPHQL, description="Generic GraphQL API connector")
 
     async def execute(self, request: IntegrationRequest) -> IntegrationResponse:
         """Execute GraphQL query or mutation request."""
